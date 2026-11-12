@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Geist } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
 import { getDictionary, hasLocale, locales } from "./dictionaries";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -30,7 +36,7 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={lang} className={`${geistSans.variable} h-full antialiased`}>
+    <html lang={lang} className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
