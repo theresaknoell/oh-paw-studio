@@ -53,7 +53,16 @@
   "products": {
     "title": "Products",
     "intro": "All products are digital downloads available on Gumroad.",
-    "buy": "View on Gumroad"
+    "buy": "View on Gumroad",
+    "bundlesTitle": "Bundles",
+    "bundlesIntro": "Several products together, with about 20% off compared to buying them separately.",
+    "includes": "Included",
+    "instead": "instead of",
+    "save": "You save",
+    "soon": "Coming soon on Gumroad",
+    "inside": "What's inside",
+    "pages": "pages",
+    "format": "Digital download (PDF)"
   },
   "blog": {
     "title": "Blog",

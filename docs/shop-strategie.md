@@ -29,7 +29,7 @@ Die günstigen Produkte (Veterinary Records, Multi-Cat, Kitten, Senior) senken d
 | Kitten-Jahr | Kitten Care Edition + Veterinary Records + Erinnerungsbuch | 37,70 € | 29,90 € |
 | Zuhause & Spiel | Cat Home Collection + Cat Enrichment Collection | 39,80 € | 31,90 € |
 | Senior-Begleitung | Senior Cat Care Edition + Veterinary Records + Care Journal | 37,70 € | 29,90 € |
-| Mehrkatzen-Alltag | Multi-Cat Pack + Care Journal | 27,80 € | 22,90 € |
+| Mehrkatzen-Alltag | Multi-Cat Pack + Care Journal | 27,80 € | 21,90 € |
 
 Das bestehende New Cat Parent Bundle habe ich nicht im Detail ausgewertet, damit sich neue Bundles nicht überschneiden.
 Gumroad bietet nach meinem Kenntnisstand Bundles als eigenen Produkttyp; das müsstest du in deinem Konto prüfen.
