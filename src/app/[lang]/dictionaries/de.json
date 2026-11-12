@@ -15,7 +15,15 @@
     "title": "Oh Paw Studio",
     "tagline": "Memories for a lifetime",
     "intro": "Durchdacht gestaltet für das Leben mit Katzen.",
-    "cta": "Produkte entdecken"
+    "cta": "Produkte entdecken",
+    "featured": "Ausgewählte Produkte",
+    "viewAll": "Alle Produkte ansehen",
+    "latest": "Aus dem Blog",
+    "readMore": "Weiterlesen",
+    "allPosts": "Alle Beiträge",
+    "aboutTitle": "Die Geschichte hinter Oh Paw Studio",
+    "aboutBody": "Aus einer spontanen Idee für ein Erinnerungsbuch wurde eine Marke für durchdachte digitale Produkte für Katzenmenschen.",
+    "aboutLink": "Mehr über uns"
   },
   "about": {
     "title": "Über uns",

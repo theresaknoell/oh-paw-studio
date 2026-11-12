@@ -30,6 +30,15 @@ export async function generateMetadata({
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    metadataBase: new URL(process.env.URL ?? "http://localhost:3000"),
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      siteName: "Oh Paw Studio",
+      type: "website",
+      locale: lang === "de" ? "de_DE" : "en_US",
+      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    },
     // Testphase: Suchmaschinen sollen die Seite noch nicht aufnehmen.
     // Zum Livegang entfernen.
     robots: { index: false, follow: false },
