@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pawSpace } from "@/data/paw-space";
 import { hasLocale } from "../dictionaries";
@@ -39,6 +40,12 @@ export default async function PawSpace({
       </ol>
 
       <p className="mt-12 text-lg text-cocoa/80">{page.waitlist}</p>
+      <Link
+        href={`/${lang}/my-paw-space/app`}
+        className="mt-6 inline-block rounded-full bg-olive px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa"
+      >
+        {lang === "de" ? "Demo ausprobieren" : "Try the demo"}
+      </Link>
     </main>
   );
 }
