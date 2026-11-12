@@ -17,7 +17,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         width={320}
         height={320}
         priority
-        className="rounded-full"
+       
       />
       <h1 className="text-5xl tracking-tight">{dict.home.title}</h1>
       <p className="max-w-md text-lg text-cocoa/80">{dict.home.intro}</p>
