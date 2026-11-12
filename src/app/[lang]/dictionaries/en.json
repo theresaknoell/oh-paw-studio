@@ -29,5 +29,9 @@
   "blog": {
     "title": "Blog",
     "empty": "Inspiration and tips for life with cats are coming soon."
+  },
+  "footer": {
+    "imprint": "Legal Notice",
+    "privacy": "Privacy Policy"
   }
 }

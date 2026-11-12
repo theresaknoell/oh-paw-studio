@@ -27,7 +27,13 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
-  return { title: dict.meta.title, description: dict.meta.description };
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    // Testphase: Suchmaschinen sollen die Seite noch nicht aufnehmen.
+    // Zum Livegang entfernen.
+    robots: { index: false, follow: false },
+  };
 }
 
 export default async function RootLayout({
@@ -43,7 +49,12 @@ export default async function RootLayout({
       <body className="min-h-full flex flex-col">
         <SiteHeader lang={lang} nav={dict.nav} />
         <div className="flex flex-1 flex-col">{children}</div>
-        <SiteFooter claim={dict.claim} />
+        <SiteFooter
+          lang={lang}
+          claim={dict.claim}
+          imprint={dict.footer.imprint}
+          privacy={dict.footer.privacy}
+        />
       </body>
     </html>
   );

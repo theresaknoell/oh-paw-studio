@@ -29,5 +29,9 @@
   "blog": {
     "title": "Blog",
     "empty": "Bald gibt es hier Inspiration und Tipps für das Leben mit Katzen."
+  },
+  "footer": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
   }
 }
