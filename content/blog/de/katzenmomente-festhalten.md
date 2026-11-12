@@ -1,7 +1,7 @@
 ---
-title: Kleine Katzenmomente festhalten – fünf Ideen
+title: "Kleine Katzenmomente festhalten – fünf Ideen"
 date: 2026-11-12
-excerpt: Wie du die kleinen Dinge im Alltag mit deiner Katze bewusst wahrnimmst und bewahrst.
+excerpt: "Wie du die kleinen Dinge im Alltag mit deiner Katze bewusst wahrnimmst und bewahrst."
 ---
 
 Nicht nur die großen Meilensteine machen das Leben mit einer Katze besonders. Oft sind es gerade die kleinen Dinge, an die man sich später am liebsten erinnert. Diese Ideen helfen dir, sie festzuhalten.

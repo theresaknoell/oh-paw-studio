@@ -1,7 +1,7 @@
 ---
-title: Warum ich ein Erinnerungsbuch für das erste Jahr mit einem Kitten gestaltet habe
+title: "Warum ich ein Erinnerungsbuch für das erste Jahr mit einem Kitten gestaltet habe"
 date: 2026-11-12
-excerpt: Wie aus einer spontanen Idee ein Erinnerungsbuch und schließlich Oh Paw Studio wurde.
+excerpt: "Wie aus einer spontanen Idee ein Erinnerungsbuch und schließlich Oh Paw Studio wurde."
 ---
 
 Alles begann mit einem Buch, das ich gar nicht selbst gekauft hatte: einem gesponserten Erinnerungsbuch für Kitten. Beim Ausfüllen merkte ich, dass viele Fragen nicht zu unseren Erlebnissen passten und nicht zu der Art, wie ich das Leben mit meiner Katze festhalten wollte.

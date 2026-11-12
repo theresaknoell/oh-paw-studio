@@ -1,7 +1,7 @@
 ---
-title: Quiet retreats for cats – a calm home for you both
+title: "Quiet retreats for cats – a calm home for you both"
 date: 2026-11-12
-excerpt: How to create places where your cat feels safe without turning your home into a cat tree warehouse.
+excerpt: "How to create places where your cat feels safe without turning your home into a cat tree warehouse."
 ---
 
 A cat-friendly home doesn't have to be chaotic. With a little planning, you can create a space where your cat feels safe that still looks like you.

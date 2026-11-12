@@ -1,7 +1,7 @@
 ---
-title: Das erste Jahr mit einem Kitten – fünf Ideen für einen ruhigen Start
+title: "Das erste Jahr mit einem Kitten – fünf Ideen für einen ruhigen Start"
 date: 2026-11-12
-excerpt: Fünf einfache Gedanken, die dir und deinem Kitten die ersten Wochen erleichtern können.
+excerpt: "Fünf einfache Gedanken, die dir und deinem Kitten die ersten Wochen erleichtern können."
 ---
 
 Wenn ein Kitten einzieht, ist alles neu: für die Katze und für dich. Diese fünf Ideen können den Start erleichtern. Sie ersetzen keinen tierärztlichen Rat; bei Fragen zur Gesundheit wende dich bitte immer an deine Tierarztpraxis.

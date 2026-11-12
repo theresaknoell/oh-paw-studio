@@ -1,7 +1,7 @@
 ---
-title: Tierarztunterlagen ordnen – so behältst du den Überblick
+title: "Tierarztunterlagen ordnen – so behältst du den Überblick"
 date: 2026-11-12
-excerpt: Impfungen, Behandlungen und Termine übersichtlich festhalten, damit du beim nächsten Besuch alles parat hast.
+excerpt: "Impfungen, Behandlungen und Termine übersichtlich festhalten, damit du beim nächsten Besuch alles parat hast."
 ---
 
 Beim Tierarztbesuch zählen Details: Wann war die letzte Impfung? Welches Medikament hat geholfen? Wie lange besteht ein Problem schon? Wer alles an einem Ort sammelt, ist gut vorbereitet.

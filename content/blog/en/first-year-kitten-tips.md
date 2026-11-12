@@ -1,7 +1,7 @@
 ---
-title: The first year with a kitten – five ideas for a calm start
+title: "The first year with a kitten – five ideas for a calm start"
 date: 2026-11-12
-excerpt: Five simple thoughts that can make the first weeks easier for you and your kitten.
+excerpt: "Five simple thoughts that can make the first weeks easier for you and your kitten."
 ---
 
 When a kitten moves in, everything is new: for the cat and for you. These five ideas can make the start easier. They do not replace veterinary advice; for any health questions, please always contact your vet.

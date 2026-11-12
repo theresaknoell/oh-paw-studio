@@ -1,7 +1,7 @@
 ---
-title: Organising vet records – how to keep track
+title: "Organising vet records – how to keep track"
 date: 2026-11-12
-excerpt: Keep vaccinations, treatments and appointments clearly recorded so you have everything at hand at the next visit.
+excerpt: "Keep vaccinations, treatments and appointments clearly recorded so you have everything at hand at the next visit."
 ---
 
 At the vet, details matter: When was the last vaccine? Which medication helped? How long has a problem been going on? If you keep everything in one place, you are well prepared.
