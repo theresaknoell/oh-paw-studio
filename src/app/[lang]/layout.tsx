@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
+import { isLive, siteUrl } from "@/lib/site";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { getDictionary, hasLocale, locales } from "./dictionaries";
@@ -30,7 +31,7 @@ export async function generateMetadata({
   return {
     title: dict.meta.title,
     description: dict.meta.description,
-    metadataBase: new URL(process.env.URL ?? "http://localhost:3000"),
+    metadataBase: new URL(siteUrl),
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
@@ -39,9 +40,8 @@ export async function generateMetadata({
       locale: lang === "de" ? "de_DE" : "en_US",
       images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     },
-    // Testphase: Suchmaschinen sollen die Seite noch nicht aufnehmen.
-    // Zum Livegang entfernen.
-    robots: { index: false, follow: false },
+    // Testphase: gesperrt, bis SITE_LIVE=true gesetzt ist (siehe src/lib/site.ts).
+    robots: isLive ? { index: true, follow: true } : { index: false, follow: false },
   };
 }
 

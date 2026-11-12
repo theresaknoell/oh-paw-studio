@@ -19,8 +19,7 @@ Voraussetzung: Newsletter-Tool (MailerLite, aktuell pausiert), Impressum, Datens
 ## SEO (technisch)
 Vorhanden: saubere URLs mit Sprache, Metadaten, Social-Vorschau, schnelle statische Seiten.
 Noch offen:
-- Sitemap und robots.txt (beim Livegang, wenn `noindex` entfernt wird)
-- hreflang-Verweise zwischen DE und EN
+- Sitemap, robots.txt und hreflang-Verweise: vorbereitet. Zum Livegang in Netlify `SITE_LIVE=true` und `SITE_URL` (Adresse der Domain) setzen.
 - Produkt-Beschreibungstexte mit Suchbezug auf den Produktseiten (aktuell nur Titel und Preis)
 - Strukturierte Daten für Blogbeiträge
 - Google Search Console einrichten, sobald die Domain steht
