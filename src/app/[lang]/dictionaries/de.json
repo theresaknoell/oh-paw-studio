@@ -1,13 +1,33 @@
 {
   "meta": {
     "title": "Oh Paw Studio",
-    "description": "Willkommen bei Oh Paw Studio."
-  },
-  "home": {
-    "title": "Oh Paw Studio",
-    "intro": "Die Website entsteht gerade. Bald gibt es hier mehr zu entdecken."
+    "description": "Thoughtfully made for life with cats. Katzen-Planer, Erinnerungsbücher und mehr von Oh Paw Studio."
   },
   "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "products": "Produkte",
+    "blog": "Blog",
     "switchLanguage": "English"
+  },
+  "claim": "Thoughtfully made for life with cats.",
+  "home": {
+    "title": "Oh Paw Studio",
+    "tagline": "Memories for a lifetime",
+    "intro": "Durchdacht gestaltet für das Leben mit Katzen.",
+    "cta": "Produkte entdecken"
+  },
+  "about": {
+    "title": "Über uns",
+    "body": "Hier erzählen wir bald die Geschichte von Oh Paw Studio."
+  },
+  "products": {
+    "title": "Produkte",
+    "intro": "Alle Produkte gibt es als digitalen Download bei Gumroad.",
+    "buy": "Bei Gumroad ansehen"
+  },
+  "blog": {
+    "title": "Blog",
+    "empty": "Bald gibt es hier Inspiration und Tipps für das Leben mit Katzen."
   }
 }

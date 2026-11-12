@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    // Produktbilder kommen direkt von Gumroad
+    remotePatterns: [
+      { protocol: "https", hostname: "public-files.gumroad.com" },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {

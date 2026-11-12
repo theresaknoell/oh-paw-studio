@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import { getDictionary, hasLocale, locales } from "./dictionaries";
 
 const cormorant = Cormorant_Garamond({
@@ -34,10 +36,15 @@ export default async function RootLayout({
 }: LayoutProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
 
   return (
     <html lang={lang} className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader lang={lang} nav={dict.nav} />
+        <div className="flex flex-1 flex-col">{children}</div>
+        <SiteFooter claim={dict.claim} />
+      </body>
     </html>
   );
 }
