@@ -23,7 +23,28 @@
     "allPosts": "Alle Beiträge",
     "aboutTitle": "Die Geschichte hinter Oh Paw Studio",
     "aboutBody": "Aus einer spontanen Idee für ein Erinnerungsbuch wurde eine Marke für durchdachte digitale Produkte für Katzenmenschen.",
-    "aboutLink": "Mehr über uns"
+    "aboutLink": "Mehr über uns",
+    "statement": "Das Leben mit Katzen besteht aus unzähligen kleinen Momenten, die es wert sind, festgehalten zu werden.",
+    "worldsTitle": "Produktwelten",
+    "worlds": {
+      "start": {
+        "title": "Der Start",
+        "text": "Für die ersten Tage und Wochen mit deiner Katze."
+      },
+      "care": {
+        "title": "Alltag & Pflege",
+        "text": "Gesundheit, Routinen und Überblick, in jeder Lebensphase."
+      },
+      "home": {
+        "title": "Zuhause & Beschäftigung",
+        "text": "Ein Zuhause, in dem ihr euch beide wohlfühlt, und Ideen für mehr Abwechslung."
+      },
+      "memories": {
+        "title": "Erinnerungen",
+        "text": "Für alles, was du später nicht vergessen möchtest."
+      }
+    },
+    "seeWorld": "Ansehen"
   },
   "about": {
     "title": "Über uns",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { productsFor } from "@/data/products";
+import { productsInWorld, worlds } from "@/data/products";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export default async function Products({
@@ -18,8 +18,12 @@ export default async function Products({
     <main className="mx-auto w-full max-w-5xl px-6 py-16">
       <h1 className="text-5xl">{dict.products.title}</h1>
       <p className="mt-4 text-lg text-cocoa/80">{dict.products.intro}</p>
-      <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {productsFor(lang).map((p) => (
+      {worlds.map((w) => (
+        <section key={w} id={w} className="mt-14 scroll-mt-8">
+          <h2 className="text-4xl">{dict.home.worlds[w].title}</h2>
+          <p className="mt-2 text-cocoa/80">{dict.home.worlds[w].text}</p>
+          <ul className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {productsInWorld(lang, w).map((p) => (
           <li key={p.slug} className="flex flex-col">
             <div className="relative aspect-square overflow-hidden rounded-lg bg-sand">
               {p.image && (
@@ -32,7 +36,7 @@ export default async function Products({
                 />
               )}
             </div>
-            <h2 className="mt-4 text-2xl">{p.title}</h2>
+            <h3 className="mt-4 text-2xl">{p.title}</h3>
             <p className="mt-1 text-cocoa/70">{price.format(p.priceEur)}</p>
             <a
               href={p.url}
@@ -45,6 +49,8 @@ export default async function Products({
           </li>
         ))}
       </ul>
+        </section>
+      ))}
     </main>
   );
 }

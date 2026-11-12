@@ -23,7 +23,28 @@
     "allPosts": "All posts",
     "aboutTitle": "The story behind Oh Paw Studio",
     "aboutBody": "A spontaneous idea for a memory book became a brand for thoughtful digital products for cat lovers.",
-    "aboutLink": "More about us"
+    "aboutLink": "More about us",
+    "statement": "Life with cats is made of countless small moments that are worth keeping.",
+    "worldsTitle": "Product worlds",
+    "worlds": {
+      "start": {
+        "title": "Getting started",
+        "text": "For the first days and weeks with your cat."
+      },
+      "care": {
+        "title": "Everyday care",
+        "text": "Health, routines and overview, at every stage of life."
+      },
+      "home": {
+        "title": "Home & enrichment",
+        "text": "A home where you both feel at ease, and ideas for more variety."
+      },
+      "memories": {
+        "title": "Memories",
+        "text": "For everything you don't want to forget later."
+      }
+    },
+    "seeWorld": "View"
   },
   "about": {
     "title": "About",

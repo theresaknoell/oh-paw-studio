@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { productsFor } from "@/data/products";
+import { productsFor, worlds } from "@/data/products";
 import { getPosts } from "@/lib/blog";
 import { getDictionary, hasLocale } from "./dictionaries";
 
@@ -36,6 +36,34 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Link href={`/${lang}/products`} className={button}>
           {dict.home.cta}
         </Link>
+      </section>
+
+      <section className="border-y border-sand px-6 py-14 text-center">
+        <p className="mx-auto max-w-2xl font-serif text-3xl leading-10">
+          {dict.home.statement}
+        </p>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-4xl">{dict.home.worldsTitle}</h2>
+          <ul className="mt-8 grid gap-6 sm:grid-cols-2">
+            {worlds.map((w) => (
+              <li key={w}>
+                <Link
+                  href={`/${lang}/products#${w}`}
+                  className="block h-full rounded-lg border border-sand bg-sand/30 p-6 transition-colors hover:bg-sand/60"
+                >
+                  <h3 className="text-2xl">{dict.home.worlds[w].title}</h3>
+                  <p className="mt-2 text-cocoa/80">{dict.home.worlds[w].text}</p>
+                  <span className="mt-4 inline-block text-sm text-olive underline underline-offset-4">
+                    {dict.home.seeWorld}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section className="bg-sand/50 px-6 py-16">
