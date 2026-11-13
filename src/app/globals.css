@@ -34,3 +34,18 @@ h3 {
 h3 {
   hyphens: manual;
 }
+
+/* Druckansicht (My Paw Space): nur das Erinnerungsbuch drucken */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .print-entry {
+    break-inside: avoid;
+  }
+}

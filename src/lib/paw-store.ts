@@ -11,6 +11,7 @@ export type Cat = {
   birthday: string;
   since: string;
   notes: string;
+  photo?: string;
 };
 
 export type MemoryCategory = "first" | "everyday" | "milestone";
@@ -21,6 +22,7 @@ export type Memory = {
   date: string;
   category: MemoryCategory;
   text: string;
+  photo?: string;
 };
 
 export type PawState = { cats: Cat[]; memories: Memory[] };
@@ -28,6 +30,7 @@ export type PawState = { cats: Cat[]; memories: Memory[] };
 const KEY = "oh-paw-space-demo-v1";
 const empty: PawState = { cats: [], memories: [] };
 let cache: PawState | null = null;
+let saveFailed = false;
 const listeners = new Set<() => void>();
 
 function load(): PawState {
@@ -48,8 +51,10 @@ function commit(next: PawState) {
   cache = next;
   try {
     localStorage.setItem(KEY, JSON.stringify(next));
+    saveFailed = false;
   } catch {
-    // Speicher nicht verfügbar: Änderungen gelten nur bis zum Neuladen.
+    // Speicher voll oder nicht verfügbar: Änderungen gelten nur bis zum Neuladen.
+    saveFailed = true;
   }
   listeners.forEach((l) => l());
 }
@@ -82,6 +87,25 @@ export function usePawStore() {
         ...snapshot(),
         memories: snapshot().memories.filter((m) => m.id !== id),
       }),
+    updateCat: (id: string, c: Partial<Omit<Cat, "id">>) =>
+      commit({ ...snapshot(), cats: snapshot().cats.map((x) => (x.id === id ? { ...x, ...c } : x)) }),
+    saveFailed,
+    storageKb: Math.round(JSON.stringify(state).length / 1024),
+    importJson: (raw: string): boolean => {
+      try {
+        const data = JSON.parse(raw);
+        if (!data || !Array.isArray(data.cats) || !Array.isArray(data.memories)) return false;
+        const cats = data.cats.filter((c: Cat) => c && typeof c.id === "string" && typeof c.name === "string");
+        const ids = new Set(cats.map((c: Cat) => c.id));
+        const memories = data.memories.filter(
+          (m: Memory) => m && typeof m.id === "string" && typeof m.text === "string" && ids.has(m.catId),
+        );
+        commit({ cats, memories });
+        return true;
+      } catch {
+        return false;
+      }
+    },
     exportJson: () => JSON.stringify(snapshot(), null, 2),
     clearAll: () => commit(empty),
   };

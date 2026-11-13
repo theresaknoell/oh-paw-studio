@@ -10,7 +10,7 @@ export default async function Memories({ params }: PageProps<"/[lang]/my-paw-spa
   return (
     <>
       <h1 className="mb-6 text-5xl">{t.title}</h1>
-      <MemoriesManager t={t} />
+      <MemoriesManager t={t} savedFailed={pawApp[lang].cats.saveFailed} />
     </>
   );
 }
