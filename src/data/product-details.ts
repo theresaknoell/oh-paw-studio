@@ -53,7 +53,7 @@ export const productDetails: Record<string, ProductDetail> = {
     ],
     "pages": 53,
     "intro": [
-      "Ein Leben mit einer Katze besteht aus vielen kleinen Dingen: vertrauten Routinen, besonderen Vorlieben, täglichen Pflegeauf gaben und Momenten, die man manchmal erst später richtig zu schätzen weiß.",
+      "Ein Leben mit einer Katze besteht aus vielen kleinen Dingen: vertrauten Routinen, besonderen Vorlieben, täglichen Pflegeaufgaben und Momenten, die man manchmal erst später richtig zu schätzen weiß.",
       "„The Cat Care Journal“ bringt all das an einen Ort. Hier sammelst du wichtige Informationen über deine Katze, organisierst Fütterung und Pflege, dokumentierst Gewicht und Gesundheit und bereitest Tierarztbesuche gut vor.",
       "Ob Kitten, erwachsene Katze oder Seniorin: Das Journal begleitet euch durch alle Lebensphasen."
     ]
@@ -81,10 +81,10 @@ export const productDetails: Record<string, ProductDetail> = {
     "inside": [
       "Grundlagen: warum Beschäftigung so wichtig ist und wie deine Katze tickt",
       "Ideen für Spiel, Jagd und Bewegung",
-      "Kopfarbeit, Futterspiele und Schnüffelauf gaben",
+      "Kopfarbeit, Futterspiele und Schnüffelaufgaben",
       "Einfache DIY-Projekte mit Dingen aus dem Haushalt, inklusive Sicherheitscheck",
       "Beschäftigung für Kitten, erwachsene Katzen, Seniorinnen, Wohnungskatzen und schüchterne Katzen",
-      "Wochenplan, Tagestracker , 7- Tage-Challenge und eine Bibliothek mit 30 Ideen"
+      "Wochenplan, Tagestracker, 7-Tage-Challenge und eine Bibliothek mit 30 Ideen"
     ],
     "pages": 56,
     "intro": [
@@ -97,11 +97,11 @@ export const productDetails: Record<string, ProductDetail> = {
     "tagline": "Creative ways to make every day more interesting",
     "inside": [
       "The basics: why enrichment matters and how your cat thinks",
-      "Ideas for play , hunting and movement",
+      "Ideas for play, hunting and movement",
       "Brain games, food puzzles and sniffing activities",
       "Easy DIY projects with household items, including a safety checklist",
       "Enrichment for kittens, adult cats, seniors, indoor cats and shy cats",
-      "Weekly planner , daily tracker, a 7-day challenge and a library of 30 ideas"
+      "Weekly planner, daily tracker, a 7-day challenge and a library of 30 ideas"
     ],
     "pages": 57,
     "intro": [
@@ -442,7 +442,7 @@ export const productDetails: Record<string, ProductDetail> = {
     "inside": [
       "Sicherheitscheck und Materialliste für alle Projekte",
       "Such- und Schnüffelspiele, zum Beispiel Muffinblech-Spiel und Handtuch-Schatzrolle",
-      "Knobelauf gaben wie Papierrollen-Pyramide und Schuhkarton-Labyrinth",
+      "Knobelaufgaben wie Papierrollen-Pyramide und Schuhkarton-Labyrinth",
       "Ideen zum Entdecken: Karton-Verstecke, Entdeckerzone, Fensterplatz und Kickkissen",
       "Platz, um die Reaktion deiner Katze festzuhalten",
       "DIY-Protokoll und Seite für die Lieblingsbeschäftigungen"
