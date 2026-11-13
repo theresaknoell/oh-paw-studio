@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import { newsletter } from "@/data/newsletter";
 import { pawSpace } from "@/data/paw-space";
-import { hasLocale } from "../dictionaries";
+import { getDictionary, hasLocale } from "../dictionaries";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/my-paw-space">): Promise<Metadata> {
   const { lang } = await params;
@@ -17,6 +19,7 @@ export default async function PawSpace({
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const page = pawSpace[lang];
+  const dict = await getDictionary(lang);
 
   return (
     <main className="mx-auto w-full max-w-4xl px-6 py-16">
@@ -47,7 +50,15 @@ export default async function PawSpace({
         ))}
       </ol>
 
-      <p className="mt-12 text-lg text-cocoa/80">{page.waitlist}</p>
+      {newsletter.enabled && (
+        <section className="mt-14 rounded-[10px] bg-sand/50 p-6 md:p-8">
+          <h2 className="text-3xl">{dict.newsletter.waitTitle}</h2>
+          <p className="mt-2 mb-5 max-w-xl text-cocoa/90">{dict.newsletter.waitText}</p>
+          <div className="relative max-w-xl">
+            <NewsletterSignup lang={lang} action={newsletter.pawSpaceAction || newsletter.action} t={dict.newsletter} />
+          </div>
+        </section>
+      )}
       <Link
         href={`/${lang}/my-paw-space/app`}
         className="mt-6 inline-block rounded-full bg-olive-deep px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa"

@@ -203,6 +203,8 @@
     "success": "Almost done! Please check your inbox and confirm your subscription using the link in the email.",
     "errorEmail": "Please enter a valid email address.",
     "errorConsent": "Please confirm that you would like to receive the newsletter.",
-    "errorNetwork": "Sorry, that did not work. Please try again later."
+    "errorNetwork": "Sorry, that did not work. Please try again later.",
+    "waitTitle": "Be among the first",
+    "waitText": "My Paw Space is in planning. Sign up and we will email you as soon as it starts, and you can help shape the preview."
   }
 }

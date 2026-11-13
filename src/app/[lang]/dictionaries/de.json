@@ -203,6 +203,8 @@
     "success": "Fast geschafft! Bitte schau in dein Postfach und bestätige deine Anmeldung über den Link in der E-Mail.",
     "errorEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
     "errorConsent": "Bitte bestätige, dass du den Newsletter erhalten möchtest.",
-    "errorNetwork": "Das hat leider nicht geklappt. Bitte versuche es später noch einmal."
+    "errorNetwork": "Das hat leider nicht geklappt. Bitte versuche es später noch einmal.",
+    "waitTitle": "Als Erste dabei sein",
+    "waitText": "My Paw Space ist in Planung. Trag dich ein, dann erfährst du per E-Mail, sobald es startet, und kannst die Vorschau mitgestalten."
   }
 }

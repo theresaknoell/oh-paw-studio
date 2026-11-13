@@ -3,4 +3,6 @@
 export const newsletter = {
   enabled: true,
   action: "https://assets.mailerlite.com/jsonp/2791472/forms/204039452056618743/subscribe",
+  // Eigenes MailerLite-Formular für die My-Paw-Space-Warteliste. Solange leer, nutzt die Warteliste das Newsletter-Formular.
+  pawSpaceAction: "" as string,
 };
