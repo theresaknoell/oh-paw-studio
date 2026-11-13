@@ -8,6 +8,7 @@ type Nav = {
   products: string;
   blog: string;
   switchLanguage: string;
+  main: string;
 };
 
 export default function SiteHeader({
@@ -28,9 +29,9 @@ export default function SiteHeader({
         <Link href={`/${lang}`} aria-label={nav.home}>
           <Image src="/logo.webp" alt="Oh Paw Studio" width={64} height={64} />
         </Link>
-        <nav className="flex items-center gap-6 text-sm">
+        <nav aria-label={nav.main} className="flex items-center gap-6 text-sm">
           {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-olive">
+            <Link key={l.href} href={l.href} className="hover:text-olive-deep">
               {l.label}
             </Link>
           ))}

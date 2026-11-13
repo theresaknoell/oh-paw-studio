@@ -2,7 +2,7 @@ import type { Locale } from "@/app/[lang]/dictionaries";
 
 export type PawApp = {
   demoBanner: string;
-  nav: { dashboard: string; cats: string; memories: string; products: string; settings: string };
+  nav: { app: string; dashboard: string; cats: string; memories: string; products: string; settings: string };
   dashboard: { title: string; intro: string; cats: string; memories: string; start: string };
   cats: {
     title: string; empty: string; name: string; birthday: string; since: string;
@@ -23,7 +23,7 @@ export type PawApp = {
 export const pawApp: Record<Locale, PawApp> = {
   de: {
     demoBanner: "Demo-Modus: Deine Einträge bleiben nur in diesem Browser gespeichert und sind nicht mit einem Konto verbunden.",
-    nav: { dashboard: "Übersicht", cats: "Meine Katzen", memories: "Erinnerungen", products: "Meine Produkte", settings: "Einstellungen" },
+    nav: { app: "My Paw Space", dashboard: "Übersicht", cats: "Meine Katzen", memories: "Erinnerungen", products: "Meine Produkte", settings: "Einstellungen" },
     dashboard: {
       title: "Dein Paw Space",
       intro: "Schön, dass du da bist. Hier sammelst du alles rund um deine Katzen.",
@@ -56,7 +56,7 @@ export const pawApp: Record<Locale, PawApp> = {
   },
   en: {
     demoBanner: "Demo mode: Your entries are stored only in this browser and are not linked to an account.",
-    nav: { dashboard: "Overview", cats: "My cats", memories: "Memories", products: "My products", settings: "Settings" },
+    nav: { app: "My Paw Space", dashboard: "Overview", cats: "My cats", memories: "Memories", products: "My products", settings: "Settings" },
     dashboard: {
       title: "Your Paw Space",
       intro: "Lovely to have you here. Collect everything about your cats in one place.",

@@ -31,11 +31,11 @@ export default async function Post({
 
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-16">
-      <Link href={`/${lang}/blog`} className="text-sm text-olive hover:underline">
+      <Link href={`/${lang}/blog`} className="text-sm text-olive-deep hover:underline">
         ← {dict.blog.title}
       </Link>
       <h1 className="mt-6 text-5xl">{post.title}</h1>
-      <div className="mt-8 space-y-5 text-lg leading-8 text-cocoa/90 [&_em]:text-cocoa/60 [&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-3xl [&_a]:text-olive [&_a]:underline">
+      <div className="mt-8 space-y-5 text-lg leading-8 text-cocoa/90 [&_em]:text-cocoa/75 [&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-3xl [&_a]:text-olive-deep [&_a]:underline">
         <Markdown>{post.content}</Markdown>
       </div>
     </main>

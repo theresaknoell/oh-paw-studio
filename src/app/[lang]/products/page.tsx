@@ -32,7 +32,7 @@ export default async function Products({
                 className="flex flex-col rounded-lg border border-sand bg-sand/30 p-6"
               >
                 <h3 className="text-2xl">{v.title}</h3>
-                <p className="mt-3 text-sm text-cocoa/60">
+                <p className="mt-3 text-sm text-cocoa/75">
                   {dict.products.includes}
                 </p>
                 <ul className="mt-1 space-y-1 text-cocoa/85">
@@ -40,14 +40,14 @@ export default async function Products({
                     <li key={p.slug}>{p.title}</li>
                   ))}
                 </ul>
-                <p className="mt-4 text-cocoa/70">
+                <p className="mt-4 text-cocoa/75">
                   <span className="text-2xl text-cocoa">
                     {price.format(v.price)}
                   </span>{" "}
                   {dict.products.instead}{" "}
                   <span className="line-through">{price.format(v.total)}</span>
                   <br />
-                  <span className="text-sm text-olive">
+                  <span className="text-sm text-olive-deep">
                     {dict.products.save} {price.format(v.saving)}
                   </span>
                 </p>
@@ -56,12 +56,12 @@ export default async function Products({
                     href={v.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 self-start rounded-full bg-olive px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa"
+                    className="mt-4 self-start rounded-full bg-olive-deep px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa"
                   >
                     {dict.products.buy}
                   </a>
                 ) : (
-                  <p className="mt-4 text-sm text-olive">{dict.products.soon}</p>
+                  <p className="mt-4 text-sm text-olive-deep">{dict.products.soon}</p>
                 )}
               </li>
             );
@@ -88,20 +88,20 @@ export default async function Products({
               )}
             </div>
             <h3 className="mt-4 text-2xl">{p.title}</h3>
-            <p className="mt-1 text-cocoa/70">{price.format(p.priceEur)}</p>
+            <p className="mt-1 text-cocoa/75">{price.format(p.priceEur)}</p>
             {productDetails[p.slug] && (
               <>
                 <p className="mt-2 text-cocoa/85">
                   {productDetails[p.slug].tagline}
                 </p>
-                <p className="mt-1 text-sm text-cocoa/60">
+                <p className="mt-1 text-sm text-cocoa/75">
                   {dict.products.format}
                   {productDetails[p.slug].pages
                     ? ` · ${productDetails[p.slug].pages} ${dict.products.pages}`
                     : ""}
                 </p>
                 <details className="mt-3 text-sm text-cocoa/85">
-                  <summary className="cursor-pointer text-olive">
+                  <summary className="cursor-pointer text-olive-deep">
                     {dict.products.inside}
                   </summary>
                   <ul className="mt-2 list-disc space-y-1 pl-5">
@@ -116,7 +116,7 @@ export default async function Products({
               href={p.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 self-start rounded-full bg-olive px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa"
+              className="mt-4 self-start rounded-full bg-olive-deep px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa"
             >
               {dict.products.buy}
             </a>

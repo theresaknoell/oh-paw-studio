@@ -15,7 +15,7 @@ export default async function MyProducts({ params }: PageProps<"/[lang]/my-paw-s
         {productsFor(lang).map((p) => (
           <li key={p.slug} className="flex items-center justify-between gap-4 py-4">
             <span className="text-lg">{p.title}</span>
-            <a href={p.url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-sm text-olive underline underline-offset-4">
+            <a href={p.url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-sm text-olive-deep underline underline-offset-4">
               {t.open}
             </a>
           </li>

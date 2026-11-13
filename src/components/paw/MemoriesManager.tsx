@@ -5,7 +5,7 @@ import { usePawStore, type MemoryCategory } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
 
 const input = "mt-1 w-full rounded-md border border-sand bg-ivory px-3 py-2";
-const button = "rounded-full bg-olive px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa";
+const button = "rounded-full bg-olive-deep px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa";
 
 export default function MemoriesManager({ t }: { t: PawApp["memories"] }) {
   const { cats, memories, addMemory, removeMemory } = usePawStore();
@@ -15,7 +15,7 @@ export default function MemoriesManager({ t }: { t: PawApp["memories"] }) {
   const catId = form.catId || cats[0]?.id || "";
   const sorted = [...memories].sort((a, b) => b.date.localeCompare(a.date));
 
-  if (cats.length === 0) return <p className="text-cocoa/70">{t.needCat}</p>;
+  if (cats.length === 0) return <p className="text-cocoa/75">{t.needCat}</p>;
 
   return (
     <div>
@@ -48,16 +48,16 @@ export default function MemoriesManager({ t }: { t: PawApp["memories"] }) {
       </form>
 
       {sorted.length === 0 ? (
-        <p className="mt-8 text-cocoa/70">{t.empty}</p>
+        <p className="mt-8 text-cocoa/75">{t.empty}</p>
       ) : (
         <ol className="mt-8 space-y-5 border-l-2 border-sage pl-5">
           {sorted.map((m) => (
             <li key={m.id}>
-              <p className="text-sm text-cocoa/60">
+              <p className="text-sm text-cocoa/75">
                 {m.date} · {cats.find((c) => c.id === m.catId)?.name} · {t.categories[m.category]}
               </p>
               <p className="mt-1 whitespace-pre-line text-lg text-cocoa/90">{m.text}</p>
-              <button className="mt-1 text-sm text-olive underline underline-offset-4" onClick={() => removeMemory(m.id)}>{t.remove}</button>
+              <button className="mt-1 text-sm text-olive-deep underline underline-offset-4" onClick={() => removeMemory(m.id)}>{t.remove}</button>
             </li>
           ))}
         </ol>

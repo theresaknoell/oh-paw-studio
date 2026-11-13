@@ -19,14 +19,14 @@ export default async function PawAppLayout({
     { href: `${base}/settings`, label: t.nav.settings },
   ];
   return (
-    <div className="mx-auto w-full max-w-4xl px-6 py-10">
+    <main className="mx-auto w-full max-w-4xl px-6 py-10">
       <p className="rounded-md bg-sage/25 px-4 py-2 text-sm text-cocoa/85">{t.demoBanner}</p>
-      <nav className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-b border-sand pb-3 text-sm">
+      <nav aria-label={t.nav.app} className="mt-6 flex flex-wrap gap-x-6 gap-y-2 border-b border-sand pb-3 text-sm">
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className="hover:text-olive">{l.label}</Link>
+          <Link key={l.href} href={l.href} className="hover:text-olive-deep">{l.label}</Link>
         ))}
       </nav>
       <div className="mt-8">{children}</div>
-    </div>
+    </main>
   );
 }

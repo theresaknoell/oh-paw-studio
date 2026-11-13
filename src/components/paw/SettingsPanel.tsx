@@ -5,7 +5,7 @@ import type { PawApp } from "@/data/paw-app";
 
 export default function SettingsPanel({ t }: { t: PawApp["settings"] }) {
   const { exportJson, clearAll } = usePawStore();
-  const button = "rounded-full border border-olive px-5 py-2 text-sm text-olive transition-colors hover:bg-olive hover:text-ivory";
+  const button = "rounded-full border border-olive px-5 py-2 text-sm text-olive-deep transition-colors hover:bg-olive-deep hover:text-ivory";
   return (
     <div className="flex flex-wrap gap-4">
       <button

@@ -6,7 +6,7 @@ import { getPosts } from "@/lib/blog";
 import { getDictionary, hasLocale } from "./dictionaries";
 
 const button =
-  "rounded-full bg-olive px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa";
+  "rounded-full bg-olive-deep px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -30,7 +30,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           priority
         />
         <h1 className="text-5xl tracking-tight">{dict.home.title}</h1>
-        <p className="max-w-md font-serif text-2xl text-olive">
+        <p className="max-w-md font-serif text-2xl text-olive-deep">
           {dict.home.intro}
         </p>
         <Link href={`/${lang}/products`} className={button}>
@@ -56,7 +56,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 >
                   <h3 className="text-2xl">{dict.home.worlds[w].title}</h3>
                   <p className="mt-2 text-cocoa/80">{dict.home.worlds[w].text}</p>
-                  <span className="mt-4 inline-block text-sm text-olive underline underline-offset-4">
+                  <span className="mt-4 inline-block text-sm text-olive-deep underline underline-offset-4">
                     {dict.home.seeWorld}
                   </span>
                 </Link>
@@ -84,7 +84,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   )}
                 </div>
                 <h3 className="mt-4 text-2xl">{p.title}</h3>
-                <p className="mt-1 text-cocoa/70">{price.format(p.priceEur)}</p>
+                <p className="mt-1 text-cocoa/75">{price.format(p.priceEur)}</p>
               </li>
             ))}
           </ul>
@@ -102,7 +102,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           </p>
           <Link
             href={`/${lang}/about`}
-            className="mt-4 inline-block text-olive underline underline-offset-4"
+            className="mt-4 inline-block text-olive-deep underline underline-offset-4"
           >
             {dict.home.aboutLink}
           </Link>
@@ -119,7 +119,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   <h3 className="text-2xl">
                     <Link
                       href={`/${lang}/blog/${p.slug}`}
-                      className="hover:text-olive"
+                      className="hover:text-olive-deep"
                     >
                       {p.title}
                     </Link>
@@ -127,7 +127,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   <p className="mt-2 text-cocoa/80">{p.excerpt}</p>
                   <Link
                     href={`/${lang}/blog/${p.slug}`}
-                    className="mt-2 inline-block text-sm text-olive underline underline-offset-4"
+                    className="mt-2 inline-block text-sm text-olive-deep underline underline-offset-4"
                   >
                     {dict.home.readMore}
                   </Link>
@@ -136,7 +136,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             </ul>
             <Link
               href={`/${lang}/blog`}
-              className="mt-8 inline-block text-olive underline underline-offset-4"
+              className="mt-8 inline-block text-olive-deep underline underline-offset-4"
             >
               {dict.home.allPosts}
             </Link>

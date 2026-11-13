@@ -12,11 +12,11 @@ export default async function PawSpace({
 
   return (
     <main className="mx-auto w-full max-w-4xl px-6 py-16">
-      <p className="inline-block rounded-full bg-sage/30 px-3 py-1 text-sm text-olive">
+      <p className="inline-block rounded-full bg-sage/30 px-3 py-1 text-sm text-cocoa">
         {page.status}
       </p>
       <h1 className="mt-4 text-6xl">{page.title}</h1>
-      <p className="mt-6 max-w-2xl font-serif text-2xl leading-9 text-olive">
+      <p className="mt-6 max-w-2xl font-serif text-2xl leading-9 text-olive-deep">
         {page.lead}
       </p>
 
@@ -42,7 +42,7 @@ export default async function PawSpace({
       <p className="mt-12 text-lg text-cocoa/80">{page.waitlist}</p>
       <Link
         href={`/${lang}/my-paw-space/app`}
-        className="mt-6 inline-block rounded-full bg-olive px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa"
+        className="mt-6 inline-block rounded-full bg-olive-deep px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa"
       >
         {lang === "de" ? "Demo ausprobieren" : "Try the demo"}
       </Link>

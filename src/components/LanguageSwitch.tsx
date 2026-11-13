@@ -17,7 +17,7 @@ export default function LanguageSwitch({
     <Link
       href={href}
       hrefLang={other}
-      className="text-sm text-olive underline-offset-4 hover:underline"
+      className="text-sm text-olive-deep underline-offset-4 hover:underline"
     >
       {label}
     </Link>

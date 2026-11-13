@@ -5,7 +5,7 @@ import { usePawStore } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
 
 const input = "mt-1 w-full rounded-md border border-sand bg-ivory px-3 py-2";
-const button = "rounded-full bg-olive px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa";
+const button = "rounded-full bg-olive-deep px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa";
 
 export default function CatsManager({ t }: { t: PawApp["cats"] }) {
   const { cats, addCat, removeCat } = usePawStore();
@@ -38,18 +38,18 @@ export default function CatsManager({ t }: { t: PawApp["cats"] }) {
       </form>
 
       {cats.length === 0 ? (
-        <p className="mt-8 text-cocoa/70">{t.empty}</p>
+        <p className="mt-8 text-cocoa/75">{t.empty}</p>
       ) : (
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {cats.map((c) => (
             <li key={c.id} className="rounded-lg border border-sand bg-sand/30 p-5">
               <h3 className="text-2xl">{c.name}</h3>
-              <p className="mt-1 text-sm text-cocoa/70">
+              <p className="mt-1 text-sm text-cocoa/75">
                 {[c.birthday && `${t.birthday}: ${c.birthday}`, c.since && `${t.since}: ${c.since}`].filter(Boolean).join(" · ")}
               </p>
               {c.notes && <p className="mt-2 text-cocoa/85">{c.notes}</p>}
               <button
-                className="mt-3 text-sm text-olive underline underline-offset-4"
+                className="mt-3 text-sm text-olive-deep underline underline-offset-4"
                 onClick={() => { if (confirm(t.confirmRemove)) removeCat(c.id); }}
               >{t.remove}</button>
             </li>

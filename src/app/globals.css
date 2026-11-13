@@ -6,6 +6,8 @@
   --color-sand: #e5dccf;
   --color-sage: #a7ad98;
   --color-olive: #747b67;
+  /* Etwas dunklere Variante von Olive für Text und Buttons (Lesbarkeit, Kontrast ≥ 4,5:1) */
+  --color-olive-deep: #626a54;
   --color-cocoa: #443c35;
   --color-taupe: #b7a99a;
 
@@ -24,4 +26,6 @@ h2,
 h3 {
   font-family: var(--font-serif);
   font-weight: 500;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }

@@ -9,10 +9,10 @@ export default function NotFound() {
         Diese Seite gibt es nicht. · This page does not exist.
       </p>
       <p className="flex gap-6">
-        <Link href="/de" className="text-olive underline underline-offset-4">
+        <Link href="/de" className="text-olive-deep underline underline-offset-4">
           Zur Startseite
         </Link>
-        <Link href="/en" className="text-olive underline underline-offset-4">
+        <Link href="/en" className="text-olive-deep underline underline-offset-4">
           Back to home
         </Link>
       </p>

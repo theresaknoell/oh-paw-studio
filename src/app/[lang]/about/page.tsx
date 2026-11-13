@@ -10,7 +10,7 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
   return (
     <main className="mx-auto w-full max-w-3xl px-6 py-16">
       <h1 className="text-5xl">{page.title}</h1>
-      <p className="mt-6 font-serif text-2xl leading-9 text-olive">
+      <p className="mt-6 font-serif text-2xl leading-9 text-olive-deep">
         {page.lead}
       </p>
       {page.sections.map((s) => (

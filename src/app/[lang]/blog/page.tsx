@@ -21,9 +21,9 @@ export default async function Blog({ params }: PageProps<"/[lang]/blog">) {
       <ul className="mt-10 space-y-10">
         {posts.map((p) => (
           <li key={p.slug}>
-            <p className="text-sm text-cocoa/60">{fmt.format(new Date(p.date))}</p>
+            <p className="text-sm text-cocoa/75">{fmt.format(new Date(p.date))}</p>
             <h2 className="mt-1 text-3xl">
-              <Link href={`/${lang}/blog/${p.slug}`} className="hover:text-olive">
+              <Link href={`/${lang}/blog/${p.slug}`} className="hover:text-olive-deep">
                 {p.title}
               </Link>
             </h2>
