@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { bundles, bundleView } from "@/data/bundles";
+import BundleCards from "@/components/BundleCards";
 import { productDetails } from "@/data/product-details";
 import { productsInWorld, worlds } from "@/data/products";
 import { getDictionary, hasLocale } from "../dictionaries";
@@ -23,50 +23,9 @@ export default async function Products({
       <section id="bundles" className="mt-14 scroll-mt-8">
         <h2 className="text-4xl">{dict.products.bundlesTitle}</h2>
         <p className="mt-2 text-cocoa/80">{dict.products.bundlesIntro}</p>
-        <ul className="mt-6 grid gap-6 sm:grid-cols-2">
-          {bundles.map((b) => {
-            const v = bundleView(b, lang);
-            return (
-              <li
-                key={b.id}
-                className="flex flex-col rounded-lg border border-sand bg-sand/30 p-6"
-              >
-                <h3 className="text-2xl">{v.title}</h3>
-                <p className="mt-3 text-sm text-cocoa/75">
-                  {dict.products.includes}
-                </p>
-                <ul className="mt-1 space-y-1 text-cocoa/85">
-                  {v.items.map((p) => (
-                    <li key={p.slug}>{p.title}</li>
-                  ))}
-                </ul>
-                <p className="mt-4 text-cocoa/75">
-                  <span className="text-2xl text-cocoa">
-                    {price.format(v.price)}
-                  </span>{" "}
-                  {dict.products.instead}{" "}
-                  <span className="line-through">{price.format(v.total)}</span>
-                  <br />
-                  <span className="text-sm text-olive-deep">
-                    {dict.products.save} {price.format(v.saving)}
-                  </span>
-                </p>
-                {v.url ? (
-                  <a
-                    href={v.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 self-start rounded-full bg-olive-deep px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa"
-                  >
-                    {dict.products.buy}
-                  </a>
-                ) : (
-                  <p className="mt-4 text-sm text-olive-deep">{dict.products.soon}</p>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-6">
+          <BundleCards lang={lang} t={dict.products} price={price} />
+        </div>
       </section>
 
       {worlds.map((w) => (

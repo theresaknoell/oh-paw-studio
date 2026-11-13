@@ -9,7 +9,14 @@
     "products": "Products",
     "blog": "Blog",
     "switchLanguage": "Deutsch",
-    "main": "Main menu"
+    "main": "Main menu",
+    "shop": "Shop",
+    "bundles": "Bundles",
+    "inspiration": "Inspiration",
+    "allProducts": "All products",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileMenu": "Mobile menu"
   },
   "claim": "Thoughtfully made for life with cats.",
   "home": {
@@ -66,11 +73,20 @@
     "format": "Digital download (PDF)"
   },
   "blog": {
-    "title": "Blog",
+    "title": "Inspiration",
     "empty": "Inspiration and tips for life with cats are coming soon."
   },
   "footer": {
     "imprint": "Legal Notice",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "shop": "Shop",
+    "discover": "Discover",
+    "legal": "Legal"
+  },
+  "bundlesPage": {
+    "title": "Bundles",
+    "lead": "Better together",
+    "intro": "Matching products for your situation, with about 20% off compared to buying them separately.",
+    "back": "View all products"
   }
 }

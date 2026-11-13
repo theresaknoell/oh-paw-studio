@@ -5,6 +5,7 @@ import "../globals.css";
 import { isLive, siteUrl } from "@/lib/site";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { worlds } from "@/data/products";
 import { getDictionary, hasLocale, locales } from "./dictionaries";
 
 const cormorant = Cormorant_Garamond({
@@ -56,13 +57,38 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <SiteHeader lang={lang} nav={dict.nav} />
+        <SiteHeader
+          lang={lang}
+          nav={{ ...dict.nav }}
+          worlds={worlds.map((w) => ({ id: w, ...dict.home.worlds[w] }))}
+        />
         <div className="flex flex-1 flex-col">{children}</div>
         <SiteFooter
-          lang={lang}
           claim={dict.claim}
-          imprint={dict.footer.imprint}
-          privacy={dict.footer.privacy}
+          copyright="© 2026 Oh Paw Studio"
+          columns={[
+            {
+              title: dict.footer.shop,
+              links: [
+                ...worlds.map((w) => ({ href: `/${lang}/products#${w}`, label: dict.home.worlds[w].title })),
+                { href: `/${lang}/bundles`, label: dict.nav.bundles },
+              ],
+            },
+            {
+              title: dict.footer.discover,
+              links: [
+                { href: `/${lang}/blog`, label: dict.nav.inspiration },
+                { href: `/${lang}/about`, label: dict.nav.about },
+              ],
+            },
+            {
+              title: dict.footer.legal,
+              links: [
+                { href: `/${lang}/impressum`, label: dict.footer.imprint },
+                { href: `/${lang}/datenschutz`, label: dict.footer.privacy },
+              ],
+            },
+          ]}
         />
       </body>
     </html>

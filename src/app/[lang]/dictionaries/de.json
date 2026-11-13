@@ -9,7 +9,14 @@
     "products": "Produkte",
     "blog": "Blog",
     "switchLanguage": "English",
-    "main": "Hauptmenü"
+    "main": "Hauptmenü",
+    "shop": "Shop",
+    "bundles": "Bundles",
+    "inspiration": "Inspiration",
+    "allProducts": "Alle Produkte",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "mobileMenu": "Mobiles Menü"
   },
   "claim": "Thoughtfully made for life with cats.",
   "home": {
@@ -66,11 +73,20 @@
     "format": "Digitaler Download (PDF)"
   },
   "blog": {
-    "title": "Blog",
+    "title": "Inspiration",
     "empty": "Bald gibt es hier Inspiration und Tipps für das Leben mit Katzen."
   },
   "footer": {
     "imprint": "Impressum",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "shop": "Shop",
+    "discover": "Entdecken",
+    "legal": "Rechtliches"
+  },
+  "bundlesPage": {
+    "title": "Bundles",
+    "lead": "Gemeinsam günstiger",
+    "intro": "Passende Produkte für deine Lebenssituation, mit etwa 20 % Vorteil gegenüber dem Einzelkauf.",
+    "back": "Alle Produkte ansehen"
   }
 }
