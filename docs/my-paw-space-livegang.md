@@ -4,19 +4,21 @@
 Fertig und ausprobierbar (Demo-Modus, Daten nur im Browser), unter `/de/my-paw-space` und `/en/my-paw-space`:
 - Katzenprofile mit Foto, Bearbeiten und Löschen; mehrere Katzen
 - Erinnerungs-Zeitachse mit Kategorie (Erstes Mal, Alltag, Meilenstein) und optionalem Foto
-- **Geführtes Erinnerungsbuch** (`/app/book`): 16 Kapitel (Ankunft, Monat 1 bis 12, Eigenheiten, Meilensteine, Zum Abschluss) mit
-  eigenen Fragen als Anregung, Foto je Kapitel, Fortschrittsanzeige und automatischem Speichern. Die Fragen stehen in `src/data/paw-book.ts`
-  und lassen sich dort ergänzen oder ändern (die `id`s nicht ändern, sonst gehen gespeicherte Antworten verloren). Das Buch ist eine
-  Mitmach-Version; das ausgearbeitete, druckbare PDF bleibt dein Gumroad-Produkt (die App verweist darauf).
-- **Gestaltetes Erinnerungsbuch als PDF (Prototyp)** (`/app/print`): Titelblatt mit Logo, Foto und Daten, ein Seite je Kapitel in Markenfarben
-  und -schriften, A4. Gespeichert wird über den Druckdialog („Als PDF speichern“, Hintergrundgrafiken aktivieren). Das ist die Grundlage für den
-  späteren bezahlten Export; für ein echtes Produkt fehlen noch Feinschliff (Seitenzahlen, Widmungsseite, transparentes Logo) und Bezahlung.
+- **Digitales Erinnerungsbuch** (`/app/book`): folgt dem Buch „Mein erstes Jahr mit dir“ / „My First Year with You“ (Willkommen, Kapitel 01 bis 13,
+  12 Monatskapitel, „Von mir für dich“). Es gibt Steckbrief, Fragen, Listen, Foto-Felder mit Datum, Tabellen (Meilensteine, Gewicht, Tierarzt,
+  Impfungen) und die Erinnerungsimpulse. Deutsch und Englisch, automatisches Speichern, Fortschritt, Pfoten-Konfetti beim ersten Eintrag je Abschnitt.
+  Die Texte stehen in `src/data/paw-book-de.ts` und `paw-book-en.ts` (gleicher Aufbau und gleiche Reihenfolge der Felder, Antworten werden nach
+  Position gespeichert; neue Felder nur am Ende einer Seite ergänzen).
+- **Druckbares Erinnerungsbuch** (`/app/print`, `/app/book-pdf` leitet dorthin um): Titelblatt mit Logo, Foto und Daten, ein Layout im Markendesign
+  (Cormorant, Strichillustrationen je Kapitel, Pfoten-Trenner), weißer Hintergrund (spart Tinte), nur ausgefüllte Seiten, A4. Alternativ als Zeitachse.
+  „Drucken / als PDF speichern“ nutzt den Druckdialog (Hintergrundgrafiken aktivieren). Das ist die Grundlage für den späteren bezahlten Export;
+  für ein echtes Produkt fehlen noch Feinschliff (Seitenzahlen, Widmungsseite) und Bezahlung. Die Illustrationen stehen in
+  `src/components/paw/BookArt.tsx`, das Logo für den Druck in `public/logo-print.png` (transparent).
 - **Pflege-Journal** (`/app/care`): Profil und Kontakte (Mikrochip, Tierarztpraxis, Notfallkontakt, Futter, Besonderheiten), Gewichtsverlauf mit
   Diagramm, Tierarzt und Gesundheit (Impfung, Kontrolle, Behandlung), Medikamente; Druckansicht; Verweis auf das Care Journal bei Gumroad.
   Es ist reine Dokumentation und gibt keine Gesundheitsempfehlungen.
 - **Warteliste** auf der Vorschauseite (`/my-paw-space`): nutzt das Newsletter-Formular. Für eine eigene Gruppe in MailerLite ein zweites Formular
   anlegen und die Adresse in `src/data/newsletter.ts` bei `pawSpaceAction` eintragen.
-- **Druckansicht:** pro Katze mit Titelblatt und wahlweise Erinnerungsbuch (nur ausgefüllte Kapitel) oder Zeitachse; „Drucken / als PDF speichern“ nutzt den Druckdialog des Browsers
 - Meine Produkte (alle Produkte, noch ohne Kaufprüfung)
 - Einstellungen: Daten exportieren und wieder importieren (JSON), alles löschen, Anzeige des belegten Speichers
 - Anmeldeseite `/my-paw-space/login` als deaktivierte Vorbereitung (Formular noch ohne Funktion)
