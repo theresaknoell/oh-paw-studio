@@ -29,7 +29,7 @@ export type PawApp = {
     title: string; intro: string; needCat: string; selectCat: string; progress: string; chapters: string;
     saved: string; photo: string; removePhoto: string; prev: string; next: string; hint: string;
     productTitle: string; productText: string; productCta: string; filled: string;
-    deOnly: string; introLabel: string; impulse: string;
+    introLabel: string; impulse: string;
   };
   login: { title: string; intro: string; email: string; submit: string; note: string; demo: string; back: string };
   products: { title: string; intro: string; open: string };
@@ -95,7 +95,7 @@ export const pawApp: Record<Locale, PawApp> = {
       needCat: "Lege zuerst eine Katze an.", selectCat: "Katze", progress: "Abschnitte begonnen", chapters: "Inhalt",
       saved: "Wird automatisch gespeichert.", photo: "Foto hinzufügen", removePhoto: "Foto entfernen", prev: "Zurück", next: "Weiter",
       hint: "Du musst nicht alles ausfüllen. Überspringe, was nicht passt.", filled: "begonnen",
-      deOnly: "", introLabel: "Einleitung zum Kapitel lesen", impulse: "Mein Erinnerungsimpuls",
+      introLabel: "Einleitung zum Kapitel lesen", impulse: "Mein Erinnerungsimpuls",
       productTitle: "Zum Ausdrucken und Verschenken", productText: "Das Erinnerungsbuch „Mein erstes Jahr mit dir“ gibt es als schön gestaltetes PDF zum Selbstausdrucken.", productCta: "Zum Erinnerungsbuch",
     },
     login: {
@@ -166,7 +166,7 @@ export const pawApp: Record<Locale, PawApp> = {
       needCat: "Add a cat first.", selectCat: "Cat", progress: "sections started", chapters: "Contents",
       saved: "Saved automatically.", photo: "Add photo", removePhoto: "Remove photo", prev: "Back", next: "Next",
       hint: "You don't have to fill in everything. Skip what doesn't fit.", filled: "started",
-      deOnly: "The questions follow the German book “Mein erstes Jahr mit dir” and are shown in German for now. The English version will follow.", introLabel: "Read the chapter introduction", impulse: "My memory prompt",
+      introLabel: "Read the chapter introduction", impulse: "My memory prompt",
       productTitle: "To print and give as a gift", productText: "The memory book “My First Year with You” is available as a beautifully designed PDF to print yourself.", productCta: "View the memory book",
     },
     login: {

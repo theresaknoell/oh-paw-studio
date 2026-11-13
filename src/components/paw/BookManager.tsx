@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { answerKey, bookUnits, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
+import { answerKey, bookUnitsFor, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
 import { downscaleImage } from "@/lib/image";
 import { unitFilled } from "@/lib/book";
 import { usePawStore } from "@/lib/paw-store";
@@ -122,6 +122,7 @@ export default function BookManager({
   productHref: string;
   saveFailed: string;
 }) {
+  const bookUnits = bookUnitsFor(lang);
   const store = usePawStore();
   const { cats, book, bookPhotos, setBookText, setBookPhoto, saveFailed: failed } = store;
   const [catSel, setCatSel] = useState("");
@@ -201,7 +202,6 @@ export default function BookManager({
         <p className="text-sm text-cocoa/85" aria-live="polite">{startedCount} / {bookUnits.length} {t.progress}</p>
       </div>
       <p className="mt-2 text-sm text-cocoa/75">{t.hint}</p>
-      {lang === "en" && <p className="mt-2 rounded-lg bg-sand/50 p-3 text-sm">{t.deOnly}</p>}
 
       <div className="mt-6 grid gap-8 md:grid-cols-[260px_1fr]">
         <div>

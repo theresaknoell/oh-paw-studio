@@ -11,7 +11,7 @@ export default async function Print({ params }: PageProps<"/[lang]/my-paw-space/
     <>
       <h1 className="no-print text-5xl">{t.print.title}</h1>
       <p className="no-print mt-4 mb-6 text-cocoa/80">{t.print.intro}</p>
-      <DesignedBook t={t.designed} print={t.print} catLabels={t.memories} />
+      <DesignedBook lang={lang} t={t.designed} print={t.print} catLabels={t.memories} />
     </>
   );
 }

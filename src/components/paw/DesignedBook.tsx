@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { answerKey, bookUnits, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
+import { answerKey, bookUnitsFor, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
 import { fieldFilled, pageFilled } from "@/lib/book";
 import { usePawStore } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
@@ -11,7 +11,8 @@ const sheet = "dsheet relative mx-auto flex w-full max-w-[210mm] flex-col bg-ivo
 const label = "text-[12px] uppercase tracking-[0.2em] text-cocoa/75";
 
 // Druckansicht im Markendesign (A4-Seiten). "Drucken / als PDF speichern" nutzt immer dieses Layout.
-export default function DesignedBook({ t, print, catLabels }: { t: PawApp["designed"]; print: PawApp["print"]; catLabels: PawApp["memories"] }) {
+export default function DesignedBook({ lang, t, print, catLabels }: { lang: "de" | "en"; t: PawApp["designed"]; print: PawApp["print"]; catLabels: PawApp["memories"] }) {
+  const bookUnits = bookUnitsFor(lang);
   const { cats, memories, book, bookPhotos } = usePawStore();
   const [selected, setSelected] = useState("");
   const [mode, setMode] = useState<"book" | "timeline">("book");
