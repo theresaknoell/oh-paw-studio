@@ -158,3 +158,110 @@ html[data-scrolled] .site-header {
     }
   }
 }
+
+/* Katze, die am unteren Rand mit dem Scrollen mitläuft (nur mit Bewegung, nie im Druck) */
+.cat-walker,
+.celebrate-layer {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cat-walker {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.85;
+    transform: translateX(calc(var(--p, 0) * (100vw - 52px) + 4px));
+  }
+  .cat-body {
+    display: block;
+    transition: transform 0.25s ease;
+  }
+  html[data-dir="up"] .cat-body {
+    transform: scaleX(-1);
+  }
+  .cat-leg {
+    transform-box: fill-box;
+    transform-origin: top center;
+  }
+  html[data-walking] .cat-leg-a {
+    animation: leg 0.32s ease-in-out infinite alternate;
+  }
+  html[data-walking] .cat-leg-b {
+    animation: leg 0.32s ease-in-out infinite alternate-reverse;
+  }
+  .cat-tail {
+    transform-box: fill-box;
+    transform-origin: bottom right;
+    animation: tail 2.4s ease-in-out infinite;
+  }
+  @keyframes leg {
+    from {
+      transform: rotate(-22deg);
+    }
+    to {
+      transform: rotate(22deg);
+    }
+  }
+  @keyframes tail {
+    0%,
+    100% {
+      transform: rotate(-8deg);
+    }
+    50% {
+      transform: rotate(14deg);
+    }
+  }
+
+  .page-in {
+    animation: page-in 0.45s ease both;
+  }
+  @keyframes page-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .celebrate-layer {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .celebrate-bit {
+    position: absolute;
+    left: 50%;
+    bottom: 22%;
+    width: var(--s);
+    height: var(--s);
+    opacity: 0;
+    animation: bit 1.4s cubic-bezier(0.15, 0.7, 0.3, 1) both;
+    animation-delay: var(--d);
+  }
+  @keyframes bit {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0);
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--x), calc(var(--y) + 120px)) rotate(var(--r));
+    }
+  }
+}
+@media print {
+  .cat-walker,
+  .celebrate-layer {
+    display: none !important;
+  }
+}

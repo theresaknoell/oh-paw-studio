@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { answerKey, bookUnitsFor, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
 import { downscaleImage } from "@/lib/image";
 import { unitFilled } from "@/lib/book";
+import { celebrate } from "@/lib/celebrate";
 import { usePawStore } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
 
@@ -128,6 +129,22 @@ export default function BookManager({
   const [catSel, setCatSel] = useState("");
   const [unitIdx, setUnitIdx] = useState(0);
   const cat = cats.find((c) => c.id === catSel) ?? cats[0];
+  const [cheer, setCheer] = useState(false);
+  // Konfetti, sobald in einem Abschnitt zum ersten Mal etwas eingetragen wurde (nicht beim bloßen Öffnen)
+  const wasStarted = useRef<Record<string, boolean>>({});
+  useEffect(() => {
+    if (!cat) return;
+    const key = `${cat.id}|${bookUnits[unitIdx].id}`;
+    const now = unitFilled({ book, bookPhotos }, cat.id, bookUnits[unitIdx]);
+    const before = wasStarted.current[key];
+    wasStarted.current[key] = now;
+    if (before === false && now) {
+      celebrate();
+      setCheer(true);
+      const id = setTimeout(() => setCheer(false), 3500);
+      return () => clearTimeout(id);
+    }
+  }, [book, bookPhotos, cat, unitIdx, bookUnits]);
 
   if (!cat) return <p className="text-cocoa/75">{t.needCat}</p>;
   const unit: Unit = bookUnits[unitIdx];
@@ -269,6 +286,7 @@ export default function BookManager({
 
           {failed && <p role="alert" className="mt-4 text-sm text-[#7a3f33]">{saveFailed}</p>}
           <p className="mt-6 text-sm text-cocoa/75">{t.saved}</p>
+          <p role="status" className="min-h-6 text-sm font-medium text-olive-deep">{cheer ? t.cheer : ""}</p>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <button type="button" className={ghost} disabled={unitIdx === 0} onClick={() => setUnitIdx(unitIdx - 1)}>← {t.prev}</button>

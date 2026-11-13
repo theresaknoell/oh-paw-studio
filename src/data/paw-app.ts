@@ -13,7 +13,7 @@ export type PawApp = {
     title: string; empty: string; needCat: string; cat: string; date: string;
     category: string; text: string; add: string; remove: string;
     categories: { first: string; everyday: string; milestone: string };
-    photo: string; removePhoto: string;
+    photo: string; removePhoto: string; cheer: string;
   };
   print: { title: string; intro: string; selectCat: string; button: string; empty: string; born: string; since: string; book: string; noCats: string; mode: string; timeline: string; guided: string; guidedEmpty: string };
   care: {
@@ -29,7 +29,7 @@ export type PawApp = {
     title: string; intro: string; needCat: string; selectCat: string; progress: string; chapters: string;
     saved: string; photo: string; removePhoto: string; prev: string; next: string; hint: string;
     productTitle: string; productText: string; productCta: string; filled: string;
-    introLabel: string; impulse: string;
+    introLabel: string; impulse: string; cheer: string;
   };
   login: { title: string; intro: string; email: string; submit: string; note: string; demo: string; back: string };
   products: { title: string; intro: string; open: string };
@@ -62,7 +62,7 @@ export const pawApp: Record<Locale, PawApp> = {
       needCat: "Lege zuerst eine Katze an.", cat: "Katze", date: "Datum",
       category: "Art", text: "Was ist passiert?", add: "Erinnerung speichern", remove: "Entfernen",
       categories: { first: "Erstes Mal", everyday: "Alltag", milestone: "Meilenstein" },
-      photo: "Foto (optional)", removePhoto: "Foto entfernen",
+      photo: "Foto (optional)", removePhoto: "Foto entfernen", cheer: "Wunderschön, die Erinnerung ist gespeichert.",
     },
     products: {
       title: "Meine Produkte",
@@ -95,7 +95,7 @@ export const pawApp: Record<Locale, PawApp> = {
       needCat: "Lege zuerst eine Katze an.", selectCat: "Katze", progress: "Abschnitte begonnen", chapters: "Inhalt",
       saved: "Wird automatisch gespeichert.", photo: "Foto hinzufügen", removePhoto: "Foto entfernen", prev: "Zurück", next: "Weiter",
       hint: "Du musst nicht alles ausfüllen. Überspringe, was nicht passt.", filled: "begonnen",
-      introLabel: "Einleitung zum Kapitel lesen", impulse: "Mein Erinnerungsimpuls",
+      introLabel: "Einleitung zum Kapitel lesen", impulse: "Mein Erinnerungsimpuls", cheer: "Schön! Dieser Abschnitt ist begonnen.",
       productTitle: "Zum Ausdrucken und Verschenken", productText: "Das Erinnerungsbuch „Mein erstes Jahr mit dir“ gibt es als schön gestaltetes PDF zum Selbstausdrucken.", productCta: "Zum Erinnerungsbuch",
     },
     login: {
@@ -133,7 +133,7 @@ export const pawApp: Record<Locale, PawApp> = {
       needCat: "Add a cat first.", cat: "Cat", date: "Date",
       category: "Type", text: "What happened?", add: "Save memory", remove: "Remove",
       categories: { first: "First time", everyday: "Everyday", milestone: "Milestone" },
-      photo: "Photo (optional)", removePhoto: "Remove photo",
+      photo: "Photo (optional)", removePhoto: "Remove photo", cheer: "Lovely, your memory is saved.",
     },
     products: {
       title: "My products",
@@ -166,7 +166,7 @@ export const pawApp: Record<Locale, PawApp> = {
       needCat: "Add a cat first.", selectCat: "Cat", progress: "sections started", chapters: "Contents",
       saved: "Saved automatically.", photo: "Add photo", removePhoto: "Remove photo", prev: "Back", next: "Next",
       hint: "You don't have to fill in everything. Skip what doesn't fit.", filled: "started",
-      introLabel: "Read the chapter introduction", impulse: "My memory prompt",
+      introLabel: "Read the chapter introduction", impulse: "My memory prompt", cheer: "Lovely! This section is started.",
       productTitle: "To print and give as a gift", productText: "The memory book “My First Year with You” is available as a beautifully designed PDF to print yourself.", productCta: "View the memory book",
     },
     login: {

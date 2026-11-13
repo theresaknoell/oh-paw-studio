@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { celebrate } from "@/lib/celebrate";
 import { downscaleImage } from "@/lib/image";
 import { usePawStore, type MemoryCategory } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
@@ -13,6 +14,7 @@ export default function MemoriesManager({ t, savedFailed }: { t: PawApp["memorie
   const [form, setForm] = useState<{ catId: string; date: string; category: MemoryCategory; text: string; photo: string }>({
     catId: "", date: "", category: "everyday", text: "", photo: "",
   });
+  const [cheer, setCheer] = useState(false);
   const catId = form.catId || cats[0]?.id || "";
   const sorted = [...memories].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -36,6 +38,9 @@ export default function MemoriesManager({ t, savedFailed }: { t: PawApp["memorie
           e.preventDefault();
           if (!form.text.trim() || !form.date) return;
           addMemory({ catId, date: form.date, category: form.category, text: form.text.trim(), photo: form.photo || undefined });
+          celebrate();
+          setCheer(true);
+          setTimeout(() => setCheer(false), 3500);
           setForm({ ...form, text: "", photo: "" });
         }}
       >
@@ -65,7 +70,7 @@ export default function MemoriesManager({ t, savedFailed }: { t: PawApp["memorie
             <button type="button" className="text-sm text-olive-deep underline underline-offset-4" onClick={() => setForm({ ...form, photo: "" })}>{t.removePhoto}</button>
           </div>
         )}
-        <div className="sm:col-span-3"><button className={button}>{t.add}</button></div>
+        <div className="sm:col-span-3"><button className={button}>{t.add}</button><p role="status" className="mt-2 min-h-6 text-sm font-medium text-olive-deep">{cheer ? t.cheer : ""}</p></div>
       </form>
       {saveFailed && <p role="alert" className="mt-4 text-sm text-[#7a3f33]">{savedFailed}</p>}
 
