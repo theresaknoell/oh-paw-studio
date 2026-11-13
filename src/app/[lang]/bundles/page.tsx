@@ -41,7 +41,7 @@ export default async function Bundles({ params }: PageProps<"/[lang]/bundles">) 
               {rows.map((r) => (
                 <tr key={r.title} className="border-b border-sand">
                   <th scope="row" className="py-3 pr-4 font-serif text-xl font-medium">{r.title}</th>
-                  <td className="py-3 pr-4 text-right text-cocoa/75 line-through">{price.format(r.total)}</td>
+                  <td className="py-3 pr-4 text-right text-cocoa/85 line-through">{price.format(r.total)}</td>
                   <td className="py-3 pr-4 text-right font-medium">{price.format(r.price)}</td>
                   <td className="py-3 text-right">{price.format(r.saving)} ({r.percent} %)</td>
                 </tr>

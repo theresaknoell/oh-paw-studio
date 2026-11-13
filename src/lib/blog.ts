@@ -9,6 +9,7 @@ export type Post = {
   date: string;
   excerpt: string;
   pair: string | null;
+  image: string | null;
   content: string;
 };
 
@@ -30,6 +31,7 @@ export function getPosts(lang: Locale): Post[] {
         date: new Date(data.date).toISOString().slice(0, 10),
         excerpt: String(data.excerpt ?? ""),
         pair: data.pair ? String(data.pair) : null,
+        image: data.image ? String(data.image) : null,
         content,
       };
     })

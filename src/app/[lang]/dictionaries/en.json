@@ -52,7 +52,15 @@
         "text": "For everything you don't want to forget later."
       }
     },
-    "seeWorld": "View"
+    "seeWorld": "View",
+    "label": "Thoughtfully made for life with cats",
+    "lead": "Digital companions for everyday life, care and memories.",
+    "ctaShop": "Discover the shop",
+    "ctaStory": "Our story",
+    "popular": "Popular with cat lovers",
+    "bundleLabel": "Bundle",
+    "viewBundle": "View bundle",
+    "inspirationTitle": "From Inspiration"
   },
   "about": {
     "title": "About",

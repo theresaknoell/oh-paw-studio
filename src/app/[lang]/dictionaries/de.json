@@ -52,7 +52,15 @@
         "text": "Für alles, was du später nicht vergessen möchtest."
       }
     },
-    "seeWorld": "Ansehen"
+    "seeWorld": "Ansehen",
+    "label": "Thoughtfully made for life with cats",
+    "lead": "Digitale Begleiter für Alltag, Pflege und Erinnerungen.",
+    "ctaShop": "Shop entdecken",
+    "ctaStory": "Unsere Geschichte",
+    "popular": "Beliebt bei Katzenmenschen",
+    "bundleLabel": "Bundle",
+    "viewBundle": "Bundle ansehen",
+    "inspirationTitle": "Aus der Inspiration"
   },
   "about": {
     "title": "Über uns",

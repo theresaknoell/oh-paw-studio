@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
+import ProductCard from "@/components/ProductCard";
 
 export type ShopItem = {
   slug: string;
@@ -50,30 +49,6 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
     >
       {children}
     </button>
-  );
-}
-
-function Card({ item, worldTitle }: { item: ShopItem; worldTitle: string }) {
-  return (
-    <li>
-      <Link href={item.href} className="group block">
-        <div className="relative aspect-square overflow-hidden rounded-[10px] bg-sand">
-          {item.image && (
-            <Image
-              src={item.image}
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 100vw"
-              className="object-cover transition-transform duration-300 group-hover:-translate-y-0.5"
-            />
-          )}
-        </div>
-        <p className="mt-4 text-[13px] font-medium uppercase tracking-[0.08em] text-cocoa/75">{worldTitle}</p>
-        <h3 className="mt-1 text-2xl group-hover:text-olive-deep">{item.title}</h3>
-        <p className="mt-1 text-[15px] text-cocoa/85">{item.tagline}</p>
-        <p className="mt-2 font-serif text-2xl">{item.price}</p>
-      </Link>
-    </li>
   );
 }
 
@@ -133,7 +108,7 @@ function ShopView({
                 <h2 className="text-4xl">{w.title}</h2>
                 <p className="mt-2 text-cocoa/80">{w.text}</p>
                 <ul className={grid}>
-                  {list.map((i) => <Card key={i.slug} item={i} worldTitle={w.title} />)}
+                  {list.map((i) => <ProductCard key={i.slug} item={i} label={w.title} />)}
                 </ul>
               </section>
               {idx === 0 && bundleBand}
@@ -155,7 +130,7 @@ function ShopView({
         <>
           <h2 className="sr-only">{t.results}</h2>
           <ul className={grid}>
-            {filtered.map((i) => <Card key={i.slug} item={i} worldTitle={worldTitle(i.world)} />)}
+            {filtered.map((i) => <ProductCard key={i.slug} item={i} label={worldTitle(i.world)} />)}
           </ul>
           {bundleBand}
         </>

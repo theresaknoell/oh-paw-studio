@@ -162,7 +162,7 @@ export default async function ProductPage({
             </p>
             <p className="mt-2">
               <span className="font-serif text-2xl">{price.format(bundle.price)}</span>{" "}
-              <span className="text-cocoa/75 line-through">{price.format(bundle.total)}</span>{" "}
+              <span className="text-cocoa/85 line-through">{price.format(bundle.total)}</span>{" "}
               <span className="ml-1 inline-block rounded-full bg-sage/35 px-3 py-0.5 text-sm">
                 {dict.products.save} {price.format(bundle.saving)}
               </span>
