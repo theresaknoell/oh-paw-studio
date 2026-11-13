@@ -1,9 +1,10 @@
 import Reveal from "./Reveal";
 
-// Dekorative Pfotenspur, die sich beim Scrollen Schritt für Schritt zeigt.
-function Paw({ rotate }: { rotate: number }) {
+// Dekorative Pfotenspur: alle Pfoten zeigen in Laufrichtung (nach rechts), links und rechts versetzt wie bei einer
+// Katze, die vorbeigelaufen ist. Die Abdrücke erscheinen nacheinander beim Scrollen.
+function Paw() {
   return (
-    <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden className="text-sage" style={{ transform: `rotate(${rotate}deg)` }}>
+    <svg viewBox="0 0 64 64" width="26" height="26" aria-hidden className="text-sage" style={{ transform: "rotate(90deg)" }}>
       <g fill="currentColor">
         <ellipse cx="32" cy="42" rx="13" ry="11" />
         <ellipse cx="14" cy="28" rx="6" ry="8" transform="rotate(-20 14 28)" />
@@ -16,18 +17,12 @@ function Paw({ rotate }: { rotate: number }) {
 }
 
 export default function PawTrail() {
-  const steps = [
-    { r: 12, up: false },
-    { r: -8, up: true },
-    { r: 12, up: false },
-    { r: -8, up: true },
-    { r: 12, up: false },
-  ];
+  const count = 12;
   return (
-    <div aria-hidden className="mx-auto flex max-w-xs items-center justify-between py-2">
-      {steps.map((s, i) => (
-        <Reveal key={i} delay={i * 140} className={s.up ? "-translate-y-3" : "translate-y-1"}>
-          <Paw rotate={s.r} />
+    <div aria-hidden className="mx-auto flex max-w-xl items-center justify-between px-2 py-3">
+      {Array.from({ length: count }, (_, i) => (
+        <Reveal key={i} delay={i * 110} className={`${i % 2 ? "-translate-y-2.5" : "translate-y-2.5"} ${i >= 8 ? "hidden sm:block" : ""}`}>
+          <Paw />
         </Reveal>
       ))}
     </div>

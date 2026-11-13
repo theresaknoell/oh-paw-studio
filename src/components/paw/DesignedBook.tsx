@@ -4,10 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { answerKey, bookUnitsFor, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
 import { fieldFilled, pageFilled } from "@/lib/book";
+import BookArt, { artFor, PawDivider } from "./BookArt";
 import { usePawStore } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
 
-const sheet = "dsheet relative mx-auto flex w-full max-w-[210mm] flex-col bg-ivory px-[18mm] py-[20mm] shadow-[0_2px_24px_rgba(68,60,53,0.12)] min-h-[297mm] print:shadow-none";
+const sheet = "dsheet relative mx-auto flex w-full max-w-[210mm] flex-col bg-white px-[18mm] py-[20mm] shadow-[0_2px_24px_rgba(68,60,53,0.12)] min-h-[297mm] print:shadow-none";
 const label = "text-[12px] uppercase tracking-[0.2em] text-cocoa/75";
 
 // Druckansicht im Markendesign (A4-Seiten). "Drucken / als PDF speichern" nutzt immer dieses Layout.
@@ -112,7 +113,7 @@ export default function DesignedBook({ lang, t, print, catLabels }: { lang: "de"
       <div className="dbook mt-8 space-y-8 print:mt-0 print:space-y-0">
         {/* Titelblatt */}
         <section className={`${sheet} items-center justify-between text-center`}>
-          <Image src="/logo.webp" alt="Oh Paw Studio" width={110} height={110} className="mix-blend-multiply" priority />
+          <Image src="/logo-print.png" alt="Oh Paw Studio" width={170} height={170} priority />
           <div>
             <p className={label}>{t.cover}</p>
             <h2 className="mt-3 font-serif text-[64px] leading-none">{cat.name}</h2>
@@ -120,37 +121,47 @@ export default function DesignedBook({ lang, t, print, catLabels }: { lang: "de"
               // eslint-disable-next-line @next/next/no-img-element
               <img src={cat.photo} alt="" className="mx-auto mt-10 h-[70mm] w-[70mm] rounded-full object-cover" />
             )}
-            <div className="mx-auto mt-10 h-px w-16 bg-sage" />
+            {!cat.photo && <BookArt name="sleeping" size={210} className="mx-auto mt-8" />}
+            <PawDivider className="mx-auto mt-8" />
             <p className="mt-6 text-cocoa/80">
               {[cat.birthday && `${print.born} ${cat.birthday}`, cat.since && `${print.since} ${cat.since}`].filter(Boolean).join(" · ")}
             </p>
             {cat.notes && <p className="mt-1 font-serif text-xl text-olive-deep">{cat.notes}</p>}
           </div>
-          <p className="font-serif text-lg text-cocoa/80">Thoughtfully made for life with cats.</p>
+          <div className="flex flex-col items-center gap-3">
+            <BookArt name="paws" size={56} />
+            <p className="font-serif text-lg text-cocoa/80">Thoughtfully made for life with cats.</p>
+          </div>
         </section>
 
         {mode === "book"
           ? filledPages.map(({ u, p, first }) => (
               <section key={`${u.id}-${p.id}`} className={sheet}>
                 {first ? (
-                  <>
-                    <p className={label}>{u.no ?? u.group}</p>
-                    <h3 className="mt-2 font-serif text-[44px] leading-tight">{u.title}</h3>
-                    {u.subtitle && <p className="font-serif text-xl italic text-olive-deep">{u.subtitle}</p>}
-                  </>
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <p className={label}>{u.no ?? u.group}</p>
+                      <h3 className="mt-2 font-serif text-[44px] leading-tight">{u.title}</h3>
+                      {u.subtitle && <p className="font-serif text-xl italic text-olive-deep">{u.subtitle}</p>}
+                    </div>
+                    <BookArt name={artFor(u.id)} size={112} className="shrink-0" />
+                  </div>
                 ) : (
                   <p className={label}>{u.title}</p>
                 )}
                 {p.title && p.title !== u.title && <h4 className="mt-4 font-serif text-[28px] leading-tight">{p.title}</h4>}
-                <div className="mt-2 h-px w-16 bg-sage" />
+                <PawDivider className="mt-3" />
                 <div className="mt-8 space-y-6">{p.fields.map((f, i) => renderField(u, p, f, i))}</div>
                 {footer}
               </section>
             ))
           : chunks.map((chunk, ci) => (
               <section key={ci} className={sheet}>
-                <p className={label}>{print.timeline}</p>
-                <div className="mt-2 h-px w-16 bg-sage" />
+                <div className="flex items-start justify-between gap-6">
+                  <p className={label}>{print.timeline}</p>
+                  <BookArt name={ci % 2 ? "yarn" : "heart"} size={80} />
+                </div>
+                <PawDivider className="mt-3" />
                 <ol className="mt-8 space-y-8">
                   {chunk.map((m) => (
                     <li key={m.id} className="print-entry">
