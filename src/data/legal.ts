@@ -124,13 +124,19 @@ export const privacy: Record<Locale, LegalPage> = {
         ],
       },
       {
-        heading: "5. Links zu Gumroad",
+        heading: "5. Kontakt per E-Mail",
+        paragraphs: [
+          "Wenn du uns per E-Mail schreibst, verarbeiten wir deine Angaben (E-Mail-Adresse, Inhalt der Nachricht) zur Bearbeitung deiner Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder f DSGVO. Unser E-Mail-Postfach wird bei IONOS SE (Elgendorfer Str. 57, 56410 Montabaur, Deutschland) betrieben. Wir löschen deine Nachricht, sobald die Anfrage erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
+        ],
+      },
+      {
+        heading: "6. Links zu Gumroad",
         paragraphs: [
           "Unsere Produkte verkaufen wir über Gumroad. Wenn du auf einen Kaufen-Link klickst, verlässt du diese Website. Für die Datenverarbeitung auf Gumroad ist allein Gumroad verantwortlich; bitte beachte deren Datenschutzerklärung.",
         ],
       },
       {
-        heading: "6. Deine Rechte",
+        heading: "7. Deine Rechte",
         paragraphs: [
           "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei der Aufsichtsbehörde beschweren. In Österreich ist das die Datenschutzbehörde (Barichgasse 40–42, 1030 Wien, www.dsb.gv.at). Für deine Anliegen an uns wende dich an die oben genannte E-Mail-Adresse.",
         ],
@@ -166,13 +172,19 @@ export const privacy: Record<Locale, LegalPage> = {
         ],
       },
       {
-        heading: "5. Links to Gumroad",
+        heading: "5. Contact by email",
+        paragraphs: [
+          "If you write to us by email, we process your details (email address, content of your message) to handle your request. The legal basis is Art. 6(1)(b) or (f) GDPR. Our mailbox is operated by IONOS SE (Elgendorfer Str. 57, 56410 Montabaur, Germany). We delete your message once the request is settled and no statutory retention duties apply.",
+        ],
+      },
+      {
+        heading: "6. Links to Gumroad",
         paragraphs: [
           "We sell our products through Gumroad. When you click a buy link, you leave this website. Gumroad alone is responsible for data processing on its platform; please see its privacy policy.",
         ],
       },
       {
-        heading: "6. Your rights",
+        heading: "7. Your rights",
         paragraphs: [
           "You have the right of access, rectification, erasure, restriction of processing, data portability and objection. You may also lodge a complaint with the supervisory authority. In Austria this is the Datenschutzbehörde (Barichgasse 40–42, 1030 Vienna, www.dsb.gv.at). For requests to us, please contact the email address above.",
         ],

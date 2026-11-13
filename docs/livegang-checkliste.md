@@ -3,6 +3,9 @@
 Jeder Punkt ist einzeln erledigbar. Die Reihenfolge ist so gewählt, dass nichts doppelt gemacht werden muss.
 Wenn dir ein Menüpunkt anders heißt als hier beschrieben, schick mir einfach, was du siehst.
 
+## 0. Gewerbeanmeldung (nächste Woche)
+Der Livegang erfolgt nach der Gewerbeanmeldung, weil das Impressum die Gewerbebehörde (und ggf. UID) nennt. Bis dahin wird alles andere fertig vorbereitet.
+
 ## 1. Impressum (Österreich)
 - Eingetragen sind: Theresa Knöll, c/o Neubauerstraße 77, 4050 Traun, Österreich, hello@ohpawstudio.com.
 - Wegen der österreichischen Adresse gelten österreichische Regeln (E-Commerce-Gesetz, Mediengesetz, Gewerbeordnung, Kleinunternehmerregelung nach § 6 Abs. 1 Z 27 UStG). Die Texte sind Vorlagen, keine Rechtsberatung; bitte bei der Wirtschaftskammer oder einer Steuerberatung abgleichen.
@@ -51,7 +54,7 @@ Nach dem Livegang auf https://search.google.com/search-console die Domain bestä
 `https://ohpawstudio.com/sitemap.xml` einreichen. Die Bestätigung geht über einen DNS-Eintrag bei IONOS.
 
 ## 8. Entscheidungen
-- Analytics: nur Search Console und Gumroad-Statistik (kostenlos) oder zusätzliches Tool (ca. 9 €/Monat)?
+- Analytics: entschieden. Nur Search Console und Gumroad-Statistik, kein zusätzliches Tool (daher kein Cookie-Banner nötig).
 - My Paw Space: erst Warteliste oder direkt Stufe 1 (siehe `docs/my-paw-space-livegang.md`)?
 
 ## 9. Letzte Prüfung vor dem Livegang
