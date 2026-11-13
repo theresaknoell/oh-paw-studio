@@ -3,10 +3,10 @@
 Jeder Punkt ist einzeln erledigbar. Die Reihenfolge ist so gewählt, dass nichts doppelt gemacht werden muss.
 Wenn dir ein Menüpunkt anders heißt als hier beschrieben, schick mir einfach, was du siehst.
 
-## 1. Impressum-Angaben festlegen
-- Name und ladungsfähige Anschrift (kein reines Postfach) entscheiden. Die E-Mail-Adresse (hello@ohpawstudio.com) ist bereits eingetragen.
-- Schick mir die Angaben; ich trage sie in Impressum und Datenschutzerklärung ein (beide Sprachen).
-- Wenn du die Privatadresse schützen willst: Geschäfts- oder c/o-Adresse bzw. Impressumsservice (kostet meist Geld).
+## 1. Impressum (Österreich)
+- Eingetragen sind: Theresa Knöll, c/o Neubauerstraße 77, 4050 Traun, Österreich, hello@ohpawstudio.com.
+- Wegen der österreichischen Adresse gelten österreichische Regeln (E-Commerce-Gesetz, Mediengesetz, Gewerbeordnung, Kleinunternehmerregelung nach § 6 Abs. 1 Z 27 UStG). Die Texte sind Vorlagen, keine Rechtsberatung; bitte bei der Wirtschaftskammer oder einer Steuerberatung abgleichen.
+- Noch offen im Text (in eckigen Klammern): Gewerbebehörde, Wirtschaftskammer/Landeskammer, UID-Nummer (falls vorhanden), Abgleich des Unternehmensgegenstands mit deiner Gewerbeberechtigung.
 
 ## 2. Domain und E-Mail (erledigt: bei IONOS gekauft)
 - Domain und E-Mail-Postfach liegen bei IONOS. Die Cloudflare-Anleitung aus früheren Versionen ist nicht mehr nötig.

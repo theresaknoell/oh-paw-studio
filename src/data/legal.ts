@@ -7,8 +7,8 @@ export type LegalPage = {
   sections: { heading: string; paragraphs: string[] }[];
 };
 
-const NAME = "[Vor- und Nachname]";
-const ADDRESS = "[Straße und Hausnummer, PLZ Ort, Land]";
+const NAME = "Theresa Knöll";
+const ADDRESS = "c/o Neubauerstraße 77\n4050 Traun\nÖsterreich";
 const EMAIL = "hello@ohpawstudio.com";
 
 export const imprint: Record<Locale, LegalPage> = {
@@ -16,19 +16,33 @@ export const imprint: Record<Locale, LegalPage> = {
     title: "Impressum",
     sections: [
       {
-        heading: "Angaben gemäß § 5 DDG",
+        heading: "Angaben gemäß § 5 ECG",
         paragraphs: [`Oh Paw Studio\nInhaberin: ${NAME}\n${ADDRESS}`],
       },
       { heading: "Kontakt", paragraphs: [`E-Mail: ${EMAIL}`] },
       {
-        heading: "Umsatzsteuer",
+        heading: "Unternehmensgegenstand",
         paragraphs: [
-          "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).",
+          "Verkauf digitaler Produkte (Planer, Vorlagen und Erinnerungsbücher rund um das Leben mit Katzen). [Bitte mit der Gewerbeberechtigung abgleichen]",
         ],
       },
       {
-        heading: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
-        paragraphs: [`${NAME}\n${ADDRESS}`],
+        heading: "Gewerbe und Aufsicht",
+        paragraphs: [
+          "Gewerbebehörde: [zuständige Bezirkshauptmannschaft bzw. Magistrat eintragen]\nMitglied der Wirtschaftskammer Österreich: [bitte prüfen und ggf. Landeskammer eintragen]\nAnwendbare Rechtsvorschriften: Gewerbeordnung (www.ris.bka.gv.at)",
+        ],
+      },
+      {
+        heading: "Umsatzsteuer",
+        paragraphs: [
+          "Kleinunternehmerregelung gemäß § 6 Abs. 1 Z 27 UStG: Es wird keine Umsatzsteuer ausgewiesen. [UID-Nummer eintragen, falls vorhanden]",
+        ],
+      },
+      {
+        heading: "Offenlegung gemäß § 25 MedienG",
+        paragraphs: [
+          `Medieninhaberin und Herausgeberin: ${NAME}, ${ADDRESS.replace(/\n/g, ", ")}.\nGrundlegende Richtung: Information und Inspiration rund um das Leben mit Katzen sowie die Präsentation digitaler Produkte.`,
+        ],
       },
       {
         heading: "Haftung für Links",
@@ -42,19 +56,33 @@ export const imprint: Record<Locale, LegalPage> = {
     title: "Legal Notice",
     sections: [
       {
-        heading: "Information according to § 5 DDG",
+        heading: "Information according to § 5 ECG (Austria)",
         paragraphs: [`Oh Paw Studio\nOwner: ${NAME}\n${ADDRESS}`],
       },
       { heading: "Contact", paragraphs: [`Email: ${EMAIL}`] },
       {
-        heading: "VAT",
+        heading: "Business purpose",
         paragraphs: [
-          "In accordance with § 19 UStG (German small business regulation), no VAT is charged.",
+          "Sale of digital products (planners, templates and memory books for life with cats). [Please check against your trade licence]",
         ],
       },
       {
-        heading: "Responsible for content according to § 18 (2) MStV",
-        paragraphs: [`${NAME}\n${ADDRESS}`],
+        heading: "Trade and supervision",
+        paragraphs: [
+          "Trade authority: [enter the responsible district authority or magistrate]\nMember of the Austrian Economic Chamber: [please check and enter the regional chamber if applicable]\nApplicable regulations: Trade Regulation Act (Gewerbeordnung, www.ris.bka.gv.at)",
+        ],
+      },
+      {
+        heading: "VAT",
+        paragraphs: [
+          "Small business scheme under § 6 (1) no. 27 UStG (Austria): no VAT is shown. [Enter VAT ID if applicable]",
+        ],
+      },
+      {
+        heading: "Disclosure according to § 25 MedienG (Austrian Media Act)",
+        paragraphs: [
+          `Media owner and publisher: ${NAME}, ${ADDRESS.replace(/\n/g, ", ")}.\nBasic orientation: information and inspiration about life with cats and the presentation of digital products.`,
+        ],
       },
       {
         heading: "Liability for links",
@@ -104,7 +132,7 @@ export const privacy: Record<Locale, LegalPage> = {
       {
         heading: "6. Deine Rechte",
         paragraphs: [
-          "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren. Wende dich dafür an die oben genannte E-Mail-Adresse.",
+          "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei der Aufsichtsbehörde beschweren. In Österreich ist das die Datenschutzbehörde (Barichgasse 40–42, 1030 Wien, www.dsb.gv.at). Für deine Anliegen an uns wende dich an die oben genannte E-Mail-Adresse.",
         ],
       },
     ],
@@ -146,7 +174,7 @@ export const privacy: Record<Locale, LegalPage> = {
       {
         heading: "6. Your rights",
         paragraphs: [
-          "You have the right of access, rectification, erasure, restriction of processing, data portability and objection. You may also lodge a complaint with a data protection supervisory authority. Please contact us at the email address above.",
+          "You have the right of access, rectification, erasure, restriction of processing, data portability and objection. You may also lodge a complaint with the supervisory authority. In Austria this is the Datenschutzbehörde (Barichgasse 40–42, 1030 Vienna, www.dsb.gv.at). For requests to us, please contact the email address above.",
         ],
       },
     ],
