@@ -24,11 +24,12 @@ export type PawApp = {
     meds: { title: string; name: string; dose: string; start: string; end: string; notes: string; add: string; empty: string; remove: string; from: string; until: string };
     productTitle: string; productText: string; productCta: string;
   };
-  designed: { title: string; intro: string; button: string; hint: string; cover: string; chapter: string; link: string; preview: string };
+  designed: { title: string; intro: string; button: string; hint: string; cover: string; };
   book: {
     title: string; intro: string; needCat: string; selectCat: string; progress: string; chapters: string;
     saved: string; photo: string; removePhoto: string; prev: string; next: string; hint: string;
     productTitle: string; productText: string; productCta: string; filled: string;
+    deOnly: string; introLabel: string; impulse: string;
   };
   login: { title: string; intro: string; email: string; submit: string; note: string; demo: string; back: string };
   products: { title: string; intro: string; open: string };
@@ -85,15 +86,16 @@ export const pawApp: Record<Locale, PawApp> = {
       productTitle: "Mehr Struktur für den Alltag", productText: "Der „Cat Care Journal“ bietet dir Pflege-Checklisten, Tracker und Seiten zum Ausdrucken.", productCta: "Zum Care Journal",
     },
     designed: {
-      title: "Gestaltetes Erinnerungsbuch", intro: "Vorschau: Dein Erinnerungsbuch im Design von Oh Paw Studio, mit Titelblatt, Kapitelseiten und Fotos.",
+      title: "Gestaltetes Erinnerungsbuch", intro: "Dein Erinnerungsbuch im Design von Oh Paw Studio, mit Titelblatt, Kapitelseiten und Fotos.",
       button: "Als PDF speichern", hint: "Wähle im Druckdialog „Als PDF speichern“, Format A4 und aktiviere „Hintergrundgrafiken“, damit Farben und Titelblatt erscheinen.",
-      cover: "Unser Erinnerungsbuch", chapter: "Kapitel", link: "Gestaltetes PDF ansehen (Vorschau)", preview: "Vorschau",
+      cover: "Unser Erinnerungsbuch",
     },
     book: {
-      title: "Erinnerungsbuch", intro: "Halte das erste Jahr Kapitel für Kapitel fest. Die Fragen sind nur Anregungen, schreibe, was dir wichtig ist.",
-      needCat: "Lege zuerst eine Katze an.", selectCat: "Katze", progress: "Kapitel begonnen", chapters: "Kapitel",
-      saved: "Wird automatisch gespeichert.", photo: "Foto zum Kapitel", removePhoto: "Foto entfernen", prev: "Vorheriges Kapitel", next: "Nächstes Kapitel",
+      title: "Erinnerungsbuch", intro: "Das digitale Erinnerungsbuch „Mein erstes Jahr mit dir“: Kapitel für Kapitel, mit den Fragen aus dem Buch. Schreibe, was dir wichtig ist.",
+      needCat: "Lege zuerst eine Katze an.", selectCat: "Katze", progress: "Abschnitte begonnen", chapters: "Inhalt",
+      saved: "Wird automatisch gespeichert.", photo: "Foto hinzufügen", removePhoto: "Foto entfernen", prev: "Zurück", next: "Weiter",
       hint: "Du musst nicht alles ausfüllen. Überspringe, was nicht passt.", filled: "begonnen",
+      deOnly: "", introLabel: "Einleitung zum Kapitel lesen", impulse: "Mein Erinnerungsimpuls",
       productTitle: "Zum Ausdrucken und Verschenken", productText: "Das Erinnerungsbuch „Mein erstes Jahr mit dir“ gibt es als schön gestaltetes PDF zum Selbstausdrucken.", productCta: "Zum Erinnerungsbuch",
     },
     login: {
@@ -155,15 +157,16 @@ export const pawApp: Record<Locale, PawApp> = {
       productTitle: "More structure for everyday life", productText: "The “Cat Care Journal” offers care checklists, trackers and pages to print.", productCta: "View the Care Journal",
     },
     designed: {
-      title: "Designed memory book", intro: "Preview: your memory book in the Oh Paw Studio design, with cover, chapter pages and photos.",
+      title: "Designed memory book", intro: "Your memory book in the Oh Paw Studio design, with cover, chapter pages and photos.",
       button: "Save as PDF", hint: "In the print dialog choose “Save as PDF”, A4 size, and enable “Background graphics” so colours and the cover appear.",
-      cover: "Our memory book", chapter: "Chapter", link: "View designed PDF (preview)", preview: "Preview",
+      cover: "Our memory book",
     },
     book: {
       title: "Memory book", intro: "Capture the first year chapter by chapter. The questions are only prompts, write what matters to you.",
-      needCat: "Add a cat first.", selectCat: "Cat", progress: "chapters started", chapters: "Chapters",
-      saved: "Saved automatically.", photo: "Photo for this chapter", removePhoto: "Remove photo", prev: "Previous chapter", next: "Next chapter",
+      needCat: "Add a cat first.", selectCat: "Cat", progress: "sections started", chapters: "Contents",
+      saved: "Saved automatically.", photo: "Add photo", removePhoto: "Remove photo", prev: "Back", next: "Next",
       hint: "You don't have to fill in everything. Skip what doesn't fit.", filled: "started",
+      deOnly: "The questions follow the German book “Mein erstes Jahr mit dir” and are shown in German for now. The English version will follow.", introLabel: "Read the chapter introduction", impulse: "My memory prompt",
       productTitle: "To print and give as a gift", productText: "The memory book “My First Year with You” is available as a beautifully designed PDF to print yourself.", productCta: "View the memory book",
     },
     login: {

@@ -8,7 +8,7 @@ Fertig und ausprobierbar (Demo-Modus, Daten nur im Browser), unter `/de/my-paw-s
   eigenen Fragen als Anregung, Foto je Kapitel, Fortschrittsanzeige und automatischem Speichern. Die Fragen stehen in `src/data/paw-book.ts`
   und lassen sich dort ergänzen oder ändern (die `id`s nicht ändern, sonst gehen gespeicherte Antworten verloren). Das Buch ist eine
   Mitmach-Version; das ausgearbeitete, druckbare PDF bleibt dein Gumroad-Produkt (die App verweist darauf).
-- **Gestaltetes Erinnerungsbuch als PDF (Prototyp)** (`/app/book-pdf`): Titelblatt mit Logo, Foto und Daten, ein Seite je Kapitel in Markenfarben
+- **Gestaltetes Erinnerungsbuch als PDF (Prototyp)** (`/app/print`): Titelblatt mit Logo, Foto und Daten, ein Seite je Kapitel in Markenfarben
   und -schriften, A4. Gespeichert wird über den Druckdialog („Als PDF speichern“, Hintergrundgrafiken aktivieren). Das ist die Grundlage für den
   späteren bezahlten Export; für ein echtes Produkt fehlen noch Feinschliff (Seitenzahlen, Widmungsseite, transparentes Logo) und Bezahlung.
 - **Pflege-Journal** (`/app/care`): Profil und Kontakte (Mikrochip, Tierarztpraxis, Notfallkontakt, Futter, Besonderheiten), Gewichtsverlauf mit

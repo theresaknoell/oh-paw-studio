@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import PrintBook from "@/components/paw/PrintBook";
+import DesignedBook from "@/components/paw/DesignedBook";
 import { pawApp } from "@/data/paw-app";
 import { hasLocale } from "../../../dictionaries";
 
@@ -11,7 +11,7 @@ export default async function Print({ params }: PageProps<"/[lang]/my-paw-space/
     <>
       <h1 className="no-print text-5xl">{t.print.title}</h1>
       <p className="no-print mt-4 mb-6 text-cocoa/80">{t.print.intro}</p>
-      <PrintBook lang={lang} t={t.print} cat={t.memories} designedLink={t.designed.link} />
+      <DesignedBook t={t.designed} print={t.print} catLabels={t.memories} />
     </>
   );
 }
