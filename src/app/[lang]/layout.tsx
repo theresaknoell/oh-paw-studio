@@ -73,7 +73,7 @@ export default async function RootLayout({
             {
               title: dict.footer.shop,
               links: [
-                ...worlds.map((w) => ({ href: `/${lang}/products#${w}`, label: dict.home.worlds[w].title })),
+                ...worlds.map((w) => ({ href: `/${lang}/products?world=${w}`, label: dict.home.worlds[w].title })),
                 { href: `/${lang}/bundles`, label: dict.nav.bundles },
               ],
             },

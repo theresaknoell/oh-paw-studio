@@ -105,7 +105,7 @@ export default function NavMenu({
               <ul className="grid grid-cols-2 gap-x-6 gap-y-4">
                 {worlds.map((w) => (
                   <li key={w.id}>
-                    <Link href={`${base}/products#${w.id}`} className="group block">
+                    <Link href={`${base}/products?world=${w.id}`} className="group block">
                       <span className="font-serif text-xl group-hover:text-olive-deep">{w.title}</span>
                       <span className="mt-0.5 block text-sm text-cocoa/75">{w.text}</span>
                     </Link>
@@ -181,7 +181,7 @@ export default function NavMenu({
                 <ul className="mt-3 space-y-3 pb-2 font-sans text-base">
                   {worlds.map((w) => (
                     <li key={w.id}>
-                      <Link href={`${base}/products#${w.id}`} className="block py-1">
+                      <Link href={`${base}/products?world=${w.id}`} className="block py-1">
                         <span className="font-serif text-2xl">{w.title}</span>
                         <span className="block text-sm text-cocoa/75">{w.text}</span>
                       </Link>

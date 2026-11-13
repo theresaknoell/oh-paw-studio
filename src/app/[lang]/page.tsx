@@ -51,7 +51,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             {worlds.map((w) => (
               <li key={w}>
                 <Link
-                  href={`/${lang}/products#${w}`}
+                  href={`/${lang}/products?world=${w}`}
                   className="block h-full rounded-lg border border-sand bg-sand/30 p-6 transition-colors hover:bg-sand/60"
                 >
                   <h3 className="text-2xl">{dict.home.worlds[w].title}</h3>

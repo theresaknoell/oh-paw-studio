@@ -1,90 +1,53 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import BundleCards from "@/components/BundleCards";
+import BundleBand from "@/components/shop/BundleBand";
+import { ShopBrowser, ShopStatic, type ShopItem } from "@/components/shop/ShopBrowser";
 import { productDetails } from "@/data/product-details";
-import { productsInWorld, worlds } from "@/data/products";
+import { phases, phasesOf } from "@/data/product-pairs";
+import { productsFor, worlds } from "@/data/products";
 import { getDictionary, hasLocale } from "../dictionaries";
 
-export default async function Products({
-  params,
-}: PageProps<"/[lang]/products">) {
+export default async function Products({ params }: PageProps<"/[lang]/products">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
-  const price = new Intl.NumberFormat(lang === "de" ? "de-DE" : "en-IE", {
-    style: "currency",
-    currency: "EUR",
-  });
+  const price = new Intl.NumberFormat(lang === "de" ? "de-DE" : "en-IE", { style: "currency", currency: "EUR" });
+
+  const items: ShopItem[] = productsFor(lang).map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    world: p.world,
+    tagline: productDetails[p.slug]?.tagline ?? "",
+    price: price.format(p.priceEur),
+    image: p.image,
+    phases: phasesOf(p.slug),
+    href: `/${lang}/products/${p.slug}`,
+  }));
+  const props = {
+    items,
+    worlds: worlds.map((w) => ({ id: w, ...dict.home.worlds[w] })),
+    phases: phases.map((p) => ({ id: p, label: dict.shop.phases[p] })),
+    t: dict.shop,
+    bundleBand: (
+      <BundleBand
+        lang={lang}
+        title={dict.shop.bundleTitle}
+        cta={dict.shop.bundleAll}
+        save={dict.products.save}
+        price={price}
+      />
+    ),
+  };
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-6 py-16">
-      <h1 className="text-5xl">{dict.products.title}</h1>
-      <p className="mt-4 text-lg text-cocoa/80">{dict.products.intro}</p>
-      <section id="bundles" className="mt-14 scroll-mt-8">
-        <h2 className="text-4xl">{dict.products.bundlesTitle}</h2>
-        <p className="mt-2 text-cocoa/80">{dict.products.bundlesIntro}</p>
-        <div className="mt-6">
-          <BundleCards lang={lang} t={dict.products} price={price} />
-        </div>
-      </section>
-
-      {worlds.map((w) => (
-        <section key={w} id={w} className="mt-14 scroll-mt-8">
-          <h2 className="text-4xl">{dict.home.worlds[w].title}</h2>
-          <p className="mt-2 text-cocoa/80">{dict.home.worlds[w].text}</p>
-          <ul className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {productsInWorld(lang, w).map((p) => (
-          <li key={p.slug} className="flex flex-col">
-            <Link href={`/${lang}/products/${p.slug}`} aria-label={p.title} className="relative block aspect-square overflow-hidden rounded-[10px] bg-sand">
-              {p.image && (
-                <Image
-                  src={p.image}
-                  alt={p.title}
-                  fill
-                  sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 100vw"
-                  className="object-cover"
-                />
-              )}
-            </Link>
-            <h3 className="mt-4 text-2xl"><Link href={`/${lang}/products/${p.slug}`} className="hover:text-olive-deep">{p.title}</Link></h3>
-            <p className="mt-1 text-cocoa/75">{price.format(p.priceEur)}</p>
-            {productDetails[p.slug] && (
-              <>
-                <p className="mt-2 text-cocoa/85">
-                  {productDetails[p.slug].tagline}
-                </p>
-                <p className="mt-1 text-sm text-cocoa/75">
-                  {dict.products.format}
-                  {productDetails[p.slug].pages
-                    ? ` · ${productDetails[p.slug].pages} ${dict.products.pages}`
-                    : ""}
-                </p>
-                <details className="mt-3 text-sm text-cocoa/85">
-                  <summary className="cursor-pointer text-olive-deep">
-                    {dict.products.inside}
-                  </summary>
-                  <ul className="mt-2 list-disc space-y-1 pl-5">
-                    {productDetails[p.slug].inside.map((it) => (
-                      <li key={it}>{it}</li>
-                    ))}
-                  </ul>
-                </details>
-              </>
-            )}
-            <a
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 self-start rounded-full bg-olive-deep px-5 py-2 text-sm text-ivory transition-colors hover:bg-cocoa"
-            >
-              {dict.products.buy}
-            </a>
-          </li>
-        ))}
-      </ul>
-        </section>
-      ))}
+    <main className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 md:py-16">
+      <h1 className="text-4xl md:text-5xl">{dict.shop.title}</h1>
+      <p className="mt-4 font-serif text-2xl leading-9 text-olive-deep">{dict.shop.lead}</p>
+      <div className="mt-10">
+        <Suspense fallback={<ShopStatic {...props} />}>
+          <ShopBrowser {...props} />
+        </Suspense>
+      </div>
     </main>
   );
 }

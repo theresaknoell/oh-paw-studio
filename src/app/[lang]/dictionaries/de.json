@@ -115,5 +115,26 @@
     "buyBar": "Kaufen",
     "buy": "Bei Gumroad kaufen",
     "details": "Details ansehen"
+  },
+  "shop": {
+    "title": "Begleiter für das Leben mit deiner Katze",
+    "lead": "Sofort-Download · Digital und Druck · Bezahlung über Gumroad",
+    "world": "Welt",
+    "phase": "Lebensphase",
+    "all": "Alle",
+    "phases": {
+      "kitten": "Kitten",
+      "adult": "Erwachsene Katze",
+      "senior": "Senior",
+      "multi": "Mehrere Katzen"
+    },
+    "one": "Produkt",
+    "many": "Produkte",
+    "none": "Für diese Auswahl gibt es noch kein Produkt.",
+    "reset": "Auswahl zurücksetzen",
+    "bundleTitle": "Bundles: gemeinsam günstiger",
+    "bundleAll": "Alle Bundles ansehen",
+    "filters": "Filter",
+    "results": "Ergebnisse"
   }
 }

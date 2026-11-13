@@ -69,7 +69,7 @@ export default async function ProductPage({
         <ol className="flex flex-wrap items-center gap-x-2">
           <li><Link href={`${base}/products`} className="hover:underline">{t.crumbShop}</Link></li>
           <li aria-hidden>›</li>
-          <li><Link href={`${base}/products#${product.world}`} className="hover:underline">{world.title}</Link></li>
+          <li><Link href={`${base}/products?world=${product.world}`} className="hover:underline">{world.title}</Link></li>
           <li aria-hidden>›</li>
           <li aria-current="page" className="text-cocoa">{product.title}</li>
         </ol>

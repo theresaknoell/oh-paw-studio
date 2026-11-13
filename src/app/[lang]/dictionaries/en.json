@@ -115,5 +115,26 @@
     "buyBar": "Buy",
     "buy": "Buy on Gumroad",
     "details": "View details"
+  },
+  "shop": {
+    "title": "Companions for life with your cat",
+    "lead": "Instant download · Digital and print · Checkout via Gumroad",
+    "world": "World",
+    "phase": "Life stage",
+    "all": "All",
+    "phases": {
+      "kitten": "Kitten",
+      "adult": "Adult cat",
+      "senior": "Senior",
+      "multi": "Several cats"
+    },
+    "one": "product",
+    "many": "products",
+    "none": "There is no product for this selection yet.",
+    "reset": "Reset selection",
+    "bundleTitle": "Bundles: better together",
+    "bundleAll": "View all bundles",
+    "filters": "Filters",
+    "results": "Results"
   }
 }
