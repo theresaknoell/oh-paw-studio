@@ -4,6 +4,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
 import { isLive, siteUrl } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
+import ScrollFX from "@/components/ScrollFX";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { productSlugMap } from "@/data/product-pairs";
@@ -60,6 +61,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <ScrollFX />
         <JsonLd
           data={[
             {

@@ -14,7 +14,7 @@ export default function SiteHeader({
   slugMap: SlugMap;
 }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-sand bg-ivory">
+    <header className="site-header sticky top-0 z-40 border-b border-sand">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href={`/${lang}`} aria-label={nav.home}>
           <Image src="/logo.webp" alt="Oh Paw Studio" width={48} height={48} priority />

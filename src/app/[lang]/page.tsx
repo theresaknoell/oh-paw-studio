@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import PawTrail from "@/components/PawTrail";
 import PhotoSlot from "@/components/PhotoSlot";
 import ProductCard from "@/components/ProductCard";
+import Reveal from "@/components/Reveal";
 import { bundles, bundleView } from "@/data/bundles";
 import { productDetails } from "@/data/product-details";
 import { productPairs } from "@/data/product-pairs";
@@ -16,9 +18,9 @@ import { getPosts } from "@/lib/blog";
 import { getDictionary, hasLocale } from "./dictionaries";
 
 const primary =
-  "inline-flex min-h-12 items-center rounded-full bg-olive-deep px-8 text-[15px] font-medium text-ivory transition-colors hover:bg-cocoa";
+  "btn-lift inline-flex min-h-12 items-center rounded-full bg-olive-deep px-8 text-[15px] font-medium text-ivory transition-colors hover:bg-cocoa";
 const secondary =
-  "inline-flex min-h-12 items-center rounded-full border-[1.5px] border-olive-deep px-8 text-[15px] font-medium text-olive-deep transition-colors hover:bg-olive-deep hover:text-ivory";
+  "btn-lift inline-flex min-h-12 items-center rounded-full border-[1.5px] border-olive-deep px-8 text-[15px] font-medium text-olive-deep transition-colors hover:bg-olive-deep hover:text-ivory";
 const wrap = "mx-auto w-full max-w-5xl px-4 sm:px-6";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
@@ -48,47 +50,49 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       {/* 1 Hero */}
       <section className={`${wrap} grid items-center gap-8 py-10 md:grid-cols-[1.1fr_1fr] md:gap-14 md:py-16`}>
         <div className="order-2 md:order-1">
-          <p className="text-[13px] font-medium uppercase tracking-[0.08em] text-cocoa/75">{h.label}</p>
-          <h1 className="mt-3 text-4xl leading-[1.05] md:text-6xl" style={{ hyphens: "manual" }}>{h.intro}</h1>
-          <p className="mt-5 font-serif text-2xl leading-8 text-olive-deep">{h.lead}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <p className="rise text-[13px] font-medium uppercase tracking-[0.08em] text-cocoa/75">{h.label}</p>
+          <h1 style={{ "--d": "80ms", hyphens: "manual" } as React.CSSProperties} className="rise mt-3 text-4xl leading-[1.05] md:text-6xl" >{h.intro}</h1>
+          <p style={{ "--d": "180ms" } as React.CSSProperties} className="rise mt-5 font-serif text-2xl leading-8 text-olive-deep">{h.lead}</p>
+          <div style={{ "--d": "280ms" } as React.CSSProperties} className="rise mt-8 flex flex-wrap gap-3">
             <Link href={`${base}/products`} className={primary}>{h.ctaShop}</Link>
             <Link href={`${base}/about`} className={secondary}>{h.ctaStory}</Link>
           </div>
         </div>
-        <div className="order-1 md:order-2">
-          <PhotoSlot image={siteImages.hero} lang={lang} ratio="aspect-[4/5]" sizes="(min-width: 768px) 460px, 100vw" priority className="mx-auto max-w-md" />
+        <div style={{ "--d": "150ms" } as React.CSSProperties} className="rise order-1 md:order-2">
+          <PhotoSlot image={siteImages.hero} lang={lang} ratio="aspect-[4/5]" sizes="(min-width: 768px) 460px, 100vw" priority className="parallax mx-auto max-w-md" />
         </div>
       </section>
 
       {/* 2 Markenbotschaft */}
       <section className="border-y border-sand px-4 py-14 text-center sm:px-6">
-        <p className="mx-auto max-w-2xl font-serif text-3xl leading-10">{h.statement}</p>
+        <Reveal><p className="mx-auto max-w-2xl font-serif text-3xl leading-10">{h.statement}</p></Reveal>
+        <div className="mt-10"><PawTrail /></div>
       </section>
 
       {/* 3 Produktwelten */}
       <section className={`${wrap} py-16`}>
-        <h2 className="text-4xl">{h.worldsTitle}</h2>
+        <Reveal><h2 className="text-4xl">{h.worldsTitle}</h2></Reveal>
         <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {worlds.map((w) => (
-            <li key={w}>
-              <Link href={`${base}/products?world=${w}`} className="group block">
-                <PhotoSlot image={siteImages.worlds[w]} lang={lang} ratio="aspect-[4/3]" sizes="(min-width: 1024px) 240px, (min-width: 640px) 45vw, 100vw" className="transition-transform duration-300 group-hover:-translate-y-0.5" />
+          {worlds.map((w, i) => (
+            <Reveal as="li" key={w} delay={i * 90}>
+              <Link href={`${base}/products?world=${w}`} className="group zoom-on-hover block">
+                <PhotoSlot image={siteImages.worlds[w]} lang={lang} ratio="aspect-[4/3]" sizes="(min-width: 1024px) 240px, (min-width: 640px) 45vw, 100vw" />
                 <h3 className="mt-3 text-2xl group-hover:text-olive-deep">{h.worlds[w].title}</h3>
                 <p className="mt-1 text-[15px] text-cocoa/85">{h.worlds[w].text}</p>
               </Link>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </section>
 
       {/* 4 Beliebt */}
       <section className={`${wrap} pb-16`}>
-        <h2 className="text-4xl">{h.popular}</h2>
+        <Reveal><h2 className="text-4xl">{h.popular}</h2></Reveal>
         <ul className="mt-8 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {popular.map((p) => (
+          {popular.map((p, i) => (
             <ProductCard
               key={p.slug}
+              index={i}
               item={{
                 slug: p.slug,
                 title: p.title,
@@ -109,7 +113,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       {/* 5 Bundle-Teaser */}
       <section className="bg-sand/60 py-16">
         <div className={`${wrap} grid items-center gap-10 md:grid-cols-2`}>
-          <div>
+          <Reveal>
             <span className="inline-block rounded-full bg-sand px-3 py-0.5 text-sm">{h.bundleLabel}</span>
             <h2 className="mt-3 text-4xl md:text-5xl">{bundle.title}</h2>
             <p className="mt-3 text-lg text-cocoa/90">{bundle.text}</p>
@@ -121,14 +125,14 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               </span>
             </p>
             <Link href={`${base}/bundles`} className={`${primary} mt-6`}>{h.viewBundle}</Link>
-          </div>
+          </Reveal>
           <ul className="grid grid-cols-3 gap-3">
-            {bundle.items.map((p) => (
-              <li key={p.slug}>
-                <Link href={`${base}/products/${p.slug}`} aria-label={p.title} className="relative block aspect-square overflow-hidden rounded-[10px] bg-sand">
+            {bundle.items.map((p, i) => (
+              <Reveal as="li" key={p.slug} delay={120 + i * 110}>
+                <Link href={`${base}/products/${p.slug}`} aria-label={p.title} className="zoom-on-hover relative block aspect-square overflow-hidden rounded-[10px] bg-sand">
                   {p.image && <Image src={p.image} alt="" fill sizes="(min-width: 768px) 160px, 30vw" className="object-cover" />}
                 </Link>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
@@ -136,35 +140,34 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
       {/* 6 Geschichte */}
       <section className={`${wrap} grid items-center gap-8 py-16 md:grid-cols-2 md:gap-14`}>
-        <PhotoSlot image={siteImages.story} lang={lang} ratio="aspect-[4/3]" sizes="(min-width: 768px) 480px, 100vw" />
-        <div>
+        <Reveal><PhotoSlot image={siteImages.story} lang={lang} ratio="aspect-[4/3]" sizes="(min-width: 768px) 480px, 100vw" className="parallax" /></Reveal>
+        <Reveal delay={120}>
           <h2 className="text-4xl">{h.aboutTitle}</h2>
           <p className="mt-4 text-lg leading-7 text-cocoa/90">{h.aboutBody}</p>
           <Link href={`${base}/about`} className={`${secondary} mt-6`}>{h.aboutLink}</Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* 7 Inspiration */}
       {posts.length > 0 && (
         <section className="border-t border-sand py-16">
           <div className={wrap}>
-            <h2 className="text-4xl">{h.inspirationTitle}</h2>
+            <Reveal><h2 className="text-4xl">{h.inspirationTitle}</h2></Reveal>
             <ul className="mt-8 grid gap-8 md:grid-cols-3">
-              {posts.map((p) => (
-                <li key={p.slug}>
-                  <Link href={`${base}/blog/${p.slug}`} className="group block">
+              {posts.map((p, i) => (
+                <Reveal as="li" key={p.slug} delay={i * 90}>
+                  <Link href={`${base}/blog/${p.slug}`} className="group zoom-on-hover block">
                     <PhotoSlot
                       image={p.image ? { src: p.image, alt: { de: "", en: "" } } : null}
                       lang={lang}
                       ratio="aspect-[3/2]"
                       sizes="(min-width: 768px) 320px, 100vw"
-                      className="transition-transform duration-300 group-hover:-translate-y-0.5"
                     />
                     <p className="mt-4 text-sm text-cocoa/75">{fmt.format(new Date(p.date))}</p>
                     <h3 className="mt-1 text-2xl group-hover:text-olive-deep">{p.title}</h3>
                     <p className="mt-2 text-[15px] text-cocoa/85">{p.excerpt}</p>
                   </Link>
-                </li>
+                </Reveal>
               ))}
             </ul>
             <Link href={`${base}/blog`} className="mt-10 inline-block text-olive-deep underline underline-offset-4 hover:text-cocoa">
@@ -178,13 +181,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       {newsletter.enabled && (
         <section className="bg-sand/60 py-16">
           <div className={`${wrap} grid items-center gap-8 md:grid-cols-2 md:gap-14`}>
-            <div>
+            <Reveal>
               <h2 className="text-4xl">{dict.newsletter.title}</h2>
               <p className="mt-3 text-lg leading-7 text-cocoa/90">{dict.newsletter.text}</p>
-            </div>
-            <div className="relative">
+            </Reveal>
+            <Reveal className="relative" delay={120}>
               <NewsletterSignup lang={lang} action={newsletter.action} t={dict.newsletter} />
-            </div>
+            </Reveal>
           </div>
         </section>
       )}
