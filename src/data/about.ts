@@ -2,7 +2,11 @@ import type { Locale } from "@/app/[lang]/dictionaries";
 
 export type AboutPage = {
   title: string;
+  heroTitle: string;
   lead: string;
+  quote: string;
+  closing: { title: string; text: string; cta: string };
+  // Die letzte Sektion („Was uns wichtig ist“) wird als Werte-Spalten dargestellt, alle davor als Geschichte.
   sections: {
     heading: string;
     paragraphs?: string[];
@@ -14,6 +18,9 @@ export type AboutPage = {
 export const about: Record<Locale, AboutPage> = {
   de: {
     title: "Über uns",
+    heroTitle: "Aus einer spontanen Idee wurde eine Marke.",
+    quote: "Auf die gemeinsame Zeit zurückzublicken, ist etwas ganz Besonderes.",
+    closing: { title: "Wo alles begann", text: "Das Erinnerungsbuch für das erste Jahr mit deiner Katze.", cta: "Zum Erinnerungsbuch" },
     lead: "Durchdachte Kreationen für die alltäglichen Momente, besonderen Meilensteine und wertvollen Erinnerungen, die das Leben mit Katzen so besonders machen.",
     sections: [
       {
@@ -89,6 +96,9 @@ export const about: Record<Locale, AboutPage> = {
   },
   en: {
     title: "About",
+    heroTitle: "A spontaneous idea became a brand.",
+    quote: "Looking back on the time you've shared is something truly special.",
+    closing: { title: "Where it all began", text: "The memory book for the first year with your cat.", cta: "View the memory book" },
     lead: "Thoughtfully made for the everyday moments, special milestones and treasured memories that make life with cats so special.",
     sections: [
       {
