@@ -87,7 +87,36 @@
     "title": "Bundles",
     "lead": "Gemeinsam günstiger",
     "intro": "Passende Produkte für deine Lebenssituation, mit etwa 20 % Vorteil gegenüber dem Einzelkauf.",
-    "back": "Alle Produkte ansehen"
+    "back": "Alle Produkte ansehen",
+    "compareTitle": "Bundle oder einzeln?",
+    "compareIntro": "So viel sparst du gegenüber dem Einzelkauf.",
+    "colBundle": "Bundle",
+    "colSingle": "Einzeln",
+    "colPrice": "Bundle-Preis",
+    "colSave": "Du sparst",
+    "faqTitle": "Häufige Fragen",
+    "faq": [
+      {
+        "q": "Sind die Bundles digital?",
+        "a": "Ja. Alle Produkte sind digitale Downloads (PDF). Es wird nichts per Post verschickt. Nach dem Kauf stehen dir die Dateien direkt zum Download bereit."
+      },
+      {
+        "q": "Gibt es die Bundles auch auf Englisch?",
+        "a": "Ja. Jedes Bundle gibt es in einer deutschen und einer englischen Ausgabe. Mit dem Sprachumschalter oben gelangst du zur anderen Sprache."
+      },
+      {
+        "q": "Kann ich die Seiten ausdrucken?",
+        "a": "Ja. Du kannst die Produkte zu Hause oder in einer Druckerei ausdrucken. Die meisten Produkte enthalten neben der Digitalversion eine eigene Druckversion auf weißem Hintergrund."
+      },
+      {
+        "q": "Kann ich auch einzelne Produkte kaufen?",
+        "a": "Ja, jedes Produkt gibt es auch einzeln. Die Bundles sind eine günstigere Zusammenstellung passender Produkte."
+      },
+      {
+        "q": "Wie bezahle ich?",
+        "a": "Der Kauf läuft sicher über Gumroad. Mit dem Button gelangst du direkt zum Bundle bei Gumroad."
+      }
+    ]
   },
   "productPage": {
     "crumbShop": "Shop",

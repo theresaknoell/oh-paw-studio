@@ -87,7 +87,36 @@
     "title": "Bundles",
     "lead": "Better together",
     "intro": "Matching products for your situation, with about 20% off compared to buying them separately.",
-    "back": "View all products"
+    "back": "View all products",
+    "compareTitle": "Bundle or single?",
+    "compareIntro": "See how much you save compared to buying separately.",
+    "colBundle": "Bundle",
+    "colSingle": "Separately",
+    "colPrice": "Bundle price",
+    "colSave": "You save",
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "Are the bundles digital?",
+        "a": "Yes. All products are digital downloads (PDF). Nothing is shipped by post. After your purchase, the files are available to download straight away."
+      },
+      {
+        "q": "Are the bundles available in German too?",
+        "a": "Yes. Every bundle is available in a German and an English edition. Use the language switch at the top to change language."
+      },
+      {
+        "q": "Can I print the pages?",
+        "a": "Yes. You can print the products at home or at a print shop. Most products include a separate print version on a white background in addition to the digital version."
+      },
+      {
+        "q": "Can I also buy single products?",
+        "a": "Yes, every product is also available on its own. Bundles are a cheaper combination of matching products."
+      },
+      {
+        "q": "How do I pay?",
+        "a": "Checkout is handled securely by Gumroad. The button takes you straight to the bundle on Gumroad."
+      }
+    ]
   },
   "productPage": {
     "crumbShop": "Shop",
