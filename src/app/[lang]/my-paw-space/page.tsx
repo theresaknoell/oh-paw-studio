@@ -31,7 +31,7 @@ export default async function PawSpace({
         {page.lead}
       </p>
 
-      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {page.features.map((f) => (
           <li key={f.title} className="rounded-lg border border-sand bg-sand/30 p-6">
             <h2 className="text-2xl">{f.title}</h2>

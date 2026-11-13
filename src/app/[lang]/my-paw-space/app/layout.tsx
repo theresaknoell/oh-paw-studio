@@ -16,6 +16,7 @@ export default async function PawAppLayout({
     { href: `${base}/cats`, label: t.nav.cats },
     { href: `${base}/memories`, label: t.nav.memories },
     { href: `${base}/book`, label: t.nav.book },
+    { href: `${base}/care`, label: t.nav.care },
     { href: `${base}/products`, label: t.nav.products },
     { href: `${base}/print`, label: t.nav.print },
     { href: `${base}/settings`, label: t.nav.settings },

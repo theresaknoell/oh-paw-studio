@@ -37,6 +37,9 @@ h3 {
 
 /* Druckansicht (My Paw Space): nur das Erinnerungsbuch drucken */
 @media print {
+  .print-only {
+    display: block !important;
+  }
   header,
   footer,
   .no-print {

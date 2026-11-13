@@ -8,6 +8,14 @@ Fertig und ausprobierbar (Demo-Modus, Daten nur im Browser), unter `/de/my-paw-s
   eigenen Fragen als Anregung, Foto je Kapitel, Fortschrittsanzeige und automatischem Speichern. Die Fragen stehen in `src/data/paw-book.ts`
   und lassen sich dort ergänzen oder ändern (die `id`s nicht ändern, sonst gehen gespeicherte Antworten verloren). Das Buch ist eine
   Mitmach-Version; das ausgearbeitete, druckbare PDF bleibt dein Gumroad-Produkt (die App verweist darauf).
+- **Gestaltetes Erinnerungsbuch als PDF (Prototyp)** (`/app/book-pdf`): Titelblatt mit Logo, Foto und Daten, ein Seite je Kapitel in Markenfarben
+  und -schriften, A4. Gespeichert wird über den Druckdialog („Als PDF speichern“, Hintergrundgrafiken aktivieren). Das ist die Grundlage für den
+  späteren bezahlten Export; für ein echtes Produkt fehlen noch Feinschliff (Seitenzahlen, Widmungsseite, transparentes Logo) und Bezahlung.
+- **Pflege-Journal** (`/app/care`): Profil und Kontakte (Mikrochip, Tierarztpraxis, Notfallkontakt, Futter, Besonderheiten), Gewichtsverlauf mit
+  Diagramm, Tierarzt und Gesundheit (Impfung, Kontrolle, Behandlung), Medikamente; Druckansicht; Verweis auf das Care Journal bei Gumroad.
+  Es ist reine Dokumentation und gibt keine Gesundheitsempfehlungen.
+- **Warteliste** auf der Vorschauseite (`/my-paw-space`): nutzt das Newsletter-Formular. Für eine eigene Gruppe in MailerLite ein zweites Formular
+  anlegen und die Adresse in `src/data/newsletter.ts` bei `pawSpaceAction` eintragen.
 - **Druckansicht:** pro Katze mit Titelblatt und wahlweise Erinnerungsbuch (nur ausgefüllte Kapitel) oder Zeitachse; „Drucken / als PDF speichern“ nutzt den Druckdialog des Browsers
 - Meine Produkte (alle Produkte, noch ohne Kaufprüfung)
 - Einstellungen: Daten exportieren und wieder importieren (JSON), alles löschen, Anzeige des belegten Speichers
@@ -21,7 +29,7 @@ Die Seite ist nicht im Menü und nicht in der Sitemap.
 Fotos werden im Browser auf 900 px verkleinert und im lokalen Speicher abgelegt (ca. 5 MB gesamt). Daten gelten nur für diesen Browser und dieses Gerät.
 
 ## Noch NICHT vorhanden
-Echte Anmeldung, echte Datenbank, Foto-Speicher in der Cloud, Kaufprüfung, weitere ausfüllbare Vorlagen (z. B. Care Journal), E-Mail-Erinnerungen, Community.
+Echte Anmeldung, echte Datenbank, Foto-Speicher in der Cloud, Kaufprüfung, bezahlter Export, E-Mail-Erinnerungen (z. B. für Impftermine), Community.
 
 ## Checkliste zum Livegang (Stufe 1)
 Entscheidungen
@@ -47,7 +55,7 @@ Ich (Technik)
 - [ ] Seite ins Menü und in die Sitemap aufnehmen, Demo-Hinweis entfernen
 
 Recht und Betrieb
-- [ ] Datenschutzerklärung um My Paw Space erweitern (Konto, gespeicherte Daten, Supabase als Dienstleister, Löschung)
+- [ ] Datenschutzerklärung um My Paw Space erweitern (Konto, gespeicherte Daten inkl. Gesundheitsangaben zur Katze und Fotos, Supabase als Dienstleister, Löschung)
 - [ ] Auftragsverarbeitung mit Supabase prüfen
 - [ ] Impressum fertig (bereits Voraussetzung für den Livegang der Website)
 - [ ] Backup- und Löschkonzept festlegen

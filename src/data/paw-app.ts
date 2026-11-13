@@ -2,7 +2,7 @@ import type { Locale } from "@/app/[lang]/dictionaries";
 
 export type PawApp = {
   demoBanner: string;
-  nav: { app: string; dashboard: string; cats: string; memories: string; book: string; products: string; print: string; settings: string };
+  nav: { app: string; dashboard: string; cats: string; memories: string; book: string; care: string; products: string; print: string; settings: string };
   dashboard: { title: string; intro: string; cats: string; memories: string; start: string };
   cats: {
     title: string; empty: string; name: string; birthday: string; since: string;
@@ -16,6 +16,14 @@ export type PawApp = {
     photo: string; removePhoto: string;
   };
   print: { title: string; intro: string; selectCat: string; button: string; empty: string; born: string; since: string; book: string; noCats: string; mode: string; timeline: string; guided: string; guidedEmpty: string };
+  care: {
+    title: string; intro: string; disclaimer: string; needCat: string; selectCat: string; print: string; saved: string;
+    profile: { title: string; chip: string; vetName: string; vetPhone: string; emergency: string; food: string; notes: string };
+    weight: { title: string; date: string; kg: string; add: string; empty: string; chart: string; remove: string; invalid: string };
+    health: { title: string; date: string; kind: string; text: string; add: string; empty: string; remove: string; kinds: { vaccination: string; checkup: string; treatment: string; other: string } };
+    meds: { title: string; name: string; dose: string; start: string; end: string; notes: string; add: string; empty: string; remove: string; from: string; until: string };
+    productTitle: string; productText: string; productCta: string;
+  };
   designed: { title: string; intro: string; button: string; hint: string; cover: string; chapter: string; link: string; preview: string };
   book: {
     title: string; intro: string; needCat: string; selectCat: string; progress: string; chapters: string;
@@ -34,7 +42,7 @@ export type PawApp = {
 export const pawApp: Record<Locale, PawApp> = {
   de: {
     demoBanner: "Demo-Modus: Deine Einträge bleiben nur in diesem Browser gespeichert und sind nicht mit einem Konto verbunden.",
-    nav: { app: "My Paw Space", dashboard: "Übersicht", cats: "Meine Katzen", memories: "Erinnerungen", book: "Erinnerungsbuch", products: "Meine Produkte", print: "Drucken", settings: "Einstellungen" },
+    nav: { app: "My Paw Space", dashboard: "Übersicht", cats: "Meine Katzen", memories: "Erinnerungen", book: "Erinnerungsbuch", care: "Pflege-Journal", products: "Meine Produkte", print: "Drucken", settings: "Einstellungen" },
     dashboard: {
       title: "Dein Paw Space",
       intro: "Schön, dass du da bist. Hier sammelst du alles rund um deine Katzen.",
@@ -66,6 +74,16 @@ export const pawApp: Record<Locale, PawApp> = {
       born: "Geboren am", since: "Bei mir seit", book: "Unser gemeinsames Erinnerungsbuch", noCats: "Lege zuerst eine Katze an.",
       mode: "Inhalt", timeline: "Zeitachse", guided: "Erinnerungsbuch", guidedEmpty: "Im Erinnerungsbuch gibt es für diese Katze noch keine Einträge.",
     },
+    care: {
+      title: "Pflege-Journal", intro: "Halte Gesundheit und Pflege deiner Katze an einem Ort fest.",
+      disclaimer: "Dieses Journal dient deiner eigenen Dokumentation und ersetzt keine tierärztliche Beratung.",
+      needCat: "Lege zuerst eine Katze an.", selectCat: "Katze", print: "Drucken / als PDF speichern", saved: "Wird automatisch gespeichert.",
+      profile: { title: "Profil und Kontakte", chip: "Mikrochip-Nummer", vetName: "Tierarztpraxis", vetPhone: "Telefon der Praxis", emergency: "Notfallkontakt", food: "Futter", notes: "Besonderheiten (z. B. Allergien)" },
+      weight: { title: "Gewicht", date: "Datum", kg: "Gewicht (kg)", add: "Gewicht eintragen", empty: "Noch kein Gewicht eingetragen.", chart: "Gewichtsverlauf", remove: "Entfernen", invalid: "Bitte ein gültiges Gewicht eingeben." },
+      health: { title: "Tierarzt und Gesundheit", date: "Datum", kind: "Art", text: "Notiz", add: "Eintrag speichern", empty: "Noch keine Einträge.", remove: "Entfernen", kinds: { vaccination: "Impfung", checkup: "Kontrolle", treatment: "Behandlung", other: "Sonstiges" } },
+      meds: { title: "Medikamente", name: "Name", dose: "Dosierung", start: "Beginn", end: "Ende", notes: "Hinweise", add: "Medikament speichern", empty: "Noch keine Medikamente eingetragen.", remove: "Entfernen", from: "ab", until: "bis" },
+      productTitle: "Mehr Struktur für den Alltag", productText: "Der „Cat Care Journal“ bietet dir Pflege-Checklisten, Tracker und Seiten zum Ausdrucken.", productCta: "Zum Care Journal",
+    },
     designed: {
       title: "Gestaltetes Erinnerungsbuch", intro: "Vorschau: Dein Erinnerungsbuch im Design von Oh Paw Studio, mit Titelblatt, Kapitelseiten und Fotos.",
       button: "Als PDF speichern", hint: "Wähle im Druckdialog „Als PDF speichern“, Format A4 und aktiviere „Hintergrundgrafiken“, damit Farben und Titelblatt erscheinen.",
@@ -94,7 +112,7 @@ export const pawApp: Record<Locale, PawApp> = {
   },
   en: {
     demoBanner: "Demo mode: Your entries are stored only in this browser and are not linked to an account.",
-    nav: { app: "My Paw Space", dashboard: "Overview", cats: "My cats", memories: "Memories", book: "Memory book", products: "My products", print: "Print", settings: "Settings" },
+    nav: { app: "My Paw Space", dashboard: "Overview", cats: "My cats", memories: "Memories", book: "Memory book", care: "Care journal", products: "My products", print: "Print", settings: "Settings" },
     dashboard: {
       title: "Your Paw Space",
       intro: "Lovely to have you here. Collect everything about your cats in one place.",
@@ -125,6 +143,16 @@ export const pawApp: Record<Locale, PawApp> = {
       selectCat: "Cat", button: "Print / save as PDF", empty: "There are no memories for this cat yet.",
       born: "Born", since: "With me since", book: "Our memory book together", noCats: "Add a cat first.",
       mode: "Content", timeline: "Timeline", guided: "Memory book", guidedEmpty: "The memory book has no entries for this cat yet.",
+    },
+    care: {
+      title: "Care journal", intro: "Keep your cat's health and care in one place.",
+      disclaimer: "This journal is for your own documentation and does not replace veterinary advice.",
+      needCat: "Add a cat first.", selectCat: "Cat", print: "Print / save as PDF", saved: "Saved automatically.",
+      profile: { title: "Profile and contacts", chip: "Microchip number", vetName: "Vet clinic", vetPhone: "Clinic phone", emergency: "Emergency contact", food: "Food", notes: "Special notes (e.g. allergies)" },
+      weight: { title: "Weight", date: "Date", kg: "Weight (kg)", add: "Add weight", empty: "No weight recorded yet.", chart: "Weight over time", remove: "Remove", invalid: "Please enter a valid weight." },
+      health: { title: "Vet and health", date: "Date", kind: "Type", text: "Note", add: "Save entry", empty: "No entries yet.", remove: "Remove", kinds: { vaccination: "Vaccination", checkup: "Check-up", treatment: "Treatment", other: "Other" } },
+      meds: { title: "Medications", name: "Name", dose: "Dosage", start: "Start", end: "End", notes: "Notes", add: "Save medication", empty: "No medications recorded yet.", remove: "Remove", from: "from", until: "until" },
+      productTitle: "More structure for everyday life", productText: "The “Cat Care Journal” offers care checklists, trackers and pages to print.", productCta: "View the Care Journal",
     },
     designed: {
       title: "Designed memory book", intro: "Preview: your memory book in the Oh Paw Studio design, with cover, chapter pages and photos.",

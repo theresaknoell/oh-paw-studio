@@ -48,6 +48,41 @@ create policy "own book entries" on public.book_entries
 create policy "own book photos" on public.book_photos
   for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 
+-- Pflege-Journal (Entwurf): Profil, Gewicht, Gesundheitseinträge, Medikamente je Katze.
+create table public.care_profiles (
+  user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
+  cat_id uuid primary key references public.cats (id) on delete cascade,
+  chip text not null default '', vet_name text not null default '', vet_phone text not null default '',
+  emergency text not null default '', food text not null default '', notes text not null default ''
+);
+create table public.weights (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
+  cat_id uuid not null references public.cats (id) on delete cascade,
+  date date not null, kg numeric(5,2) not null check (kg > 0 and kg <= 30)
+);
+create table public.health_records (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
+  cat_id uuid not null references public.cats (id) on delete cascade,
+  date date not null, kind text not null check (kind in ('vaccination', 'checkup', 'treatment', 'other')),
+  text text not null check (char_length(text) <= 2000)
+);
+create table public.medications (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
+  cat_id uuid not null references public.cats (id) on delete cascade,
+  name text not null, dose text not null default '', start date, "end" date, notes text not null default ''
+);
+alter table public.care_profiles enable row level security;
+alter table public.weights enable row level security;
+alter table public.health_records enable row level security;
+alter table public.medications enable row level security;
+create policy "own care profiles" on public.care_profiles for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+create policy "own weights" on public.weights for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+create policy "own health records" on public.health_records for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+create policy "own medications" on public.medications for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+
 -- Später: Zuordnung gekaufter Produkte zu einem Konto (Befüllung erst, wenn die Kauf-Verknüpfung entschieden ist).
 create table public.entitlements (
   id uuid primary key default gen_random_uuid(),

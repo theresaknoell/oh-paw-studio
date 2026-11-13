@@ -25,16 +25,32 @@ export type Memory = {
   photo?: string;
 };
 
+export type CareProfile = {
+  chip: string;
+  vetName: string;
+  vetPhone: string;
+  emergency: string;
+  food: string;
+  notes: string;
+};
+export type WeightEntry = { id: string; catId: string; date: string; kg: number };
+export type HealthKind = "vaccination" | "checkup" | "treatment" | "other";
+export type HealthEntry = { id: string; catId: string; date: string; kind: HealthKind; text: string };
+export type MedEntry = { id: string; catId: string; name: string; dose: string; start: string; end: string; notes: string };
+export type CareState = { profiles: Record<string, CareProfile>; weights: WeightEntry[]; health: HealthEntry[]; meds: MedEntry[] };
+
 export type PawState = {
   cats: Cat[];
   memories: Memory[];
   // Erinnerungsbuch: Antworten je Frage und Fotos je Kapitel (Schlüssel siehe src/data/paw-book.ts)
   book: Record<string, string>;
   bookPhotos: Record<string, string>;
+  care: CareState;
 };
 
 const KEY = "oh-paw-space-demo-v1";
-const empty: PawState = { cats: [], memories: [], book: {}, bookPhotos: {} };
+const emptyCare: CareState = { profiles: {}, weights: [], health: [], meds: [] };
+const empty: PawState = { cats: [], memories: [], book: {}, bookPhotos: {}, care: emptyCare };
 let cache: PawState | null = null;
 let saveFailed = false;
 const listeners = new Set<() => void>();
@@ -42,7 +58,9 @@ const listeners = new Set<() => void>();
 function load(): PawState {
   try {
     const raw = localStorage.getItem(KEY);
-    return raw ? { ...empty, ...JSON.parse(raw) } : empty;
+    if (!raw) return empty;
+    const data = JSON.parse(raw);
+    return { ...empty, ...data, care: { ...emptyCare, ...(data.care ?? {}) } };
   } catch {
     return empty;
   }
@@ -84,7 +102,29 @@ export function usePawStore() {
         memories: snapshot().memories.filter((m) => m.catId !== id),
         book: Object.fromEntries(Object.entries(snapshot().book).filter(([k]) => !k.startsWith(`${id}|`))),
         bookPhotos: Object.fromEntries(Object.entries(snapshot().bookPhotos).filter(([k]) => !k.startsWith(`${id}|`))),
+        care: {
+          profiles: Object.fromEntries(Object.entries(snapshot().care.profiles).filter(([k]) => k !== id)),
+          weights: snapshot().care.weights.filter((x) => x.catId !== id),
+          health: snapshot().care.health.filter((x) => x.catId !== id),
+          meds: snapshot().care.meds.filter((x) => x.catId !== id),
+        },
       }),
+    setCareProfile: (catId: string, patch: Partial<CareProfile>) => {
+      const cur = snapshot().care.profiles[catId] ?? { chip: "", vetName: "", vetPhone: "", emergency: "", food: "", notes: "" };
+      commit({ ...snapshot(), care: { ...snapshot().care, profiles: { ...snapshot().care.profiles, [catId]: { ...cur, ...patch } } } });
+    },
+    addWeight: (w: Omit<WeightEntry, "id">) =>
+      commit({ ...snapshot(), care: { ...snapshot().care, weights: [...snapshot().care.weights, { ...w, id: newId() }] } }),
+    removeWeight: (id: string) =>
+      commit({ ...snapshot(), care: { ...snapshot().care, weights: snapshot().care.weights.filter((x) => x.id !== id) } }),
+    addHealth: (h: Omit<HealthEntry, "id">) =>
+      commit({ ...snapshot(), care: { ...snapshot().care, health: [...snapshot().care.health, { ...h, id: newId() }] } }),
+    removeHealth: (id: string) =>
+      commit({ ...snapshot(), care: { ...snapshot().care, health: snapshot().care.health.filter((x) => x.id !== id) } }),
+    addMed: (m: Omit<MedEntry, "id">) =>
+      commit({ ...snapshot(), care: { ...snapshot().care, meds: [...snapshot().care.meds, { ...m, id: newId() }] } }),
+    removeMed: (id: string) =>
+      commit({ ...snapshot(), care: { ...snapshot().care, meds: snapshot().care.meds.filter((x) => x.id !== id) } }),
     setBookText: (key: string, text: string) => {
       const book = { ...snapshot().book };
       if (text.trim()) book[key] = text;
@@ -128,7 +168,23 @@ export function usePawStore() {
                 ),
               ) as Record<string, string>
             : {};
-        commit({ cats, memories, book: own(data.book, ids as Set<string>), bookPhotos: own(data.bookPhotos, ids as Set<string>) });
+        const c = data.care ?? {};
+        const mine = <T extends { catId: string }>(a: unknown): T[] =>
+          Array.isArray(a) ? a.filter((x: T) => x && typeof x.catId === "string" && (ids as Set<string>).has(x.catId)) : [];
+        commit({
+          cats,
+          memories,
+          book: own(data.book, ids as Set<string>),
+          bookPhotos: own(data.bookPhotos, ids as Set<string>),
+          care: {
+            profiles: Object.fromEntries(
+              Object.entries((c.profiles ?? {}) as Record<string, CareProfile>).filter(([k]) => (ids as Set<string>).has(k)),
+            ),
+            weights: mine<WeightEntry>(c.weights),
+            health: mine<HealthEntry>(c.health),
+            meds: mine<MedEntry>(c.meds),
+          },
+        });
         return true;
       } catch {
         return false;

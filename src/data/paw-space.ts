@@ -29,6 +29,10 @@ export const pawSpace: Record<Locale, PawSpacePage> = {
         text: "Das erste Jahr Kapitel für Kapitel: mit Fragen als Anregung, Platz für Fotos und einer Druckansicht als PDF.",
       },
       {
+        title: "Pflege-Journal",
+        text: "Gewicht, Tierarzttermine und Medikamente übersichtlich festhalten, mit Verlaufsdiagramm und Druckansicht.",
+      },
+      {
         title: "Meine Produkte",
         text: "Alle deine Oh-Paw-Studio-Produkte übersichtlich an einem Ort.",
       },
@@ -67,6 +71,10 @@ export const pawSpace: Record<Locale, PawSpacePage> = {
       {
         title: "Memory book",
         text: "The first year chapter by chapter: with prompts, room for photos and a print view as PDF.",
+      },
+      {
+        title: "Care journal",
+        text: "Keep weight, vet visits and medications in order, with a progress chart and print view.",
       },
       {
         title: "My products",
