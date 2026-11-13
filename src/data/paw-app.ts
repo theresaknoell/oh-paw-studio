@@ -16,6 +16,7 @@ export type PawApp = {
     photo: string; removePhoto: string;
   };
   print: { title: string; intro: string; selectCat: string; button: string; empty: string; born: string; since: string; book: string; noCats: string; mode: string; timeline: string; guided: string; guidedEmpty: string };
+  designed: { title: string; intro: string; button: string; hint: string; cover: string; chapter: string; link: string; preview: string };
   book: {
     title: string; intro: string; needCat: string; selectCat: string; progress: string; chapters: string;
     saved: string; photo: string; removePhoto: string; prev: string; next: string; hint: string;
@@ -64,6 +65,11 @@ export const pawApp: Record<Locale, PawApp> = {
       selectCat: "Katze", button: "Drucken / als PDF speichern", empty: "Für diese Katze gibt es noch keine Erinnerungen.",
       born: "Geboren am", since: "Bei mir seit", book: "Unser gemeinsames Erinnerungsbuch", noCats: "Lege zuerst eine Katze an.",
       mode: "Inhalt", timeline: "Zeitachse", guided: "Erinnerungsbuch", guidedEmpty: "Im Erinnerungsbuch gibt es für diese Katze noch keine Einträge.",
+    },
+    designed: {
+      title: "Gestaltetes Erinnerungsbuch", intro: "Vorschau: Dein Erinnerungsbuch im Design von Oh Paw Studio, mit Titelblatt, Kapitelseiten und Fotos.",
+      button: "Als PDF speichern", hint: "Wähle im Druckdialog „Als PDF speichern“, Format A4 und aktiviere „Hintergrundgrafiken“, damit Farben und Titelblatt erscheinen.",
+      cover: "Unser Erinnerungsbuch", chapter: "Kapitel", link: "Gestaltetes PDF ansehen (Vorschau)", preview: "Vorschau",
     },
     book: {
       title: "Erinnerungsbuch", intro: "Halte das erste Jahr Kapitel für Kapitel fest. Die Fragen sind nur Anregungen, schreibe, was dir wichtig ist.",
@@ -119,6 +125,11 @@ export const pawApp: Record<Locale, PawApp> = {
       selectCat: "Cat", button: "Print / save as PDF", empty: "There are no memories for this cat yet.",
       born: "Born", since: "With me since", book: "Our memory book together", noCats: "Add a cat first.",
       mode: "Content", timeline: "Timeline", guided: "Memory book", guidedEmpty: "The memory book has no entries for this cat yet.",
+    },
+    designed: {
+      title: "Designed memory book", intro: "Preview: your memory book in the Oh Paw Studio design, with cover, chapter pages and photos.",
+      button: "Save as PDF", hint: "In the print dialog choose “Save as PDF”, A4 size, and enable “Background graphics” so colours and the cover appear.",
+      cover: "Our memory book", chapter: "Chapter", link: "View designed PDF (preview)", preview: "Preview",
     },
     book: {
       title: "Memory book", intro: "Capture the first year chapter by chapter. The questions are only prompts, write what matters to you.",

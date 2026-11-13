@@ -49,3 +49,29 @@ h3 {
     break-inside: avoid;
   }
 }
+
+/* Gestaltetes Erinnerungsbuch (My Paw Space, Prototyp): A4-Seiten mit Markenfarben */
+.dbook {
+  page: dbook;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@page dbook {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  html:has(.dbook),
+  body:has(.dbook) {
+    background: #f5f1e9;
+  }
+  .dbook .dsheet {
+    break-after: page;
+    margin: 0 auto;
+    max-width: none;
+    width: 210mm;
+  }
+  .dbook .dsheet:last-child {
+    break-after: auto;
+  }
+}

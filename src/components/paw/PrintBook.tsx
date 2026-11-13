@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { bookChapters, bookKey, photoKey } from "@/data/paw-book";
 import { usePawStore } from "@/lib/paw-store";
 import type { PawApp } from "@/data/paw-app";
 
 // Druckansicht: "Drucken" öffnet den Druckdialog des Browsers, dort lässt sich auch "Als PDF speichern" wählen.
-export default function PrintBook({ lang, t, cat: catLabels }: { lang: "de" | "en"; t: PawApp["print"]; cat: PawApp["memories"] }) {
+export default function PrintBook({ lang, t, cat: catLabels, designedLink }: { lang: "de" | "en"; t: PawApp["print"]; cat: PawApp["memories"]; designedLink: string }) {
   const { cats, memories, book, bookPhotos } = usePawStore();
   const [selected, setSelected] = useState("");
   const [mode, setMode] = useState<"book" | "timeline">("book");
@@ -44,6 +45,8 @@ export default function PrintBook({ lang, t, cat: catLabels }: { lang: "de" | "e
           {t.button}
         </button>
       </div>
+
+      <p className="no-print mt-4 text-sm"><Link href={`/${lang}/my-paw-space/app/book-pdf`} className="text-olive-deep underline underline-offset-4 hover:text-cocoa">{designedLink}</Link></p>
 
       <article className="print-book mt-10">
         <header className="text-center">
