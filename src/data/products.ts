@@ -39,6 +39,16 @@ export const products: Product[] = [
   { world: "care", slug: "the-senior-cat-care-edtion-en", lang: "en", title: "The Senior Cat Care Edition", priceEur: 9.9, url: `${shop}/the-senior-cat-care-edtion-en`, image: null },
   { world: "care", slug: "the-multi-cat-household-pack-en", lang: "en", title: "The Multi-Cat Household Pack", priceEur: 7.9, url: `${shop}/the-multi-cat-household-pack-en`, image: img("22vpzqjj85guncvefwi8qb4wv270") },
   { world: "care", slug: "the-veterinary-records-pack-en", lang: "en", title: "The Veterinary Records Pack", priceEur: 7.9, url: `${shop}/the-veterinary-records-pack-en`, image: img("h02fcvofyc43mptjyuv1ao1wjyel") },
+
+  { world: "home", slug: "the-seasonal-enrichment-collection-de", lang: "de", title: "The Seasonal Enrichment Collection", priceEur: 7.9, url: `${shop}/the-seasonal-enrichment-collection-de`, image: img("7b9s5wln6vc4zg3ssgn3ifppw54v") },
+  { world: "home", slug: "the-seasonal-enrichment-collection-en", lang: "en", title: "The Seasonal Enrichment Collection", priceEur: 8.9, url: `${shop}/the-seasonal-enrichment-collection-en`, image: null },
+  { world: "home", slug: "30-days-of-cat-enrichment-de", lang: "de", title: "30 Days of Cat Enrichment", priceEur: 8.9, url: `${shop}/30-days-of-cat-enrichment-de`, image: img("6kgdoaagdnhddewo12q9xda1f6e9") },
+  { world: "home", slug: "30-days-of-cat-enrichment-en", lang: "en", title: "30 Days of Cat Enrichment", priceEur: 9.9, url: `${shop}/30-days-of-cat-enrichment-en`, image: null },
+  { world: "home", slug: "th-indoor-cat-activity-planner-de", lang: "de", title: "The Indoor Cat Activity Planner", priceEur: 9.9, url: `${shop}/th-indoor-cat-activity-planner-de`, image: img("ll2c49l6tg7h8vxl7jyxoc4m1nrl") },
+  { world: "home", slug: "the-indoor-cat-activity-planner-en", lang: "en", title: "The Indoor Cat Activity Planner", priceEur: 9.9, url: `${shop}/the-indoor-cat-activity-planner-en`, image: img("b9ysi0ypaqtndzlq7upv31ucg67i") },
+  { world: "home", slug: "the-diy-enrichment-book-de", lang: "de", title: "The DIY Enrichment Book", priceEur: 12.9, url: `${shop}/the-diy-enrichment-book-de`, image: img("3z04ofz00rncrziezr763jklgfiq") },
+  { world: "home", slug: "the-diy-enrichment-book-en", lang: "en", title: "The DIY Enrichment Book", priceEur: 12.9, url: `${shop}/the-diy-enrichment-book-en`, image: img("6kshnyuuqcs2clmdawgj66x2advq") },
+  { world: "care", slug: "the-printable-care-planner-en", lang: "en", title: "The Printable Care Planner", priceEur: 8.9, url: `${shop}/the-printable-care-planner-en`, image: img("o58nw7bpih5wu9ualuixtpdwxapv") },
 ];
 
 export const productsFor = (lang: Locale) =>

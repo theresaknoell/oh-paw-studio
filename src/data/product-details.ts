@@ -327,5 +327,161 @@ export const productDetails: Record<string, ProductDetail> = {
       "“The Veterinary Records Pack” keeps all of your cat’s health records in one place: vaccinations, parasite prevention, vet visits, test results, medications and expenses.",
       "So you have every answer at hand for each appointment, when changing clinics or in an emergency."
     ]
+  },
+  "the-seasonal-enrichment-collection-de": {
+    "tagline": "Beschäftigungsideen für jede Jahreszeit",
+    "intro": [
+      "Auch für Katzen verändert sich das Jahr: Das Licht wird anders, draußen gibt es Neues zu beobachten, und im Haushalt stehen andere Dinge im Mittelpunkt.",
+      "„The Seasonal Enrichment Collection“ begleitet euch durch Frühling, Sommer, Herbst und Winter. Für jede Saison findest du eine Übersicht mit Sicherheitshinweisen, sechs passende Beschäftigungsideen und einen Tracker für eure Erfahrungen.",
+      "Vom Vogelkino im Frühling über die Schattenhöhle im Sommer bis zum Katzen-Adventskalender im Winter."
+    ],
+    "inside": [
+      "Vier Saisonüberblicke mit Vorbereitungs-Checkliste",
+      "Sicherheitshinweise, zum Beispiel zu giftigen Pflanzen, Hitze und Weihnachtsdeko",
+      "24 Beschäftigungsideen, sechs pro Jahreszeit",
+      "Platz für eigene Ideen",
+      "Saison-Tracker mit Fotoplatz",
+      "Jahresrückblick und Notizseiten"
+    ],
+    "pages": 16
+  },
+  "the-seasonal-enrichment-collection-en": {
+    "tagline": "Enrichment ideas for every season",
+    "intro": [
+      "The year changes for cats, too: the light shifts, there are new things to watch outside, and different things take center stage at home.",
+      "“The Seasonal Enrichment Collection” takes you through spring, summer, fall and winter. For each season, you’ll find an overview with safety tips, six fitting enrichment ideas and a tracker for your experiences.",
+      "From bird TV in spring and a shady den in summer to a cat advent calendar in winter."
+    ],
+    "inside": [
+      "Four season overviews with a prep checklist",
+      "Safety tips, for example on toxic plants, heat and holiday decorations",
+      "24 enrichment ideas, six per season",
+      "Space for your own ideas",
+      "Season trackers with room for a photo",
+      "Year in review and notes pages"
+    ],
+    "pages": 16
+  },
+  "30-days-of-cat-enrichment-de": {
+    "tagline": "Jeden Tag eine kleine Idee für mehr Abwechslung",
+    "intro": [
+      "30 Tage, 30 kleine Abenteuer: Diese Challenge bringt jeden Tag eine neue Beschäftigungsidee in euren Alltag. Keine dauert lange, und keine braucht teures Zubehör.",
+      "Jeden Tag probierst du eine Idee aus, notierst kurz die Reaktion deiner Katze und schaust am Ende jeder Woche, was gut funktioniert hat.",
+      "Nach 30 Tagen kennst du die Lieblingsbeschäftigungen deiner Katze und habt gemeinsam viele neue Momente erlebt."
+    ],
+    "inside": [
+      "Startseite, um den Ist-Zustand festzuhalten",
+      "30 Tagesideen aus Spiel, Erkunden, Kopfarbeit, Schnüffeln, Ruhe und Kreativität",
+      "Platz für Reaktion und Notizen zu jedem Tag",
+      "Vier Wochenrückblicke",
+      "Übersicht aller 30 Tage mit Punktebewertung",
+      "Abschlussseite, um eure Erfolge zu feiern"
+    ],
+    "pages": 18
+  },
+  "30-days-of-cat-enrichment-en": {
+    "tagline": "One little idea a day for a more varied life",
+    "intro": [
+      "30 days, 30 little adventures: this challenge brings a new enrichment idea into your everyday life every day. None of them take long, and none require expensive equipment.",
+      "Each day, try one idea, jot down how your cat reacted and look back at the end of each week at what worked well.",
+      "After 30 days, you’ll know your cat’s favorite activities and have shared lots of new moments together."
+    ],
+    "inside": [
+      "A starting page to capture where you are today",
+      "30 daily ideas across play, exploring, thinking, sniffing, calm and creativity",
+      "Space for reactions and notes every day",
+      "Four weekly reviews",
+      "An overview of all 30 days with scores",
+      "A finish page to celebrate your success"
+    ],
+    "pages": 18
+  },
+  "th-indoor-cat-activity-planner-de": {
+    "tagline": "Mehr Abwechslung für Wohnungskatzen, gut geplant",
+    "intro": [
+      "Wohnungskatzen erleben ihre ganze Welt in deinem Zuhause. Damit sie dort genug zu entdecken, zu jagen und zu erkunden haben, braucht es keine großen Umbauten, sondern einen guten Plan.",
+      "„The Indoor Cat Activity Planner“ hilft dir, Beschäftigung fest in euren Alltag einzubauen: mit einem Revier-Check für eure Wohnung, einem passenden Tagesrhythmus und Plänen für Woche und Monat.",
+      "So entsteht Abwechslung, die zu deiner Katze passt, ohne dass du jeden Tag etwas Neues erfinden musst."
+    ],
+    "inside": [
+      "Revier-Check: Was bietet eure Wohnung Raum für Raum?",
+      "Beschäftigungsprofil und Beschäftigungstyp deiner Katze",
+      "Tagesrhythmus mit Spielzeiten und Ideen für die Zeit allein",
+      "Wochenplan, Tagestracker und Monatsplan",
+      "Spielzeug-Rotation",
+      "30 Ideen und ein Spickzettel für schnelle Inspiration",
+      "Rückblick: Was funktioniert wirklich?"
+    ],
+    "pages": 16
+  },
+  "the-indoor-cat-activity-planner-en": {
+    "tagline": "More variety for indoor cats, planned with ease",
+    "intro": [
+      "Indoor cats experience their entire world inside your home. To give them enough to discover, hunt and explore, you don’t need big renovations, just a good plan.",
+      "“The Indoor Cat Activity Planner” helps you build enrichment into your everyday routine: with a territory check for your home, a daily rhythm that fits and plans for each week and month.",
+      "That way, you create variety that suits your cat without having to invent something new every day."
+    ],
+    "inside": [
+      "Territory check: what does your home offer, room by room?",
+      "Your cat’ s enrichment profile and enrichment style",
+      "Daily rhythm with play times and ideas for alone time",
+      "Weekly planner, daily tracker and monthly plan",
+      "Toy rotation",
+      "30 ideas and a quick guide for instant inspiration",
+      "Review: what really works?"
+    ],
+    "pages": 16
+  },
+  "the-diy-enrichment-book-de": {
+    "tagline": "Einfache Beschäftigungsideen zum Selbermachen",
+    "intro": [
+      "Für gute Beschäftigung brauchst du kein teures Spielzeug. Ein Karton, ein paar Papierrollen oder ein altes Handtuch reichen oft schon, um den Alltag deiner Katze spannender zu machen.",
+      "„The DIY Enrichment Book“ sammelt einfache Projekte, die du mit Dingen aus dem Haushalt in wenigen Minuten umsetzen kannst: Suchspiele, Futterpuzzles, Verstecke und mehr.",
+      "Jedes Projekt kommt mit Materialliste, Schritt-für-Schritt-Anleitung und Sicherheitshinweis."
+    ],
+    "inside": [
+      "Sicherheitscheck und Materialliste für alle Projekte",
+      "Such- und Schnüffelspiele, zum Beispiel Muffinblech-Spiel und Handtuch-Schatzrolle",
+      "Knobelauf gaben wie Papierrollen-Pyramide und Schuhkarton-Labyrinth",
+      "Ideen zum Entdecken: Karton-Verstecke, Entdeckerzone, Fensterplatz und Kickkissen",
+      "Platz, um die Reaktion deiner Katze festzuhalten",
+      "DIY-Protokoll und Seite für die Lieblingsbeschäftigungen"
+    ],
+    "pages": 18
+  },
+  "the-diy-enrichment-book-en": {
+    "tagline": "Simple enrichment projects to make at home",
+    "intro": [
+      "Great enrichment doesn’t require expensive toys. A box, a few paper rolls or an old towel are often enough to make your cat’s day more exciting.",
+      "“The DIY Enrichment Book” is a collection of simple projects you can make in minutes with things you already have at home: search games, food puzzles, hiding spots and more.",
+      "Every project comes with a materials list, step-by-step instructions and a safety tip."
+    ],
+    "inside": [
+      "Safety check and materials list for every project",
+      "Search and sniff games like the Muffin Tin Game and the Towel Treasure Roll",
+      "Puzzles like the Paper Roll Pyramid and the Shoebox Maze",
+      "Ideas to explore: box hideouts, an exploration zone, a window spot and a kicker pillow",
+      "Space to record how your cat reacted",
+      "A DIY log and a page for your cat’s favorite activities"
+    ],
+    "pages": 18
+  },
+  "the-printable-care-planner-en": {
+    "tagline": "Trackers and checklists for everyday cat care",
+    "intro": [
+      "Sometimes you don’t need a whole book, just the right template at the right time.",
+      "“The Printable Care Planner” is a set of individual trackers and checklists. Every page works on its own: print only what you need right now, as often as you like.",
+      "Put the weekly plan on the fridge, the food tracker next to the feeding spot and stay on top of everything without even thinking about it."
+    ],
+    "inside": [
+      "Year-at-a-glance overview for all recurring appointments",
+      "Daily routine, weekly plan and monthly checklist",
+      "Food, water and weight trackers",
+      "Grooming and litter box trackers",
+      "Medications and appointments",
+      "Supplies and shopping list",
+      "Expense overview and monthly review"
+    ],
+    "pages": 16
   }
 };

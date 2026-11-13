@@ -13,12 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   }));
   for (const pr of productPairs) {
-    const languages = {
-      de: `${siteUrl}/de/products/${pr.slugs.de}`,
-      en: `${siteUrl}/en/products/${pr.slugs.en}`,
-    };
-    entries.push({ url: languages.de, alternates: { languages } });
-    entries.push({ url: languages.en, alternates: { languages } });
+    const languages: Record<string, string> = {};
+    if (pr.slugs.de) languages.de = `${siteUrl}/de/products/${pr.slugs.de}`;
+    if (pr.slugs.en) languages.en = `${siteUrl}/en/products/${pr.slugs.en}`;
+    const both = Object.keys(languages).length === 2;
+    for (const url of Object.values(languages)) {
+      entries.push(both ? { url, alternates: { languages } } : { url });
+    }
   }
   for (const lang of ["en", "de"] as const) {
     if (lang === "en") {
