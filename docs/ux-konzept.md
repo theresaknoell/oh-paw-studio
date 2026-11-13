@@ -194,11 +194,11 @@ Klicks auf „Bei Gumroad kaufen“ je Produkt · Klickrate von Beitrag zu Produ
 
 ---
 
-## 12. Entscheidungen für die Freigabe
+## 12. Getroffene Entscheidungen
 
-1. **Eigene Produktdetailseiten** auf der Website (Empfehlung: ja; Kauf bleibt bei Gumroad).
-2. **Hauptmenü** mit „Shop ▾“ (Welten), „Bundles“, „Inspiration“, „Über uns“ (Empfehlung) oder flache Menüleiste.
-3. **Produktnamen:** englische Markennamen beibehalten und auf der deutschen Seite einen deutschen Untertitel ergänzen (Empfehlung) oder eindeutschen.
-4. **Lebensphasen-Filter** zusätzlich zu den Welten (Empfehlung: ja, aber erst, wenn die Produktzahl wächst; zunächst als Chips).
+1. **Eigene Produktdetailseiten** auf der Website, Kauf bleibt bei Gumroad. ✔
+2. **Hauptmenü:** Shop ▾ (Welten), Bundles, Inspiration, Über uns. ✔
+3. **Produktnamen:** englische Markennamen bleiben, auf der deutschen Seite kommt ein deutscher Untertitel dazu. ✔
+4. **Lebensphasen-Filter** als einfache Chips zusätzlich zu den Welten. ✔
 
-Nach deiner Freigabe folgt Phase 2: Designsystem (Typografie, Raster, Komponenten, Zustände) – wieder zuerst als Konzept zur Prüfung.
+Offen: Gesamtfreigabe dieses UX-Konzepts. Danach folgt Phase 2: Designsystem (Typografie, Raster, Komponenten, Zustände), wieder zuerst als Konzept zur Prüfung.
