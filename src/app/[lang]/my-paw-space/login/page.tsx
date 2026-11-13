@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pawApp } from "@/data/paw-app";
 import { hasLocale } from "../../dictionaries";
+
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 // Vorbereitete Anmeldeseite. Beim Livegang wird das Formular mit Supabase verbunden (siehe docs/my-paw-space-livegang.md).
 export default async function Login({ params }: PageProps<"/[lang]/my-paw-space/login">) {

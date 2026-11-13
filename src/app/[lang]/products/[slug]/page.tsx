@@ -10,11 +10,23 @@ import { counterpartSlug, pairOf, productPairs } from "@/data/product-pairs";
 import { products, productsFor } from "@/data/products";
 import { siteUrl } from "@/lib/site";
 import { getPost } from "@/lib/blog";
-import { alternates } from "@/lib/meta";
+import { alternates, ogImages } from "@/lib/meta";
 import { getDictionary, hasLocale } from "../../dictionaries";
 
 export function generateStaticParams() {
   return products.map((p) => ({ lang: p.lang, slug: p.slug }));
+}
+
+// Beschreibung für Suchmaschinen: Kurzzeile plus erster Satz der Einleitung, höchstens 155 Zeichen.
+function metaDescription(d: (typeof productDetails)[string] | undefined) {
+  if (!d) return undefined;
+  const first = d.intro[0] ?? "";
+  const full = `${d.tagline}. ${first}`.replace(/\.\.\s/g, ". ");
+  if (full.length <= 155) return full;
+  const cut = full.slice(0, 155);
+  const end = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "));
+  if (end > d.tagline.length + 20) return cut.slice(0, end + 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:]$/, "") + "…";
 }
 
 export async function generateMetadata({
@@ -29,11 +41,11 @@ export async function generateMetadata({
   const own = `/products/${slug}`;
   return {
     title: p.title,
-    description: d?.tagline,
+    description: metaDescription(d),
     alternates: other
       ? alternates(lang, lang === "de" ? { de: own, en: `/products/${other}` } : { en: own, de: `/products/${other}` })
       : { canonical: `/${lang}${own}` },
-    openGraph: { title: p.title, description: d?.tagline, images: p.image ? [{ url: p.image }] : undefined },
+    openGraph: { title: p.title, description: metaDescription(d), images: p.image ? [{ url: p.image }] : ogImages },
   };
 }
 

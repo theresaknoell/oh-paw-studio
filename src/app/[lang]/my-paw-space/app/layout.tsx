@@ -1,7 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pawApp } from "@/data/paw-app";
 import { hasLocale } from "../../dictionaries";
+
+// Demo-Bereich: nicht für Suchmaschinen gedacht
+export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 export default async function PawAppLayout({
   children,

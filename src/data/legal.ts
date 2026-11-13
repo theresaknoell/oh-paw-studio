@@ -114,7 +114,7 @@ export const privacy: Record<Locale, LegalPage> = {
       {
         heading: "3. Cookies und Tracking",
         paragraphs: [
-          "Diese Website setzt derzeit keine Cookies und verwendet keine Analyse- oder Tracking-Werkzeuge.",
+          "Diese Website setzt derzeit keine Cookies und verwendet keine Analyse- oder Tracking-Werkzeuge. Der Bereich My Paw Space nutzt den lokalen Speicher deines Browsers, siehe Abschnitt 8.",
         ],
       },
       {
@@ -144,7 +144,14 @@ export const privacy: Record<Locale, LegalPage> = {
         ],
       },
       {
-        heading: "8. Deine Rechte",
+        heading: "8. My Paw Space (Demo)",
+        paragraphs: [
+          "Der Bereich „My Paw Space“ ist derzeit eine Demo. Alles, was du dort einträgst (z. B. Namen und Fotos deiner Katzen, Erinnerungen, Gewichts- und Gesundheitsangaben zu deiner Katze), wird ausschließlich im lokalen Speicher deines Browsers auf deinem Gerät abgelegt. Es wird nichts an uns oder an Dritte übertragen, und wir haben keinen Zugriff darauf. Dieser lokale Speicher dient allein der von dir gewünschten Funktion und ist kein Cookie. Du kannst die Daten jederzeit unter „Einstellungen“ exportieren oder löschen.",
+          "Wenn du die Daten im Browser löschst oder das Gerät wechselst, sind sie nicht mehr verfügbar. Exportiere sie deshalb regelmäßig. Sobald My Paw Space mit Konten und Datenspeicherung auf unseren Servern erscheint, ergänzen wir diese Erklärung vorab.",
+        ],
+      },
+      {
+        heading: "9. Deine Rechte",
         paragraphs: [
           "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei der Aufsichtsbehörde beschweren. In Österreich ist das die Datenschutzbehörde (Barichgasse 40–42, 1030 Wien, www.dsb.gv.at). Für deine Anliegen an uns wende dich an die oben genannte E-Mail-Adresse.",
         ],
@@ -170,7 +177,7 @@ export const privacy: Record<Locale, LegalPage> = {
       {
         heading: "3. Cookies and tracking",
         paragraphs: [
-          "This website currently sets no cookies and uses no analytics or tracking tools.",
+          "This website currently sets no cookies and uses no analytics or tracking tools. The My Paw Space area uses your browser's local storage, see section 8.",
         ],
       },
       {
@@ -200,7 +207,14 @@ export const privacy: Record<Locale, LegalPage> = {
         ],
       },
       {
-        heading: "8. Your rights",
+        heading: "8. My Paw Space (demo)",
+        paragraphs: [
+          "“My Paw Space” is currently a demo. Everything you enter there (e.g. names and photos of your cats, memories, weight and health details) is stored only in your browser's local storage on your device. Nothing is transmitted to us or to third parties, and we have no access to it. This local storage serves only the function you asked for and is not a cookie. You can export or delete the data at any time under “Settings”.",
+          "If you clear your browser data or switch devices, the data is no longer available. Please export it regularly. Before My Paw Space is offered with accounts and data storage on our servers, we will extend this policy.",
+        ],
+      },
+      {
+        heading: "9. Your rights",
         paragraphs: [
           "You have the right of access, rectification, erasure, restriction of processing, data portability and objection. You may also lodge a complaint with the supervisory authority. In Austria this is the Datenschutzbehörde (Barichgasse 40–42, 1030 Vienna, www.dsb.gv.at). For requests to us, please contact the email address above.",
         ],
