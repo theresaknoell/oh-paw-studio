@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oh Paw Studio – Designsystem (Vorschau)</title>
+<style>
+@font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-garamond.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"DM Sans";src:url(fonts/dm-sans.woff2) format("woff2");font-weight:100 1000;font-display:swap}
+:root{
+  --ivory:#F5F1E9;--sand:#E5DCCF;--sage:#A7AD98;--olive:#747B67;--cocoa:#443C35;--taupe:#B7A99A;
+  --olive-deep:#626A54;
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  --radius:10px;--ease:cubic-bezier(.2,.6,.2,1);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--cocoa);font-family:var(--sans);font-size:17px;line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--s5)}
+section{padding:var(--s8) 0;border-top:1px solid var(--sand)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;margin:0;overflow-wrap:break-word;hyphens:auto}
+.label{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(68,60,53,.75);margin:0 0 var(--s3)}
+.note{font-size:14px;color:rgba(68,60,53,.75);margin-top:var(--s3)}
+h2.sec{font-size:44px;margin-bottom:var(--s5)}
+.grid{display:grid;gap:var(--s5)}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+@media(max-width:800px){.g2,.g3{grid-template-columns:1fr}.g6{grid-template-columns:repeat(2,1fr)}h2.sec{font-size:36px}}
+/* Farben */
+.sw{border-radius:var(--radius);overflow:hidden;border:1px solid var(--sand);background:#fff0}
+.sw i{display:block;height:84px}.sw div{padding:var(--s3);font-size:13px;line-height:1.4}.sw b{display:block;font-size:14px}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 var(--s5);border-radius:999px;border:1.5px solid transparent;font:500 15px var(--sans);text-decoration:none;cursor:pointer;transition:background .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .18s var(--ease)}
+.btn-primary{background:var(--olive-deep);color:var(--ivory)}
+.btn-primary:hover,.btn-primary.is-hover{background:var(--cocoa)}
+.btn-primary:active,.btn-primary.is-active{background:var(--cocoa);transform:translateY(1px)}
+.btn-secondary{background:transparent;color:var(--olive-deep);border-color:var(--olive-deep)}
+.btn-secondary:hover,.btn-secondary.is-hover{background:var(--olive-deep);color:var(--ivory)}
+.btn:focus-visible,.is-focus{outline:2px solid var(--cocoa);outline-offset:3px}
+.btn[disabled]{background:var(--sand);color:rgba(68,60,53,.6);cursor:not-allowed}
+.link{color:var(--olive-deep);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;transition:text-decoration-thickness .15s}
+.link:hover{text-decoration-thickness:2px;color:var(--cocoa)}
+.row{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:center}
+/* Karten */
+.card{background:transparent}
+.ph{aspect-ratio:1/1;border-radius:var(--radius);background:linear-gradient(135deg,var(--sand),#efe7da);display:flex;align-items:center;justify-content:center;color:var(--taupe);font-size:13px;position:relative;overflow:hidden;transition:transform .3s var(--ease)}
+.card:hover .ph{transform:translateY(-2px)}
+.card h3{font-size:26px;margin-top:var(--s4)}
+.card .sub{margin:var(--s2) 0 0;font-size:15px;color:rgba(68,60,53,.8)}
+.card .meta{margin:var(--s2) 0 0;font-size:14px;color:rgba(68,60,53,.75)}
+.price{font-family:var(--serif);font-size:24px}
+.chip{display:inline-block;font-size:13px;padding:2px 12px;border-radius:999px;background:var(--sand);color:var(--cocoa)}
+.bundle{background:rgba(229,220,207,.45);border:1px solid var(--sand);border-radius:var(--radius);padding:var(--s5)}
+.bundle .was{text-decoration:line-through;color:rgba(68,60,53,.75)}
+.save{color:var(--cocoa);font-size:14px;background:rgba(167,173,152,.35);border-radius:999px;padding:2px 10px;display:inline-block}
+/* Formular */
+label{display:block;font-size:14px;margin-bottom:var(--s2)}
+input,select,textarea{width:100%;font:16px var(--sans);color:var(--cocoa);background:var(--ivory);border:1.5px solid var(--taupe);border-radius:8px;padding:12px 14px;min-height:48px;transition:border-color .15s}
+input:hover{border-color:var(--olive-deep)}input:focus{outline:2px solid var(--cocoa);outline-offset:2px;border-color:var(--cocoa)}
+.err{border-color:#8a4b3d}.errmsg{color:#7a3f33;font-size:14px;margin-top:6px}
+/* Navigation */
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:12px var(--s5);background:var(--ivory);border:1px solid var(--sand);border-radius:var(--radius)}
+.hdr{flex-wrap:wrap;gap:var(--s3)}
+.hdr nav{display:flex;flex-wrap:wrap;gap:var(--s4) var(--s5);font-size:15px;align-items:center}
+.hdr nav a{color:var(--cocoa);text-decoration:none;padding:6px 0;border-bottom:1.5px solid transparent;transition:border-color .15s}
+.hdr nav a:hover,.hdr nav a.on{border-color:var(--olive-deep)}
+.logo{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.mobile{width:300px;border:1px solid var(--sand);border-radius:18px;padding:var(--s4);background:var(--ivory)}
+.mobile .top{display:flex;justify-content:space-between;align-items:center}
+.mobile ul{list-style:none;margin:var(--s5) 0 0;padding:0}
+.mobile li{font-family:var(--serif);font-size:30px;padding:10px 0;border-bottom:1px solid var(--sand)}
+.mobile li small{display:block;font:14px var(--sans);color:rgba(68,60,53,.75);padding-top:4px}
+.sticky{margin-top:var(--s4);display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:12px var(--s4);border:1px solid var(--sand);border-radius:14px;background:var(--ivory);box-shadow:0 -6px 20px rgba(68,60,53,.08)}
+footer.ftr{background:var(--sand);border-radius:var(--radius);padding:var(--s6) var(--s5)}
+footer.ftr .grid{grid-template-columns:2fr 1fr 1fr 1fr;font-size:15px}
+@media(max-width:800px){footer.ftr .grid{grid-template-columns:1fr 1fr}}
+footer.ftr a{color:var(--cocoa);display:block;padding:4px 0}
+.ratio{border-radius:var(--radius);background:var(--sand);display:flex;align-items:center;justify-content:center;color:var(--cocoa);font-size:14px;text-align:center}
+.spc{display:flex;align-items:flex-end;gap:var(--s3);flex-wrap:wrap}
+.spc div{background:var(--sage);border-radius:3px;font-size:12px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;color:var(--cocoa)}
+.ty-row{display:grid;grid-template-columns:160px 1fr;gap:var(--s5);align-items:baseline;padding:var(--s4) 0;border-bottom:1px solid var(--sand)}
+@media(max-width:800px){.ty-row{grid-template-columns:1fr;gap:var(--s2)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap" style="padding-top:var(--s8)">
+  <p class="label">Oh Paw Studio · Designsystem · Vorschau zur Freigabe</p>
+  <h1 style="font-size:clamp(40px,8vw,64px)">Ruhig, warm, durchdacht.</h1>
+  <p style="max-width:640px;font-size:19px;margin-top:var(--s4)">Diese Vorschau zeigt die Bausteine der Website in den Markenfarben und Schriften. Es ist ein Entwurf zur Freigabe; auf der Website ist noch nichts davon verändert.</p>
+</header>
+
+<section><div class="wrap">
+  <h2 class="sec">Farben</h2>
+  <div class="grid g6">
+    <div class="sw"><i style="background:#F5F1E9;border-bottom:1px solid #E5DCCF"></i><div><b>Warm Ivory</b>#F5F1E9<br>Grund, Seiten</div></div>
+    <div class="sw"><i style="background:#E5DCCF"></i><div><b>Soft Sand</b>#E5DCCF<br>Flächen, Karten, Footer</div></div>
+    <div class="sw"><i style="background:#A7AD98"></i><div><b>Muted Sage</b>#A7AD98<br>Dezente Akzente, Linien</div></div>
+    <div class="sw"><i style="background:#747B67"></i><div><b>Olive Grey</b>#747B67<br>Dekor, große Elemente</div></div>
+    <div class="sw"><i style="background:#443C35"></i><div><b>Deep Cocoa</b>#443C35<br>Text, Überschriften</div></div>
+    <div class="sw"><i style="background:#B7A99A"></i><div><b>Dusty Taupe</b>#B7A99A<br>Rahmen, Details</div></div>
+  </div>
+  <div class="grid g3" style="margin-top:var(--s5)">
+    <div class="sw"><i style="background:#626A54"></i><div><b>Olive Deep (Ergänzung)</b>#626A54<br>Olive-Variante für Text und Buttons, damit Kleingedrucktes gut lesbar bleibt (5,0:1 auf Ivory)</div></div>
+  </div>
+  <p class="note">Kontrast: Cocoa auf Ivory 9,6:1 · Cocoa auf Sand 8,0:1 · Olive Deep auf Ivory 5,0:1 · Ivory auf Olive Deep 5,0:1. Sage, Taupe und Olive (#747B67) tragen keinen Fließtext (zu wenig Kontrast), nur Flächen, Linien und große Schrift. Olive Deep gehört nicht als Text auf Sand (4,2:1), dort nimmt man Cocoa.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Typografie</h2>
+  <div class="ty-row"><span class="label">Display · Cormorant 500<br>56–72 px / 1,05</span><h1 style="font-size:64px">Das Leben mit Katzen</h1></div>
+  <div class="ty-row"><span class="label">H1 · Cormorant 500<br>44–52 px / 1,1</span><h1 style="font-size:48px">Dein erstes Jahr mit dir</h1></div>
+  <div class="ty-row"><span class="label">H2 · Cormorant 500<br>32–40 px / 1,15</span><h2 style="font-size:36px">Produktwelten</h2></div>
+  <div class="ty-row"><span class="label">H3 · Cormorant 500<br>24–28 px / 1,2</span><h3 style="font-size:26px">The Kitten Care Edition</h3></div>
+  <div class="ty-row"><span class="label">Lead · Cormorant 400<br>22–26 px / 1,4</span><p style="font-family:var(--serif);font-size:24px;line-height:1.4;margin:0;color:var(--olive-deep)">Durchdachte Kreationen für die kleinen und großen Momente.</p></div>
+  <div class="ty-row"><span class="label">Fließtext · DM Sans 400<br>17–18 px / 1,65</span><p style="margin:0;max-width:620px">Für die ersten Tage und Wochen mit deiner Katze: Checklisten, Übersichten und Raum für eure ersten Male. Zeilenlänge maximal etwa 65 Zeichen.</p></div>
+  <div class="ty-row"><span class="label">UI / Buttons · DM Sans 500<br>14–15 px</span><span style="font-weight:500;font-size:15px">Bei Gumroad kaufen · Mehr erfahren</span></div>
+  <div class="ty-row"><span class="label">Label · DM Sans 500<br>13 px · Versalien · 0,08 em</span><span class="label" style="margin:0">Der Start · Neu</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Abstände, Raster, Ecken</h2>
+  <div class="spc" style="margin-bottom:var(--s5)">
+    <div style="width:30px;height:4px">4</div><div style="width:30px;height:8px">8</div><div style="width:30px;height:12px">12</div><div style="width:30px;height:16px">16</div><div style="width:30px;height:24px">24</div><div style="width:30px;height:32px">32</div><div style="width:30px;height:48px">48</div><div style="width:30px;height:64px">64</div><div style="width:30px;height:96px">96</div>
+  </div>
+  <p>Basis 4 px. Abschnitte auf Mobil 48 px, Desktop 96 px Abstand. Inhaltsbreite 1080 px, Lesetexte 680 px, seitlicher Rand 16 px (Mobil), 24 px (Tablet), 32 px (Desktop). Raster 4 Spalten mobil, 8 Tablet, 12 Desktop mit 24 px Abstand. Ecken: 10 px für Karten und Bilder, 8 px Formulare, Pillen für Buttons.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Buttons und Links</h2>
+  <p class="label">Primär (eine pro Ansicht)</p>
+  <div class="row"><a class="btn btn-primary">Standard</a><a class="btn btn-primary is-hover">Hover</a><a class="btn btn-primary is-active">Gedrückt</a><a class="btn btn-primary is-focus">Fokus</a><button class="btn btn-primary" disabled>Deaktiviert</button></div>
+  <p class="label" style="margin-top:var(--s5)">Sekundär</p>
+  <div class="row"><a class="btn btn-secondary">Standard</a><a class="btn btn-secondary is-hover">Hover</a><a class="btn btn-secondary is-focus">Fokus</a></div>
+  <p class="label" style="margin-top:var(--s5)">Textlink</p>
+  <p style="margin:0">Mehr dazu in unserer <a class="link" href="#">Produktwelt Alltag &amp; Pflege</a>.</p>
+  <p class="note">Hover: ruhiger Farbwechsel in 180 ms, keine Sprünge. Fokus: 2 px Cocoa-Ring mit Abstand. Mindesthöhe 44 px.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Produktkarte und Bundle</h2>
+  <div class="grid g3">
+    <article class="card"><div class="ph">Bild 1:1</div><p class="label" style="margin-top:var(--s4);margin-bottom:0">Der Start</p><h3 style="margin-top:6px">The Kitten Care Edition</h3><p class="sub">Fürsorge und Begleitung im ersten Lebensjahr</p><p class="meta">PDF · 22 Seiten · Digital und Druck</p><p style="margin:var(--s3) 0 0" class="price">9,90 €</p></article>
+    <article class="card"><div class="ph">Bild 1:1</div><p class="label" style="margin-top:var(--s4);margin-bottom:0">Erinnerungen</p><h3 style="margin-top:6px">Mein erstes Jahr mit dir</h3><p class="sub">Ein liebevolles Erinnerungsbuch für das erste Jahr</p><p class="meta">PDF · 73 Seiten · Digital und Druck</p><p style="margin:var(--s3) 0 0" class="price">19,90 €</p></article>
+    <div class="bundle"><span class="chip">Bundle</span><h3 style="font-size:30px;margin-top:var(--s3)">Kitten-Jahr</h3><ul style="padding-left:18px;margin:var(--s3) 0;font-size:15px"><li>Kitten Care Edition</li><li>Veterinary Records Pack</li><li>Erinnerungsbuch</li></ul><p style="margin:0"><span class="price">29,90 €</span> <span class="was">37,70 €</span></p><p style="margin:var(--s2) 0 var(--s4)"><span class="save">Du sparst 7,80 €</span></p><a class="btn btn-primary">Bei Gumroad kaufen</a></div>
+  </div>
+  <p class="note">Karten: kein Rahmen, kein Schatten. Das Bild trägt die Karte; Hover hebt es 2 px an. Bundles liegen auf einer Sand-Fläche, damit sie sich ruhig abheben. Auf Mobil einspaltig.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Formulare</h2>
+  <div class="grid g2">
+    <div><label for="a">E-Mail-Adresse</label><input id="a" placeholder="du@beispiel.de"><p class="note">Normal · Hover und Fokus verstärken den Rand</p></div>
+    <div><label for="b">E-Mail-Adresse</label><input id="b" class="err" value="du@beispiel"><p class="errmsg">Bitte gib eine gültige E-Mail-Adresse ein.</p></div>
+  </div>
+  <p class="note">Beschriftung immer über dem Feld, nie nur als Platzhalter. Fehlertexte sachlich und freundlich. Einwilligungstexte (Newsletter) gut lesbar unter dem Feld.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Navigation und Footer</h2>
+  <p class="label">Desktop</p>
+  <div class="hdr"><img class="logo" src="logo.webp" alt="Oh Paw Studio"><nav><a class="on" href="#">Shop ▾</a><a href="#">Bundles</a><a href="#">Inspiration</a><a href="#">Über uns</a><a class="link" href="#" style="padding:0;border:0">English</a></nav></div>
+  <div class="grid g2" style="margin-top:var(--s6);align-items:start">
+    <div><p class="label">Mobil: Menü geöffnet</p>
+      <div class="mobile"><div class="top"><img class="logo" src="logo.webp" alt="" style="width:40px;height:40px"><span style="font-size:15px">English &nbsp;✕</span></div>
+      <ul><li>Shop<small>Start · Alltag &amp; Pflege · Zuhause · Erinnerungen</small></li><li>Bundles</li><li>Inspiration</li><li>Über uns</li></ul></div></div>
+    <div><p class="label">Mobil: Kaufleiste am Produkt</p>
+      <div class="mobile" style="padding:var(--s4)"><div class="ph" style="aspect-ratio:4/3">Produktbild</div><div class="sticky"><span class="price">9,90 €</span><a class="btn btn-primary" style="padding:0 var(--s4)">Bei Gumroad kaufen</a></div></div></div>
+  </div>
+  <p class="label" style="margin-top:var(--s6)">Footer</p>
+  <footer class="ftr"><div class="grid"><div><h3 style="font-size:26px">Oh Paw Studio</h3><p style="margin:var(--s2) 0 0;font-family:var(--serif);font-size:19px">Thoughtfully made for life with cats.</p></div><div><b>Shop</b><a href="#">Welten</a><a href="#">Bundles</a></div><div><b>Entdecken</b><a href="#">Inspiration</a><a href="#">Über uns</a></div><div><b>Rechtliches</b><a href="#">Impressum</a><a href="#">Datenschutz</a></div></div></footer>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Bildsprache und Formate</h2>
+  <div class="grid g3">
+    <div><div class="ratio" style="aspect-ratio:1/1">Produkt 1:1</div><p class="note">Produktkarten, Gumroad-Cover</p></div>
+    <div><div class="ratio" style="aspect-ratio:3/2">Blog 3:2</div><p class="note">Beitragsbilder, Teaser</p></div>
+    <div><div class="ratio" style="aspect-ratio:16/9">Banner 16:9</div><p class="note">Startseite, Welten, Social</p></div>
+  </div>
+  <p style="margin-top:var(--s5)">Natürliches Licht, warme neutrale Töne, viel Weißraum. Echte Katzen in ruhigen, alltäglichen Momenten statt gestellter Posen; Produkte als sauberes Mockup auf Ivory oder Sand, nie überladen. Keine Cartoons, keine Clip-Art, keine harten Filter. Das Logo mit dem Kätzchen bleibt Markenanker, es wird nicht verfremdet. Alle Bilder mit aussagekräftigem Alternativtext.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="sec">Responsive Verhalten</h2>
+  <div class="grid g3">
+    <div><b>Smartphone (bis 639 px)</b><p class="note" style="margin-top:6px">1 Spalte, Seitenrand 16 px, Vollbild-Menü, Kaufleiste unten, Welten als wischbare Leiste, Akkordeons für Details.</p></div>
+    <div><b>Tablet (640–1023 px)</b><p class="note" style="margin-top:6px">2 Spalten bei Karten, Seitenrand 24 px, Menü als Overlay, Produktbild über dem Text.</p></div>
+    <div><b>Desktop (ab 1024 px)</b><p class="note" style="margin-top:6px">3 Spalten bei Karten, Untermenü bei „Shop“, Produktdetail zweispaltig (Bild links, Text rechts, Kaufbereich haftet beim Scrollen).</p></div>
+  </div>
+</div></section>
+<div class="wrap" style="padding-bottom:var(--s9)"></div>
+</body></html>
