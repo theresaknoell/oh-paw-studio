@@ -2,6 +2,7 @@
 title: "Bringing a kitten home – your checklist for the first days"
 date: 2026-11-12
 excerpt: "What to prepare before the move-in and what to keep in mind during the first days."
+topic: "start"
 pair: "einzug-checkliste-kitten"
 ---
 
@@ -21,4 +22,4 @@ Give the kitten time to settle in. Show it food, water and the litter box, and w
 
 ## Everything in one place
 
-If you keep supplies, appointments and observations together, you won't have to search later. You can find a ready-made template in our [product worlds](/en/products#start).
+If you keep supplies, appointments and observations together, you won't have to search later. You can find a ready-made template in our [product worlds](/en/products?world=start).

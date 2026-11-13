@@ -2,6 +2,7 @@
 title: "Rückzugsorte für Katzen – ein ruhiges Zuhause für euch beide"
 date: 2026-11-12
 excerpt: "Wie du Plätze schaffst, an denen sich deine Katze sicher fühlt, ohne dass dein Zuhause zum Kratzbaumlager wird."
+topic: "home"
 pair: "quiet-retreats-for-cats"
 ---
 
@@ -21,4 +22,4 @@ Gehe in Gedanken durch jedes Zimmer: Wo ist es ruhig? Wo kann etwas gefährlich 
 
 ## Hilfreiche Vorlagen
 
-Wer den Überblick behalten möchte, findet in der [Welt Zuhause & Beschäftigung](/de/products#home) Checklisten Raum für Raum.
+Wer den Überblick behalten möchte, findet in der [Welt Zuhause & Beschäftigung](/de/products?world=home) Checklisten Raum für Raum.

@@ -2,6 +2,7 @@
 title: "Mehrere Katzen unter einem Dach – so behältst du den Überblick"
 date: 2026-11-12
 excerpt: "Unterschiedliche Charaktere, unterschiedliches Futter, eine gemeinsame Routine: Ideen für den Mehrkatzenalltag."
+topic: "care"
 pair: "organising-multi-cat-household"
 ---
 
@@ -21,6 +22,6 @@ Eine einfache Übersicht mit Futtermengen und Besonderheiten verhindert Verwechs
 
 ## Neue Katze willkommen heißen
 
-Gib allen Beteiligten Zeit und gehe schrittweise vor. Beobachte, wie sich die Katzen verstehen. Hilfreiche Vorlagen findest du in der [Welt Alltag & Pflege](/de/products#care).
+Gib allen Beteiligten Zeit und gehe schrittweise vor. Beobachte, wie sich die Katzen verstehen. Hilfreiche Vorlagen findest du in der [Welt Alltag & Pflege](/de/products?world=care).
 
 Bei Fragen zu Verhalten oder Gesundheit hilft deine Tierarztpraxis weiter.

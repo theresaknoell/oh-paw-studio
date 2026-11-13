@@ -2,6 +2,7 @@
 title: "Keeping an indoor cat entertained – simple ideas for more variety"
 date: 2026-11-12
 excerpt: "How to bring hunting, sniffing and thinking challenges into everyday life with simple means."
+topic: "enrichment"
 pair: "wohnungskatze-beschaeftigen"
 ---
 
@@ -21,4 +22,4 @@ Instead of simply filling the bowl, you can offer part of the food in a food puz
 
 ## Notice what your cat enjoys
 
-Every cat has its own preferences. Note which games your cat likes best and repeat them. You'll find more inspiration in our [Home & enrichment world](/en/products#home).
+Every cat has its own preferences. Note which games your cat likes best and repeat them. You'll find more inspiration in our [Home & enrichment world](/en/products?world=home).

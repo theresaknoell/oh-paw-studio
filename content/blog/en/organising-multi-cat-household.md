@@ -2,6 +2,7 @@
 title: "Several cats under one roof – how to keep track"
 date: 2026-11-12
 excerpt: "Different personalities, different food, one shared routine: ideas for everyday life with several cats."
+topic: "care"
 pair: "mehrkatzenhaushalt-organisieren"
 ---
 
@@ -21,6 +22,6 @@ A simple overview with food amounts and special notes prevents mix-ups.
 
 ## Welcoming a new cat
 
-Give everyone time and go step by step. Watch how your cats get along. You'll find helpful templates in the [Everyday care world](/en/products#care).
+Give everyone time and go step by step. Watch how your cats get along. You'll find helpful templates in the [Everyday care world](/en/products?world=care).
 
 For questions about behaviour or health, your vet can help.

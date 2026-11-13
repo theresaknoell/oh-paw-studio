@@ -2,6 +2,7 @@
 title: "Wohnungskatze beschäftigen – einfache Ideen für mehr Abwechslung"
 date: 2026-11-12
 excerpt: "Wie du mit einfachen Mitteln Jagd-, Schnüffel- und Denkaufgaben in den Alltag bringst."
+topic: "enrichment"
 pair: "keeping-indoor-cat-entertained"
 ---
 
@@ -21,4 +22,4 @@ Statt den Napf einfach zu füllen, kannst du einen Teil des Futters in einem Fut
 
 ## Beobachten, was gefällt
 
-Jede Katze hat eigene Vorlieben. Notiere dir, welche Spiele ihr am besten gefallen, und wiederhole sie. Weitere Anregungen findest du in unserer [Welt Zuhause & Beschäftigung](/de/products#home).
+Jede Katze hat eigene Vorlieben. Notiere dir, welche Spiele ihr am besten gefallen, und wiederhole sie. Weitere Anregungen findest du in unserer [Welt Zuhause & Beschäftigung](/de/products?world=home).

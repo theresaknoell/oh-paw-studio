@@ -3,11 +3,16 @@ import path from "node:path";
 import matter from "gray-matter";
 import type { Locale } from "@/app/[lang]/dictionaries";
 
+export const topics = ["start", "memories", "enrichment", "care", "home"] as const;
+export type Topic = (typeof topics)[number];
+
 export type Post = {
   slug: string;
   title: string;
   date: string;
   excerpt: string;
+  topic: Topic;
+  readingMinutes: number;
   pair: string | null;
   image: string | null;
   content: string;
@@ -30,6 +35,8 @@ export function getPosts(lang: Locale): Post[] {
         // gray-matter liest Datumsangaben als Date-Objekt
         date: new Date(data.date).toISOString().slice(0, 10),
         excerpt: String(data.excerpt ?? ""),
+        topic: (topics as readonly string[]).includes(String(data.topic)) ? (String(data.topic) as Topic) : "start",
+        readingMinutes: Math.max(1, Math.round(content.split(/\s+/).filter(Boolean).length / 200)),
         pair: data.pair ? String(data.pair) : null,
         image: data.image ? String(data.image) : null,
         content,

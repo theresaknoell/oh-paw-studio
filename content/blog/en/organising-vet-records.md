@@ -2,6 +2,7 @@
 title: "Organising vet records – how to keep track"
 date: 2026-11-12
 excerpt: "Keep vaccinations, treatments and appointments clearly recorded so you have everything at hand at the next visit."
+topic: "care"
 pair: "tierarztunterlagen-ordnen"
 ---
 
@@ -21,6 +22,6 @@ Write down what you noticed, and collect your questions beforehand. After the ap
 
 ## Digital or on paper
 
-Both work. What matters is having a fixed place. You'll find suitable templates in the [Everyday care world](/en/products#care).
+Both work. What matters is having a fixed place. You'll find suitable templates in the [Everyday care world](/en/products?world=care).
 
 These tips do not replace veterinary advice.

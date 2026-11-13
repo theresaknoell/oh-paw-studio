@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { ReactNode } from "react";
+import FilterChip from "@/components/FilterChip";
 import ProductCard from "@/components/ProductCard";
 
 export type ShopItem = {
@@ -37,21 +38,6 @@ type Props = {
   bundleBand: ReactNode;
 };
 
-function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: ReactNode }) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={`min-h-10 rounded-full px-4 text-sm transition-colors ${
-        active ? "bg-olive-deep text-ivory" : "bg-sand text-cocoa hover:bg-taupe/50"
-      }`}
-    >
-      {children}
-    </button>
-  );
-}
-
 function ShopView({
   world,
   phase,
@@ -78,18 +64,18 @@ function ShopView({
         <div>
           <p className="mb-2 text-[13px] font-medium uppercase tracking-[0.08em] text-cocoa/75">{t.world}</p>
           <div className="flex flex-wrap gap-2">
-            <Chip active={!world} onClick={() => setFilter("world", null)}>{t.all}</Chip>
+            <FilterChip active={!world} onClick={() => setFilter("world", null)}>{t.all}</FilterChip>
             {worlds.map((w) => (
-              <Chip key={w.id} active={world === w.id} onClick={() => setFilter("world", w.id)}>{w.title}</Chip>
+              <FilterChip key={w.id} active={world === w.id} onClick={() => setFilter("world", w.id)}>{w.title}</FilterChip>
             ))}
           </div>
         </div>
         <div>
           <p className="mb-2 text-[13px] font-medium uppercase tracking-[0.08em] text-cocoa/75">{t.phase}</p>
           <div className="flex flex-wrap gap-2">
-            <Chip active={!phase} onClick={() => setFilter("phase", null)}>{t.all}</Chip>
+            <FilterChip active={!phase} onClick={() => setFilter("phase", null)}>{t.all}</FilterChip>
             {phases.map((p) => (
-              <Chip key={p.id} active={phase === p.id} onClick={() => setFilter("phase", p.id)}>{p.label}</Chip>
+              <FilterChip key={p.id} active={phase === p.id} onClick={() => setFilter("phase", p.id)}>{p.label}</FilterChip>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@
 title: "Capturing small cat moments – five ideas"
 date: 2026-11-12
 excerpt: "How to notice and keep the small things in everyday life with your cat."
+topic: "memories"
 pair: "katzenmomente-festhalten"
 ---
 

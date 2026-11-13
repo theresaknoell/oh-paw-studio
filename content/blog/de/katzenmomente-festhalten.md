@@ -2,6 +2,7 @@
 title: "Kleine Katzenmomente festhalten – fünf Ideen"
 date: 2026-11-12
 excerpt: "Wie du die kleinen Dinge im Alltag mit deiner Katze bewusst wahrnimmst und bewahrst."
+topic: "memories"
 pair: "capturing-cat-moments"
 ---
 

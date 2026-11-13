@@ -2,6 +2,7 @@
 title: "Tierarztunterlagen ordnen – so behältst du den Überblick"
 date: 2026-11-12
 excerpt: "Impfungen, Behandlungen und Termine übersichtlich festhalten, damit du beim nächsten Besuch alles parat hast."
+topic: "care"
 pair: "organising-vet-records"
 ---
 
@@ -21,6 +22,6 @@ Schreibe dir auf, was dir aufgefallen ist, und stelle deine Fragen vorher zusamm
 
 ## Digital oder auf Papier
 
-Beides funktioniert. Entscheidend ist, dass du einen festen Platz hast. Passende Vorlagen findest du in der [Welt Alltag & Pflege](/de/products#care).
+Beides funktioniert. Entscheidend ist, dass du einen festen Platz hast. Passende Vorlagen findest du in der [Welt Alltag & Pflege](/de/products?world=care).
 
 Diese Hinweise ersetzen keine tierärztliche Beratung.

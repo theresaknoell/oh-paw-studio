@@ -82,7 +82,23 @@
   },
   "blog": {
     "title": "Inspiration",
-    "empty": "Bald gibt es hier Inspiration und Tipps für das Leben mit Katzen."
+    "empty": "Bald gibt es hier Inspiration und Tipps für das Leben mit Katzen.",
+    "all": "Alle",
+    "topicLabel": "Thema",
+    "topics": {
+      "start": "Der Start",
+      "memories": "Erinnerungen",
+      "enrichment": "Beschäftigung",
+      "care": "Alltag & Pflege",
+      "home": "Zuhause"
+    },
+    "readingTime": "Min. Lesezeit",
+    "related": "Weiterlesen",
+    "toProduct": "Zum Produkt",
+    "lead": "Ideen und Hilfe für das Leben mit Katzen",
+    "count": "Beiträge",
+    "featuredLabel": "Neu",
+    "none": "Zu diesem Thema gibt es noch keine Beiträge."
   },
   "footer": {
     "imprint": "Impressum",

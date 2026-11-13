@@ -82,7 +82,23 @@
   },
   "blog": {
     "title": "Inspiration",
-    "empty": "Inspiration and tips for life with cats are coming soon."
+    "empty": "Inspiration and tips for life with cats are coming soon.",
+    "all": "All",
+    "topicLabel": "Topic",
+    "topics": {
+      "start": "Getting started",
+      "memories": "Memories",
+      "enrichment": "Enrichment",
+      "care": "Everyday care",
+      "home": "Home"
+    },
+    "readingTime": "min read",
+    "related": "Keep reading",
+    "toProduct": "View product",
+    "lead": "Ideas and help for life with cats",
+    "count": "articles",
+    "featuredLabel": "New",
+    "none": "There are no articles on this topic yet."
   },
   "footer": {
     "imprint": "Legal Notice",

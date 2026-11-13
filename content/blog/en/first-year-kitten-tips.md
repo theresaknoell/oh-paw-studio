@@ -2,6 +2,7 @@
 title: "The first year with a kitten – five ideas for a calm start"
 date: 2026-11-12
 excerpt: "Five simple thoughts that can make the first weeks easier for you and your kitten."
+topic: "start"
 pair: "erstes-jahr-kitten-tipps"
 ---
 

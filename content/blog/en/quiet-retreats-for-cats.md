@@ -2,6 +2,7 @@
 title: "Quiet retreats for cats – a calm home for you both"
 date: 2026-11-12
 excerpt: "How to create places where your cat feels safe without turning your home into a cat tree warehouse."
+topic: "home"
 pair: "rueckzugsorte-fuer-katzen"
 ---
 
@@ -21,4 +22,4 @@ Go through each room in your mind: Where is it quiet? Where could something beco
 
 ## Helpful templates
 
-If you want to keep track, you'll find room-by-room checklists in the [Home & enrichment world](/en/products#home).
+If you want to keep track, you'll find room-by-room checklists in the [Home & enrichment world](/en/products?world=home).

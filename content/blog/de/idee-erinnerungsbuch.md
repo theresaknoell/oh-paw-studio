@@ -2,6 +2,7 @@
 title: "Warum ich ein Erinnerungsbuch für das erste Jahr mit einem Kitten gestaltet habe"
 date: 2026-11-12
 excerpt: "Wie aus einer spontanen Idee ein Erinnerungsbuch und schließlich Oh Paw Studio wurde."
+topic: "memories"
 pair: "idea-behind-memory-book"
 ---
 

@@ -2,6 +2,7 @@
 title: "Einzug eines Kittens – die Checkliste für die ersten Tage"
 date: 2026-11-12
 excerpt: "Was vor dem Einzug erledigt sein sollte und woran du in den ersten Tagen denken kannst."
+topic: "start"
 pair: "kitten-move-in-checklist"
 ---
 
@@ -21,4 +22,4 @@ Lass dem Kitten Zeit anzukommen. Zeige ihm Futter, Wasser und Toilette, und beob
 
 ## Alles an einem Ort
 
-Wer Ausstattung, Termine und Beobachtungen an einem Platz sammelt, muss später nicht suchen. Eine fertige Vorlage dafür findest du in unseren [Produktwelten](/de/products#start).
+Wer Ausstattung, Termine und Beobachtungen an einem Platz sammelt, muss später nicht suchen. Eine fertige Vorlage dafür findest du in unseren [Produktwelten](/de/products?world=start).
