@@ -90,7 +90,7 @@ Bestehende Bausteine bleiben: Tailwind-Farbwerte (`ivory`, `sand`, `sage`, `oliv
 Gumroad-Links, Blog, My Paw Space. Neu: Komponenten Button, Karte, Navigation, Footer und Formularfelder als wiederverwendbare Bausteine.
 Reihenfolge laut Phase 3 und 4: Seite für Seite, jede Änderung getestet.
 
-## 13. Offene Entscheidungen
-1. Olive Deep (#626A54) als offizielle Ergänzung der Markenpalette? (Empfehlung: ja, für Text und Buttons.)
-2. Karten ohne Rahmen und Schatten wie in der Vorschau, oder mit feinem Sand-Rahmen? (Empfehlung: ohne.)
-3. Buttons als Pille (rund, wie heute) oder dezent abgerundet? (Empfehlung: Pille.)
+## 13. Getroffene Entscheidungen (freigegeben)
+1. Olive Deep (#626A54) ist offizielle Ergänzung der Markenpalette für Text und Buttons. ✔
+2. Produktkarten ohne Rahmen und Schatten. ✔
+3. Buttons als Pille. ✔
