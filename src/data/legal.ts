@@ -130,13 +130,21 @@ export const privacy: Record<Locale, LegalPage> = {
         ],
       },
       {
-        heading: "6. Links zu Gumroad",
+        heading: "6. Newsletter",
+        paragraphs: [
+          "Wenn du dich für unseren Newsletter anmeldest, verarbeiten wir deine E-Mail-Adresse, um dir den Newsletter zu senden. Die Anmeldung erfolgt mit deiner ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) im Double-Opt-in-Verfahren: Du bekommst eine E-Mail und musst deine Anmeldung bestätigen. Zum Nachweis speichern wir Zeitpunkt der Anmeldung und Bestätigung sowie die dabei verwendete IP-Adresse.",
+          "Der Versand läuft über MailerLite (MailerLite Limited, Irland). [Anschrift und Hinweise zu Datenübermittlungen in Drittländer laut MailerLite-Datenschutzerklärung vor dem Livegang prüfen und ergänzen.] Beim Absenden des Anmeldeformulars wird deine E-Mail-Adresse an MailerLite übertragen. Vorher werden keine Daten an MailerLite oder Dritte übertragen; wir setzen auf der Website kein reCAPTCHA und keine Cookies ein.",
+          "Die Newsletter können Messfunktionen enthalten, z. B. ob und wie oft eine E-Mail geöffnet oder ein Link angeklickt wurde. [Bitte prüfen, ob diese Messung in MailerLite aktiviert ist, und den Text anpassen.] Du kannst den Newsletter jederzeit über den Abmeldelink in jeder E-Mail abbestellen oder dich per E-Mail an uns wenden. Deine Daten löschen wir nach der Abmeldung, soweit keine gesetzlichen Aufbewahrungspflichten bestehen.",
+        ],
+      },
+      {
+        heading: "7. Links zu Gumroad",
         paragraphs: [
           "Unsere Produkte verkaufen wir über Gumroad. Wenn du auf einen Kaufen-Link klickst, verlässt du diese Website. Für die Datenverarbeitung auf Gumroad ist allein Gumroad verantwortlich; bitte beachte deren Datenschutzerklärung.",
         ],
       },
       {
-        heading: "7. Deine Rechte",
+        heading: "8. Deine Rechte",
         paragraphs: [
           "Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem kannst du dich bei der Aufsichtsbehörde beschweren. In Österreich ist das die Datenschutzbehörde (Barichgasse 40–42, 1030 Wien, www.dsb.gv.at). Für deine Anliegen an uns wende dich an die oben genannte E-Mail-Adresse.",
         ],
@@ -178,13 +186,21 @@ export const privacy: Record<Locale, LegalPage> = {
         ],
       },
       {
-        heading: "6. Links to Gumroad",
+        heading: "6. Newsletter",
+        paragraphs: [
+          "If you subscribe to our newsletter, we process your email address to send you the newsletter. Subscription is based on your explicit consent (Art. 6(1)(a) GDPR) using a double opt-in procedure: you receive an email and must confirm your subscription. As proof, we store the time of subscription and confirmation and the IP address used.",
+          "The newsletter is sent through MailerLite (MailerLite Limited, Ireland). [Check and add the address and information on transfers to third countries from the MailerLite privacy policy before launch.] When you submit the sign-up form, your email address is transmitted to MailerLite. Before that, no data is sent to MailerLite or third parties; we use no reCAPTCHA and no cookies on the website.",
+          "Newsletters may contain tracking functions, e.g. whether and how often an email was opened or a link clicked. [Please check whether this measurement is enabled in MailerLite and adjust the text.] You can unsubscribe at any time using the link in every email or by contacting us by email. We delete your data after you unsubscribe, unless statutory retention duties apply.",
+        ],
+      },
+      {
+        heading: "7. Links to Gumroad",
         paragraphs: [
           "We sell our products through Gumroad. When you click a buy link, you leave this website. Gumroad alone is responsible for data processing on its platform; please see its privacy policy.",
         ],
       },
       {
-        heading: "7. Your rights",
+        heading: "8. Your rights",
         paragraphs: [
           "You have the right of access, rectification, erasure, restriction of processing, data portability and objection. You may also lodge a complaint with the supervisory authority. In Austria this is the Datenschutzbehörde (Barichgasse 40–42, 1030 Vienna, www.dsb.gv.at). For requests to us, please contact the email address above.",
         ],

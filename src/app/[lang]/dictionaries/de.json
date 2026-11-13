@@ -189,5 +189,20 @@
     "bundleAll": "Alle Bundles ansehen",
     "filters": "Filter",
     "results": "Ergebnisse"
+  },
+  "newsletter": {
+    "title": "Bleib in Verbindung",
+    "text": "Neue Ideen, hilfreiche Beiträge und Neuigkeiten von Oh Paw Studio, ruhig und nicht zu oft, direkt in dein Postfach.",
+    "email": "E-Mail-Adresse",
+    "button": "Anmelden",
+    "sending": "Wird gesendet …",
+    "consentBefore": "Ich möchte den Newsletter von Oh Paw Studio erhalten und kann mich jederzeit abmelden. Mehr dazu in der ",
+    "consentLink": "Datenschutzerklärung",
+    "consentAfter": ".",
+    "note": "Du bekommst eine E-Mail, mit der du deine Anmeldung bestätigst.",
+    "success": "Fast geschafft! Bitte schau in dein Postfach und bestätige deine Anmeldung über den Link in der E-Mail.",
+    "errorEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "errorConsent": "Bitte bestätige, dass du den Newsletter erhalten möchtest.",
+    "errorNetwork": "Das hat leider nicht geklappt. Bitte versuche es später noch einmal."
   }
 }

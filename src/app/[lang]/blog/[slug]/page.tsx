@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import PhotoSlot from "@/components/PhotoSlot";
 import PostCard from "@/components/PostCard";
+import { newsletter } from "@/data/newsletter";
 import { productDetails } from "@/data/product-details";
 import { productPairs } from "@/data/product-pairs";
 import { productsFor } from "@/data/products";
@@ -100,6 +102,16 @@ export default async function Post({ params }: PageProps<"/[lang]/blog/[slug]">)
           {second && <div className={prose}><Markdown>{second}</Markdown></div>}
         </div>
       </article>
+
+      {newsletter.enabled && (
+        <section className="mx-auto mt-16 max-w-[680px] rounded-[10px] bg-sand/50 p-6 md:p-8">
+          <h2 className="text-3xl">{dict.newsletter.title}</h2>
+          <p className="mt-2 mb-5 text-cocoa/90">{dict.newsletter.text}</p>
+          <div className="relative">
+            <NewsletterSignup lang={lang} action={newsletter.action} t={dict.newsletter} />
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="mt-20 border-t border-sand pt-12">

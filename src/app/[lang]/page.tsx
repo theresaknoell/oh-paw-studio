@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import PhotoSlot from "@/components/PhotoSlot";
 import ProductCard from "@/components/ProductCard";
 import { bundles, bundleView } from "@/data/bundles";
 import { productDetails } from "@/data/product-details";
 import { productPairs } from "@/data/product-pairs";
 import { productsFor, worlds } from "@/data/products";
+import { newsletter } from "@/data/newsletter";
 import { siteImages } from "@/data/site-images";
 import { getPosts } from "@/lib/blog";
 import { getDictionary, hasLocale } from "./dictionaries";
@@ -160,6 +162,21 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <Link href={`${base}/blog`} className="mt-10 inline-block text-olive-deep underline underline-offset-4 hover:text-cocoa">
               {h.allPosts} →
             </Link>
+          </div>
+        </section>
+      )}
+
+      {/* 8 Newsletter */}
+      {newsletter.enabled && (
+        <section className="bg-sand/60 py-16">
+          <div className={`${wrap} grid items-center gap-8 md:grid-cols-2 md:gap-14`}>
+            <div>
+              <h2 className="text-4xl">{dict.newsletter.title}</h2>
+              <p className="mt-3 text-lg leading-7 text-cocoa/90">{dict.newsletter.text}</p>
+            </div>
+            <div className="relative">
+              <NewsletterSignup lang={lang} action={newsletter.action} t={dict.newsletter} />
+            </div>
           </div>
         </section>
       )}
