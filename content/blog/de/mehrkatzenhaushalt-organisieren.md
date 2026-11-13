@@ -2,6 +2,7 @@
 title: "Mehrere Katzen unter einem Dach – so behältst du den Überblick"
 date: 2026-11-12
 excerpt: "Unterschiedliche Charaktere, unterschiedliches Futter, eine gemeinsame Routine: Ideen für den Mehrkatzenalltag."
+pair: "organising-multi-cat-household"
 ---
 
 Mehrere Katzen bedeuten doppelt so viel Leben: verschiedene Persönlichkeiten, eigene Vorlieben, unterschiedliches Futter und eine gemeinsame Routine, die gut organisiert sein will.

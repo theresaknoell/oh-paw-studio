@@ -2,6 +2,7 @@
 title: "Bringing a kitten home – your checklist for the first days"
 date: 2026-11-12
 excerpt: "What to prepare before the move-in and what to keep in mind during the first days."
+pair: "einzug-checkliste-kitten"
 ---
 
 A kitten moves in, and suddenly everything is full of questions. A simple list helps you keep track. It does not replace veterinary advice; for any health questions, please contact your vet.

@@ -5,7 +5,9 @@ import "../globals.css";
 import { isLive, siteUrl } from "@/lib/site";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { productSlugMap } from "@/data/product-pairs";
 import { worlds } from "@/data/products";
+import { postSlugMap } from "@/lib/blog";
 import { getDictionary, hasLocale, locales } from "./dictionaries";
 
 const cormorant = Cormorant_Garamond({
@@ -60,6 +62,7 @@ export default async function RootLayout({
         <SiteHeader
           lang={lang}
           nav={{ ...dict.nav }}
+          slugMap={{ products: productSlugMap, posts: postSlugMap() }}
           worlds={worlds.map((w) => ({ id: w, ...dict.home.worlds[w] }))}
         />
         <div className="flex flex-1 flex-col">{children}</div>

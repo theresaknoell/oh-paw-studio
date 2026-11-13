@@ -8,6 +8,7 @@ export type Post = {
   title: string;
   date: string;
   excerpt: string;
+  pair: string | null;
   content: string;
 };
 
@@ -28,6 +29,7 @@ export function getPosts(lang: Locale): Post[] {
         // gray-matter liest Datumsangaben als Date-Objekt
         date: new Date(data.date).toISOString().slice(0, 10),
         excerpt: String(data.excerpt ?? ""),
+        pair: data.pair ? String(data.pair) : null,
         content,
       };
     })
@@ -36,3 +38,11 @@ export function getPosts(lang: Locale): Post[] {
 
 export const getPost = (lang: Locale, slug: string) =>
   getPosts(lang).find((p) => p.slug === slug);
+
+// Für den Sprachumschalter: Slug → Slug des Beitrags in der anderen Sprache
+export const postSlugMap = (): Record<string, string> =>
+  Object.fromEntries(
+    (["de", "en"] as const).flatMap((lang) =>
+      getPosts(lang).flatMap((p) => (p.pair ? [[p.slug, p.pair]] : [])),
+    ),
+  );

@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import LanguageSwitch from "./LanguageSwitch";
 
+export type SlugMap = { products: Record<string, string>; posts: Record<string, string> };
+
 export type NavLabels = {
   home: string;
   shop: string;
@@ -26,10 +28,12 @@ export default function NavMenu({
   lang,
   nav,
   worlds,
+  slugMap,
 }: {
   lang: "de" | "en";
   nav: NavLabels;
   worlds: NavWorld[];
+  slugMap: SlugMap;
 }) {
   const pathname = usePathname();
   // Menüs gelten nur für die Seite, auf der sie geöffnet wurden: ein Seitenwechsel schließt sie.
@@ -120,12 +124,12 @@ export default function NavMenu({
         <Link href={`${base}/bundles`} className={link(is(`${base}/bundles`))}>{nav.bundles}</Link>
         <Link href={`${base}/blog`} className={link(is(`${base}/blog`))}>{nav.inspiration}</Link>
         <Link href={`${base}/about`} className={link(is(`${base}/about`))}>{nav.about}</Link>
-        <LanguageSwitch lang={lang} label={nav.switchLanguage} />
+        <LanguageSwitch lang={lang} label={nav.switchLanguage} slugMap={slugMap} />
       </nav>
 
       {/* Mobil */}
       <div className="flex items-center gap-5 md:hidden">
-        <LanguageSwitch lang={lang} label={nav.switchLanguage} />
+        <LanguageSwitch lang={lang} label={nav.switchLanguage} slugMap={slugMap} />
         <button
           type="button"
           aria-label={nav.openMenu}
@@ -150,7 +154,7 @@ export default function NavMenu({
               <Image src="/logo.webp" alt="Oh Paw Studio" width={48} height={48} />
             </Link>
             <div className="flex items-center gap-5">
-              <LanguageSwitch lang={lang} label={nav.switchLanguage} />
+              <LanguageSwitch lang={lang} label={nav.switchLanguage} slugMap={slugMap} />
               <button
                 ref={closeRef}
                 type="button"

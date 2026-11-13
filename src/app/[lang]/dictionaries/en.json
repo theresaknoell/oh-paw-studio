@@ -88,5 +88,32 @@
     "lead": "Better together",
     "intro": "Matching products for your situation, with about 20% off compared to buying them separately.",
     "back": "View all products"
+  },
+  "productPage": {
+    "crumbShop": "Shop",
+    "breadcrumb": "Breadcrumb",
+    "expect": "What's inside",
+    "about": "About this product",
+    "format": "Format and printing",
+    "formatText": "Fill in the digital version right on your tablet or computer, for example with the free Adobe Acrobat Reader. Print the print version at home or at a print shop.",
+    "formatTextPrintOnly": "The memory book is a digital PDF to print yourself, at home or at a print shop.",
+    "note": "This is a digital product. No physical book will be shipped. Colors may vary slightly depending on printer and paper.",
+    "noteHealth": " The content does not replace veterinary advice.",
+    "trustInstant": "Instant download",
+    "trustBoth": "Digital and print version",
+    "trustPrint": "Printable at home",
+    "trustPages": "page PDF",
+    "trustPay": "Secure checkout via Gumroad",
+    "alsoIn": "This product is also available in German",
+    "inBundle": "Better in a bundle",
+    "bundleWith": "Together with more products",
+    "viewBundle": "View bundle",
+    "together": "Goes well with",
+    "help": "Helpful reading from Inspiration",
+    "readPost": "Read article",
+    "imageSoon": "Image coming soon",
+    "buyBar": "Buy",
+    "buy": "Buy on Gumroad",
+    "details": "View details"
   }
 }

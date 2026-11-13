@@ -83,7 +83,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                     />
                   )}
                 </div>
-                <h3 className="mt-4 text-2xl">{p.title}</h3>
+                <h3 className="mt-4 text-2xl"><Link href={`/${lang}/products/${p.slug}`} className="hover:text-olive-deep">{p.title}</Link></h3>
                 <p className="mt-1 text-cocoa/75">{price.format(p.priceEur)}</p>
               </li>
             ))}

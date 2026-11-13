@@ -29,3 +29,8 @@ h3 {
   overflow-wrap: break-word;
   hyphens: auto;
 }
+
+/* Produkt- und Kartentitel: nur an echten Bindestrichen trennen */
+h3 {
+  hyphens: manual;
+}

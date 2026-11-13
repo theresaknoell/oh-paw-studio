@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import NavMenu, { type NavLabels, type NavWorld } from "./NavMenu";
+import NavMenu, { type NavLabels, type NavWorld, type SlugMap } from "./NavMenu";
 
 export default function SiteHeader({
   lang,
   nav,
   worlds,
+  slugMap,
 }: {
   lang: "de" | "en";
   nav: NavLabels;
   worlds: NavWorld[];
+  slugMap: SlugMap;
 }) {
   return (
     <header className="sticky top-0 z-40 border-b border-sand bg-ivory">
@@ -17,7 +19,7 @@ export default function SiteHeader({
         <Link href={`/${lang}`} aria-label={nav.home}>
           <Image src="/logo.webp" alt="Oh Paw Studio" width={48} height={48} priority />
         </Link>
-        <NavMenu lang={lang} nav={nav} worlds={worlds} />
+        <NavMenu lang={lang} nav={nav} worlds={worlds} slugMap={slugMap} />
       </div>
     </header>
   );

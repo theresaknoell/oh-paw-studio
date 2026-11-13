@@ -2,6 +2,7 @@
 title: "Einzug eines Kittens – die Checkliste für die ersten Tage"
 date: 2026-11-12
 excerpt: "Was vor dem Einzug erledigt sein sollte und woran du in den ersten Tagen denken kannst."
+pair: "kitten-move-in-checklist"
 ---
 
 Ein Kitten zieht ein, und plötzlich ist alles voller Fragen. Mit einer einfachen Liste behältst du den Überblick. Sie ersetzt keine tierärztliche Beratung; bei Fragen zur Gesundheit wende dich bitte an deine Tierarztpraxis.

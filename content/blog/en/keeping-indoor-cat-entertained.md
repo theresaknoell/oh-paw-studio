@@ -2,6 +2,7 @@
 title: "Keeping an indoor cat entertained – simple ideas for more variety"
 date: 2026-11-12
 excerpt: "How to bring hunting, sniffing and thinking challenges into everyday life with simple means."
+pair: "wohnungskatze-beschaeftigen"
 ---
 
 Cats are curious explorers with strong instincts. They want to hunt, sniff, solve puzzles and explore. In everyday indoor life, that often falls short. Even small changes bring variety.

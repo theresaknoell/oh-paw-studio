@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import BundleCards from "@/components/BundleCards";
 import { productDetails } from "@/data/product-details";
@@ -35,7 +36,7 @@ export default async function Products({
           <ul className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {productsInWorld(lang, w).map((p) => (
           <li key={p.slug} className="flex flex-col">
-            <div className="relative aspect-square overflow-hidden rounded-lg bg-sand">
+            <Link href={`/${lang}/products/${p.slug}`} aria-label={p.title} className="relative block aspect-square overflow-hidden rounded-[10px] bg-sand">
               {p.image && (
                 <Image
                   src={p.image}
@@ -45,8 +46,8 @@ export default async function Products({
                   className="object-cover"
                 />
               )}
-            </div>
-            <h3 className="mt-4 text-2xl">{p.title}</h3>
+            </Link>
+            <h3 className="mt-4 text-2xl"><Link href={`/${lang}/products/${p.slug}`} className="hover:text-olive-deep">{p.title}</Link></h3>
             <p className="mt-1 text-cocoa/75">{price.format(p.priceEur)}</p>
             {productDetails[p.slug] && (
               <>

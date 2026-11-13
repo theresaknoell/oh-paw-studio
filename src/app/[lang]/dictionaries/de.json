@@ -88,5 +88,32 @@
     "lead": "Gemeinsam günstiger",
     "intro": "Passende Produkte für deine Lebenssituation, mit etwa 20 % Vorteil gegenüber dem Einzelkauf.",
     "back": "Alle Produkte ansehen"
+  },
+  "productPage": {
+    "crumbShop": "Shop",
+    "breadcrumb": "Brotkrumen",
+    "expect": "Das erwartet dich",
+    "about": "Über dieses Produkt",
+    "format": "Format und Druck",
+    "formatText": "Die Digitalversion kannst du direkt am Tablet oder Computer ausfüllen, zum Beispiel mit dem kostenlosen Adobe Acrobat Reader. Die Druckversion druckst du zu Hause oder in der Druckerei aus.",
+    "formatTextPrintOnly": "Das Erinnerungsbuch ist ein digitales PDF zum Selbstausdrucken, zu Hause oder in der Druckerei.",
+    "note": "Dies ist ein digitales Produkt. Es wird kein gedrucktes Buch versendet. Farben können je nach Drucker und Papier leicht variieren.",
+    "noteHealth": " Die Inhalte ersetzen keine tierärztliche Beratung.",
+    "trustInstant": "Sofort-Download",
+    "trustBoth": "Digital- und Druckversion",
+    "trustPrint": "Zum Selbstausdrucken",
+    "trustPages": "Seiten PDF",
+    "trustPay": "Sicher bezahlen über Gumroad",
+    "alsoIn": "Dieses Produkt gibt es auch auf Englisch",
+    "inBundle": "Im Bundle günstiger",
+    "bundleWith": "Zusammen mit weiteren Produkten",
+    "viewBundle": "Bundle ansehen",
+    "together": "Dazu passt",
+    "help": "Passende Hilfe aus der Inspiration",
+    "readPost": "Beitrag lesen",
+    "imageSoon": "Bild folgt",
+    "buyBar": "Kaufen",
+    "buy": "Bei Gumroad kaufen",
+    "details": "Details ansehen"
   }
 }

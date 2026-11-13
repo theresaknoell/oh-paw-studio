@@ -2,6 +2,7 @@
 title: "Several cats under one roof – how to keep track"
 date: 2026-11-12
 excerpt: "Different personalities, different food, one shared routine: ideas for everyday life with several cats."
+pair: "mehrkatzenhaushalt-organisieren"
 ---
 
 Life with several cats means twice the activity: different personalities, individual preferences, different food and a shared routine that needs good organisation.

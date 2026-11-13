@@ -2,6 +2,7 @@
 title: "Wohnungskatze beschäftigen – einfache Ideen für mehr Abwechslung"
 date: 2026-11-12
 excerpt: "Wie du mit einfachen Mitteln Jagd-, Schnüffel- und Denkaufgaben in den Alltag bringst."
+pair: "keeping-indoor-cat-entertained"
 ---
 
 Katzen sind neugierige Entdecker mit starken Instinkten. Sie wollen jagen, schnüffeln, Rätsel lösen und erkunden. Im Alltag drinnen kommt das oft zu kurz. Schon kleine Veränderungen bringen Abwechslung.
