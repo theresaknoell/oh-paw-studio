@@ -11,6 +11,7 @@ import { productDetails } from "@/data/product-details";
 import { productPairs } from "@/data/product-pairs";
 import { productsFor } from "@/data/products";
 import { getPost, getPosts } from "@/lib/blog";
+import { alternates } from "@/lib/meta";
 import { getDictionary, hasLocale, locales } from "../../dictionaries";
 
 export function generateStaticParams() {
@@ -21,7 +22,16 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug
   const { lang, slug } = await params;
   if (!hasLocale(lang)) return {};
   const post = getPost(lang, slug);
-  return post ? { title: post.title, description: post.excerpt } : {};
+  if (!post) return {};
+  const own = `/blog/${slug}`;
+  const other = post.pair ? `/blog/${post.pair}` : undefined;
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: other
+      ? alternates(lang, lang === "de" ? { de: own, en: other } : { en: own, de: other })
+      : { canonical: `/${lang}${own}` },
+  };
 }
 
 const prose =

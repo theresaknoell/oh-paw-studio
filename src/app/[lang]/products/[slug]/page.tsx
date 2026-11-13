@@ -8,6 +8,7 @@ import { productDetails } from "@/data/product-details";
 import { counterpartSlug, pairOf, productPairs } from "@/data/product-pairs";
 import { products, productsFor } from "@/data/products";
 import { getPost } from "@/lib/blog";
+import { alternates } from "@/lib/meta";
 import { getDictionary, hasLocale } from "../../dictionaries";
 
 export function generateStaticParams() {
@@ -22,9 +23,14 @@ export async function generateMetadata({
   const p = productsFor(lang).find((x) => x.slug === slug);
   if (!p) return {};
   const d = productDetails[slug];
+  const other = counterpartSlug(slug, lang);
+  const own = `/products/${slug}`;
   return {
     title: p.title,
     description: d?.tagline,
+    alternates: other
+      ? alternates(lang, lang === "de" ? { de: own, en: `/products/${other}` } : { en: own, de: `/products/${other}` })
+      : { canonical: `/${lang}${own}` },
     openGraph: { title: p.title, description: d?.tagline, images: p.image ? [{ url: p.image }] : undefined },
   };
 }

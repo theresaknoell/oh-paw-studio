@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -9,6 +11,12 @@ import { siteImages } from "@/data/site-images";
 import { hasLocale } from "../dictionaries";
 
 const wrap = "mx-auto w-full max-w-5xl px-4 sm:px-6";
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  return pageMetadata(lang, "about");
+}
 
 export default async function About({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;

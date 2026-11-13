@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -18,6 +20,12 @@ const primary =
 const secondary =
   "inline-flex min-h-12 items-center rounded-full border-[1.5px] border-olive-deep px-8 text-[15px] font-medium text-olive-deep transition-colors hover:bg-olive-deep hover:text-ivory";
 const wrap = "mx-auto w-full max-w-5xl px-4 sm:px-6";
+
+export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  return pageMetadata(lang, "home");
+}
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;

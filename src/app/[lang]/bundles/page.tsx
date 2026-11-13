@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BundleCards from "@/components/BundleCards";
 import { bundles, bundleView } from "@/data/bundles";
 import { getDictionary, hasLocale } from "../dictionaries";
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/bundles">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  return pageMetadata(lang, "bundles");
+}
 
 export default async function Bundles({ params }: PageProps<"/[lang]/bundles">) {
   const { lang } = await params;

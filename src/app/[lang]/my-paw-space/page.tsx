@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { pawSpace } from "@/data/paw-space";
 import { hasLocale } from "../dictionaries";
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/my-paw-space">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  return pageMetadata(lang, "pawSpace");
+}
 
 export default async function PawSpace({
   params,

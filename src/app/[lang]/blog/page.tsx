@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { BlogBrowser, BlogStatic, type BlogItem } from "@/components/BlogBrowser";
 import { getPosts, topics } from "@/lib/blog";
 import { getDictionary, hasLocale } from "../dictionaries";
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  return pageMetadata(lang, "blog");
+}
 
 export default async function Blog({ params }: PageProps<"/[lang]/blog">) {
   const { lang } = await params;

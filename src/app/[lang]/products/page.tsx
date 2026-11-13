@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/meta";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import BundleBand from "@/components/shop/BundleBand";
@@ -6,6 +8,12 @@ import { productDetails } from "@/data/product-details";
 import { phases, phasesOf } from "@/data/product-pairs";
 import { productsFor, worlds } from "@/data/products";
 import { getDictionary, hasLocale } from "../dictionaries";
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/products">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!hasLocale(lang)) return {};
+  return pageMetadata(lang, "products");
+}
 
 export default async function Products({ params }: PageProps<"/[lang]/products">) {
   const { lang } = await params;

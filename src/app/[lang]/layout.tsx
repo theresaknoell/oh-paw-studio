@@ -32,7 +32,7 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
   return {
-    title: dict.meta.title,
+    title: { default: dict.meta.title, template: "%s | Oh Paw Studio" },
     description: dict.meta.description,
     metadataBase: new URL(siteUrl),
     openGraph: {
