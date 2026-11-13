@@ -4,19 +4,19 @@ Jeder Punkt ist einzeln erledigbar. Die Reihenfolge ist so gewählt, dass nichts
 Wenn dir ein Menüpunkt anders heißt als hier beschrieben, schick mir einfach, was du siehst.
 
 ## 1. Impressum-Angaben festlegen
-- Name, ladungsfähige Anschrift (kein reines Postfach) und E-Mail-Adresse entscheiden.
+- Name und ladungsfähige Anschrift (kein reines Postfach) entscheiden. Die E-Mail-Adresse (hello@ohpawstudio.com) ist bereits eingetragen.
 - Schick mir die Angaben; ich trage sie in Impressum und Datenschutzerklärung ein (beide Sprachen).
 - Wenn du die Privatadresse schützen willst: Geschäfts- oder c/o-Adresse bzw. Impressumsservice (kostet meist Geld).
 
 ## 2. Domain und E-Mail (erledigt: bei IONOS gekauft)
 - Domain und E-Mail-Postfach liegen bei IONOS. Die Cloudflare-Anleitung aus früheren Versionen ist nicht mehr nötig.
-- Die Domain-Adresse (z. B. `deinedomain.de`) brauche ich für `SITE_URL`, Impressum und Datenschutz.
+- Domain: **ohpawstudio.com**, E-Mail: **hello@ohpawstudio.com** (die E-Mail steht schon im Impressum und in der Datenschutzerklärung).
 - Die IONOS-Adresse kannst du als Kontakt im Impressum, als Absender bei MailerLite und für den Gumroad-Support nutzen.
 - Wichtig: In den IONOS-DNS-Einstellungen nur die Einträge für die Website ändern (A/CNAME). Die E-Mail-Einträge (MX, SPF, DKIM) nicht löschen, sonst funktioniert dein Postfach nicht mehr.
 
 ## 3. Domain mit dem Hosting verbinden
 Variante A, Netlify (aktuell eingerichtet):
-1. Netlify: Site configuration → Domain management → Add a domain → deine Domain eintragen.
+1. Netlify: Site configuration → Domain management → Add a domain → `ohpawstudio.com` eintragen.
 2. Netlify zeigt die nötigen DNS-Einträge (meist ein A-Eintrag für die Hauptdomain und ein CNAME für `www`). Diese bei IONOS unter Domains → DNS eintragen. Bestehende E-Mail-Einträge nicht anfassen.
 3. In Netlify „HTTPS“ aktivieren (kostenloses Zertifikat, dauert einige Minuten bis Stunden nach der DNS-Änderung).
 
@@ -24,7 +24,7 @@ Variante B, anderes Hosting (z. B. STRATO oder IONOS-Webspace): siehe technische
 
 ## 4. Livegang-Schalter in Netlify
 Site configuration → Environment variables:
-- `SITE_URL` = `https://deine-domain` (die bei IONOS gekaufte Adresse mit https://)
+- `SITE_URL` = `https://ohpawstudio.com`
 - `SITE_LIVE` = `true`
 Danach „Trigger deploy“. Erst jetzt öffnet sich die Seite für Suchmaschinen (Sperre, robots.txt, Sitemap).
 
@@ -48,7 +48,7 @@ Titel, Beschreibung, Preis → veröffentlichen. Die Links schickst du mir; ich 
 
 ## 7. Search Console (kostenlos)
 Nach dem Livegang auf https://search.google.com/search-console die Domain bestätigen und die Sitemap
-`https://deine-domain/sitemap.xml` einreichen. Die Bestätigung geht über einen DNS-Eintrag bei IONOS.
+`https://ohpawstudio.com/sitemap.xml` einreichen. Die Bestätigung geht über einen DNS-Eintrag bei IONOS.
 
 ## 8. Entscheidungen
 - Analytics: nur Search Console und Gumroad-Statistik (kostenlos) oder zusätzliches Tool (ca. 9 €/Monat)?

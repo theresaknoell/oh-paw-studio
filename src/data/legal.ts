@@ -9,7 +9,7 @@ export type LegalPage = {
 
 const NAME = "[Vor- und Nachname]";
 const ADDRESS = "[Straße und Hausnummer, PLZ Ort, Land]";
-const EMAIL = "[E-Mail-Adresse]";
+const EMAIL = "hello@ohpawstudio.com";
 
 export const imprint: Record<Locale, LegalPage> = {
   de: {
