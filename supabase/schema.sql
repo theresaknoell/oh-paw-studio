@@ -22,6 +22,32 @@ create table public.memories (
   created_at timestamptz not null default now()
 );
 
+-- Erinnerungsbuch: eine Zeile je beantworteter Frage und je Kapitelfoto (Kapitel und Fragen stehen in src/data/paw-book.ts).
+create table public.book_entries (
+  user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
+  cat_id uuid not null references public.cats (id) on delete cascade,
+  chapter_id text not null,
+  prompt_id text not null,
+  text text not null check (char_length(text) <= 5000),
+  updated_at timestamptz not null default now(),
+  primary key (cat_id, chapter_id, prompt_id)
+);
+
+create table public.book_photos (
+  user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
+  cat_id uuid not null references public.cats (id) on delete cascade,
+  chapter_id text not null,
+  storage_path text not null, -- Datei liegt in Supabase Storage
+  primary key (cat_id, chapter_id)
+);
+
+alter table public.book_entries enable row level security;
+alter table public.book_photos enable row level security;
+create policy "own book entries" on public.book_entries
+  for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+create policy "own book photos" on public.book_photos
+  for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+
 -- Später: Zuordnung gekaufter Produkte zu einem Konto (Befüllung erst, wenn die Kauf-Verknüpfung entschieden ist).
 create table public.entitlements (
   id uuid primary key default gen_random_uuid(),

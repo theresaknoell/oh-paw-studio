@@ -25,10 +25,16 @@ export type Memory = {
   photo?: string;
 };
 
-export type PawState = { cats: Cat[]; memories: Memory[] };
+export type PawState = {
+  cats: Cat[];
+  memories: Memory[];
+  // Erinnerungsbuch: Antworten je Frage und Fotos je Kapitel (Schlüssel siehe src/data/paw-book.ts)
+  book: Record<string, string>;
+  bookPhotos: Record<string, string>;
+};
 
 const KEY = "oh-paw-space-demo-v1";
-const empty: PawState = { cats: [], memories: [] };
+const empty: PawState = { cats: [], memories: [], book: {}, bookPhotos: {} };
 let cache: PawState | null = null;
 let saveFailed = false;
 const listeners = new Set<() => void>();
@@ -76,7 +82,21 @@ export function usePawStore() {
       commit({
         cats: snapshot().cats.filter((c) => c.id !== id),
         memories: snapshot().memories.filter((m) => m.catId !== id),
+        book: Object.fromEntries(Object.entries(snapshot().book).filter(([k]) => !k.startsWith(`${id}|`))),
+        bookPhotos: Object.fromEntries(Object.entries(snapshot().bookPhotos).filter(([k]) => !k.startsWith(`${id}|`))),
       }),
+    setBookText: (key: string, text: string) => {
+      const book = { ...snapshot().book };
+      if (text.trim()) book[key] = text;
+      else delete book[key];
+      commit({ ...snapshot(), book });
+    },
+    setBookPhoto: (key: string, photo: string | null) => {
+      const bookPhotos = { ...snapshot().bookPhotos };
+      if (photo) bookPhotos[key] = photo;
+      else delete bookPhotos[key];
+      commit({ ...snapshot(), bookPhotos });
+    },
     addMemory: (m: Omit<Memory, "id">) =>
       commit({
         ...snapshot(),
@@ -100,7 +120,15 @@ export function usePawStore() {
         const memories = data.memories.filter(
           (m: Memory) => m && typeof m.id === "string" && typeof m.text === "string" && ids.has(m.catId),
         );
-        commit({ cats, memories });
+        const own = (o: unknown, ids: Set<string>): Record<string, string> =>
+          o && typeof o === "object"
+            ? Object.fromEntries(
+                Object.entries(o as Record<string, unknown>).filter(
+                  ([k, v]) => typeof v === "string" && ids.has(k.split("|")[0]),
+                ),
+              ) as Record<string, string>
+            : {};
+        commit({ cats, memories, book: own(data.book, ids as Set<string>), bookPhotos: own(data.bookPhotos, ids as Set<string>) });
         return true;
       } catch {
         return false;

@@ -25,6 +25,10 @@ export const pawSpace: Record<Locale, PawSpacePage> = {
         text: "Halte erste Male, Meilensteine und ganz gewöhnliche Tage mit Text und Fotos auf einer persönlichen Zeitachse fest.",
       },
       {
+        title: "Erinnerungsbuch",
+        text: "Das erste Jahr Kapitel für Kapitel: mit Fragen als Anregung, Platz für Fotos und einer Druckansicht als PDF.",
+      },
+      {
         title: "Meine Produkte",
         text: "Alle deine Oh-Paw-Studio-Produkte übersichtlich an einem Ort.",
       },
@@ -59,6 +63,10 @@ export const pawSpace: Record<Locale, PawSpacePage> = {
       {
         title: "Memories",
         text: "Capture firsts, milestones and perfectly ordinary days with text and photos on a personal timeline.",
+      },
+      {
+        title: "Memory book",
+        text: "The first year chapter by chapter: with prompts, room for photos and a print view as PDF.",
       },
       {
         title: "My products",

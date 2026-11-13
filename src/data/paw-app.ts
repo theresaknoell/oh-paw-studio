@@ -2,7 +2,7 @@ import type { Locale } from "@/app/[lang]/dictionaries";
 
 export type PawApp = {
   demoBanner: string;
-  nav: { app: string; dashboard: string; cats: string; memories: string; products: string; print: string; settings: string };
+  nav: { app: string; dashboard: string; cats: string; memories: string; book: string; products: string; print: string; settings: string };
   dashboard: { title: string; intro: string; cats: string; memories: string; start: string };
   cats: {
     title: string; empty: string; name: string; birthday: string; since: string;
@@ -15,7 +15,12 @@ export type PawApp = {
     categories: { first: string; everyday: string; milestone: string };
     photo: string; removePhoto: string;
   };
-  print: { title: string; intro: string; selectCat: string; button: string; empty: string; born: string; since: string; book: string; noCats: string };
+  print: { title: string; intro: string; selectCat: string; button: string; empty: string; born: string; since: string; book: string; noCats: string; mode: string; timeline: string; guided: string; guidedEmpty: string };
+  book: {
+    title: string; intro: string; needCat: string; selectCat: string; progress: string; chapters: string;
+    saved: string; photo: string; removePhoto: string; prev: string; next: string; hint: string;
+    productTitle: string; productText: string; productCta: string; filled: string;
+  };
   login: { title: string; intro: string; email: string; submit: string; note: string; demo: string; back: string };
   products: { title: string; intro: string; open: string };
   settings: {
@@ -28,7 +33,7 @@ export type PawApp = {
 export const pawApp: Record<Locale, PawApp> = {
   de: {
     demoBanner: "Demo-Modus: Deine Einträge bleiben nur in diesem Browser gespeichert und sind nicht mit einem Konto verbunden.",
-    nav: { app: "My Paw Space", dashboard: "Übersicht", cats: "Meine Katzen", memories: "Erinnerungen", products: "Meine Produkte", print: "Drucken", settings: "Einstellungen" },
+    nav: { app: "My Paw Space", dashboard: "Übersicht", cats: "Meine Katzen", memories: "Erinnerungen", book: "Erinnerungsbuch", products: "Meine Produkte", print: "Drucken", settings: "Einstellungen" },
     dashboard: {
       title: "Dein Paw Space",
       intro: "Schön, dass du da bist. Hier sammelst du alles rund um deine Katzen.",
@@ -58,6 +63,14 @@ export const pawApp: Record<Locale, PawApp> = {
       title: "Erinnerungsbuch drucken", intro: "Wähle eine Katze und speichere ihre Erinnerungen als PDF oder drucke sie aus.",
       selectCat: "Katze", button: "Drucken / als PDF speichern", empty: "Für diese Katze gibt es noch keine Erinnerungen.",
       born: "Geboren am", since: "Bei mir seit", book: "Unser gemeinsames Erinnerungsbuch", noCats: "Lege zuerst eine Katze an.",
+      mode: "Inhalt", timeline: "Zeitachse", guided: "Erinnerungsbuch", guidedEmpty: "Im Erinnerungsbuch gibt es für diese Katze noch keine Einträge.",
+    },
+    book: {
+      title: "Erinnerungsbuch", intro: "Halte das erste Jahr Kapitel für Kapitel fest. Die Fragen sind nur Anregungen, schreibe, was dir wichtig ist.",
+      needCat: "Lege zuerst eine Katze an.", selectCat: "Katze", progress: "Kapitel begonnen", chapters: "Kapitel",
+      saved: "Wird automatisch gespeichert.", photo: "Foto zum Kapitel", removePhoto: "Foto entfernen", prev: "Vorheriges Kapitel", next: "Nächstes Kapitel",
+      hint: "Du musst nicht alles ausfüllen. Überspringe, was nicht passt.", filled: "begonnen",
+      productTitle: "Zum Ausdrucken und Verschenken", productText: "Das Erinnerungsbuch „Mein erstes Jahr mit dir“ gibt es als schön gestaltetes PDF zum Selbstausdrucken.", productCta: "Zum Erinnerungsbuch",
     },
     login: {
       title: "Anmelden", intro: "Bald meldest du dich hier mit einem Link per E-Mail an, ganz ohne Passwort. So bleiben deine Erinnerungen auf allen Geräten verfügbar.",
@@ -75,7 +88,7 @@ export const pawApp: Record<Locale, PawApp> = {
   },
   en: {
     demoBanner: "Demo mode: Your entries are stored only in this browser and are not linked to an account.",
-    nav: { app: "My Paw Space", dashboard: "Overview", cats: "My cats", memories: "Memories", products: "My products", print: "Print", settings: "Settings" },
+    nav: { app: "My Paw Space", dashboard: "Overview", cats: "My cats", memories: "Memories", book: "Memory book", products: "My products", print: "Print", settings: "Settings" },
     dashboard: {
       title: "Your Paw Space",
       intro: "Lovely to have you here. Collect everything about your cats in one place.",
@@ -105,6 +118,14 @@ export const pawApp: Record<Locale, PawApp> = {
       title: "Print memory book", intro: "Choose a cat and save its memories as a PDF or print them.",
       selectCat: "Cat", button: "Print / save as PDF", empty: "There are no memories for this cat yet.",
       born: "Born", since: "With me since", book: "Our memory book together", noCats: "Add a cat first.",
+      mode: "Content", timeline: "Timeline", guided: "Memory book", guidedEmpty: "The memory book has no entries for this cat yet.",
+    },
+    book: {
+      title: "Memory book", intro: "Capture the first year chapter by chapter. The questions are only prompts, write what matters to you.",
+      needCat: "Add a cat first.", selectCat: "Cat", progress: "chapters started", chapters: "Chapters",
+      saved: "Saved automatically.", photo: "Photo for this chapter", removePhoto: "Remove photo", prev: "Previous chapter", next: "Next chapter",
+      hint: "You don't have to fill in everything. Skip what doesn't fit.", filled: "started",
+      productTitle: "To print and give as a gift", productText: "The memory book “My First Year with You” is available as a beautifully designed PDF to print yourself.", productCta: "View the memory book",
     },
     login: {
       title: "Sign in", intro: "Soon you will sign in here with a link sent by email, no password needed. That keeps your memories available on all your devices.",

@@ -4,7 +4,11 @@
 Fertig und ausprobierbar (Demo-Modus, Daten nur im Browser), unter `/de/my-paw-space` und `/en/my-paw-space`:
 - Katzenprofile mit Foto, Bearbeiten und Löschen; mehrere Katzen
 - Erinnerungs-Zeitachse mit Kategorie (Erstes Mal, Alltag, Meilenstein) und optionalem Foto
-- **Druckansicht „Erinnerungsbuch“:** pro Katze mit Titelblatt, Foto und allen Erinnerungen; „Drucken / als PDF speichern“ nutzt den Druckdialog des Browsers
+- **Geführtes Erinnerungsbuch** (`/app/book`): 16 Kapitel (Ankunft, Monat 1 bis 12, Eigenheiten, Meilensteine, Zum Abschluss) mit
+  eigenen Fragen als Anregung, Foto je Kapitel, Fortschrittsanzeige und automatischem Speichern. Die Fragen stehen in `src/data/paw-book.ts`
+  und lassen sich dort ergänzen oder ändern (die `id`s nicht ändern, sonst gehen gespeicherte Antworten verloren). Das Buch ist eine
+  Mitmach-Version; das ausgearbeitete, druckbare PDF bleibt dein Gumroad-Produkt (die App verweist darauf).
+- **Druckansicht:** pro Katze mit Titelblatt und wahlweise Erinnerungsbuch (nur ausgefüllte Kapitel) oder Zeitachse; „Drucken / als PDF speichern“ nutzt den Druckdialog des Browsers
 - Meine Produkte (alle Produkte, noch ohne Kaufprüfung)
 - Einstellungen: Daten exportieren und wieder importieren (JSON), alles löschen, Anzeige des belegten Speichers
 - Anmeldeseite `/my-paw-space/login` als deaktivierte Vorbereitung (Formular noch ohne Funktion)
@@ -17,10 +21,11 @@ Die Seite ist nicht im Menü und nicht in der Sitemap.
 Fotos werden im Browser auf 900 px verkleinert und im lokalen Speicher abgelegt (ca. 5 MB gesamt). Daten gelten nur für diesen Browser und dieses Gerät.
 
 ## Noch NICHT vorhanden
-Echte Anmeldung, echte Datenbank, Foto-Speicher in der Cloud, Kaufprüfung, digital ausfüllbare Vorlagen, E-Mail-Erinnerungen, Community.
+Echte Anmeldung, echte Datenbank, Foto-Speicher in der Cloud, Kaufprüfung, weitere ausfüllbare Vorlagen (z. B. Care Journal), E-Mail-Erinnerungen, Community.
 
 ## Checkliste zum Livegang (Stufe 1)
 Entscheidungen
+- [ ] Erinnerungsbuch in der App: kostenlos für alle, nur mit gekauftem Produkt oder als Teil eines Abos? (Wirkung auf den Verkauf des PDFs bedenken)
 - [ ] Zugang: kostenlos, nur mit gekauftem Produkt oder Abo?
 - [ ] Käufe verknüpfen: Gumroad, eigener Shop oder zunächst ohne Prüfung?
 
