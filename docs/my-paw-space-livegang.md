@@ -25,7 +25,11 @@ Echte Anmeldung, echte Datenbank, Foto-Speicher in der Cloud, Kaufprüfung, weit
 
 ## Checkliste zum Livegang (Stufe 1)
 Entscheidungen
-- [ ] Erinnerungsbuch in der App: kostenlos für alle, nur mit gekauftem Produkt oder als Teil eines Abos? (Wirkung auf den Verkauf des PDFs bedenken)
+- [ ] Erinnerungsbuch in der App, Zugang offen. Zwei Varianten (Entscheidung nach Interessenstest mit der Warteliste):
+  - A: Probe (z. B. Ankunft und zwei Monate) frei, Rest nur mit gekauftem Erinnerungsbuch (braucht Kaufprüfung).
+  - B (Empfehlung): Ausfüllen kostenlos, bezahlt wird das gestaltete PDF mit eigenem Layout (neues Produkt „Personalisiertes Erinnerungsbuch“).
+    Die einfache Druckansicht bleibt schlicht, sonst zahlt niemand für das gestaltete PDF. Käuferinnen des Standard-PDFs könnten den Export gratis bekommen.
+  - Der gestaltete PDF-Export ist ein eigener Baustein (Layout, Zahlung) und wird erst gebaut, wenn Interesse da ist.
 - [ ] Zugang: kostenlos, nur mit gekauftem Produkt oder Abo?
 - [ ] Käufe verknüpfen: Gumroad, eigener Shop oder zunächst ohne Prüfung?
 
