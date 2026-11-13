@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
+import JsonLd from "@/components/JsonLd";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import PhotoSlot from "@/components/PhotoSlot";
 import PostCard from "@/components/PostCard";
@@ -12,6 +13,7 @@ import { productPairs } from "@/data/product-pairs";
 import { productsFor } from "@/data/products";
 import { getPost, getPosts } from "@/lib/blog";
 import { alternates } from "@/lib/meta";
+import { siteUrl } from "@/lib/site";
 import { getDictionary, hasLocale, locales } from "../../dictionaries";
 
 export function generateStaticParams() {
@@ -66,6 +68,20 @@ export default async function Post({ params }: PageProps<"/[lang]/blog/[slug]">)
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 md:py-14">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          inLanguage: lang,
+          image: post.image ? [`${siteUrl}${post.image}`] : undefined,
+          mainEntityOfPage: `${siteUrl}/${lang}/blog/${slug}`,
+          author: { "@type": "Organization", name: "Oh Paw Studio" },
+          publisher: { "@type": "Organization", name: "Oh Paw Studio", logo: { "@type": "ImageObject", url: `${siteUrl}/logo.webp` } },
+        }}
+      />
       <article>
         <div className="mx-auto max-w-[720px]">
           <Link href={`${base}/blog`} className="text-sm text-olive-deep hover:underline">← {b.title}</Link>

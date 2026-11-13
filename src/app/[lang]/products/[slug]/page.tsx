@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/JsonLd";
 import StickyBuyBar from "@/components/StickyBuyBar";
 import { bundles, bundleView } from "@/data/bundles";
 import { productDetails } from "@/data/product-details";
 import { counterpartSlug, pairOf, productPairs } from "@/data/product-pairs";
 import { products, productsFor } from "@/data/products";
+import { siteUrl } from "@/lib/site";
 import { getPost } from "@/lib/blog";
 import { alternates } from "@/lib/meta";
 import { getDictionary, hasLocale } from "../../dictionaries";
@@ -71,6 +73,37 @@ export default async function ProductPage({
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 md:py-12">
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.title,
+            description: [d?.tagline, d?.intro[0]].filter(Boolean).join(". "),
+            image: product.image ? [product.image] : undefined,
+            category: world.title,
+            inLanguage: lang,
+            brand: { "@type": "Brand", name: "Oh Paw Studio" },
+            url: `${siteUrl}/${lang}/products/${slug}`,
+            offers: {
+              "@type": "Offer",
+              price: product.priceEur.toFixed(2),
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url: `${siteUrl}/${lang}/products/${slug}`,
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: t.crumbShop, item: `${siteUrl}/${lang}/products` },
+              { "@type": "ListItem", position: 2, name: world.title, item: `${siteUrl}/${lang}/products?world=${product.world}` },
+              { "@type": "ListItem", position: 3, name: product.title },
+            ],
+          },
+        ]}
+      />
       <nav aria-label={t.breadcrumb} className="text-sm text-cocoa/75">
         <ol className="flex flex-wrap items-center gap-x-2">
           <li><Link href={`${base}/products`} className="hover:underline">{t.crumbShop}</Link></li>

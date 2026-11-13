@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
 import { isLive, siteUrl } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { productSlugMap } from "@/data/product-pairs";
@@ -59,6 +60,26 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <JsonLd
+          data={[
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Oh Paw Studio",
+              url: siteUrl,
+              logo: `${siteUrl}/logo.webp`,
+              email: "hello@ohpawstudio.com",
+              slogan: dict.claim,
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Oh Paw Studio",
+              url: `${siteUrl}/${lang}`,
+              inLanguage: lang,
+            },
+          ]}
+        />
         <SiteHeader
           lang={lang}
           nav={{ ...dict.nav }}
