@@ -1,6 +1,7 @@
--- My Paw Space: Datenbankschema für Supabase (ENTWURF, noch nicht getestet).
--- Wird beim Livegang im Supabase-Dashboard unter "SQL Editor" ausgeführt.
--- Anmeldung übernimmt Supabase Auth (auth.users), Daten sind je Konto per Row Level Security getrennt.
+-- My Paw Space: Datenbankschema für Supabase (Projekt "oh-paw-studio", Region Frankfurt).
+-- Spiegelt den Datenaufbau von src/lib/paw-store.ts. Anmeldung übernimmt Supabase Auth (auth.users);
+-- jede Tabelle ist per Row Level Security auf das eigene Konto beschränkt. Fotos liegen im privaten Storage-Bucket "photos".
+-- Stand: auf das Projekt angewendet (Migration "my_paw_space_schema"). Änderungen immer als neue Migration, nicht hier überschreiben.
 
 create table public.cats (
   id uuid primary key default gen_random_uuid(),
@@ -9,6 +10,7 @@ create table public.cats (
   birthday date,
   since date,
   notes text not null default '' check (char_length(notes) <= 500),
+  photo_path text, -- Datei im Bucket "photos": <user_id>/<datei>
   created_at timestamptz not null default now()
 );
 
@@ -19,36 +21,30 @@ create table public.memories (
   date date not null,
   category text not null check (category in ('first', 'everyday', 'milestone')),
   text text not null check (char_length(text) between 1 and 5000),
+  photo_path text,
   created_at timestamptz not null default now()
 );
 
--- Erinnerungsbuch: eine Zeile je beantworteter Frage und je Kapitelfoto (Kapitel und Fragen stehen in src/data/paw-book.ts).
-create table public.book_entries (
+-- Erinnerungsbuch: eine Zeile je beantwortetem Feld. "key" ist der Schlüssel aus src/data/paw-book-core.ts (answerKey ohne Katzen-ID),
+-- z. B. "m1|p1.f1", Listen "k4|p1.f4.2", Tabellen als JSON-Text.
+create table public.book_answers (
   user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
   cat_id uuid not null references public.cats (id) on delete cascade,
-  chapter_id text not null,
-  prompt_id text not null,
-  text text not null check (char_length(text) <= 5000),
+  key text not null check (char_length(key) <= 80),
+  value text not null check (char_length(value) <= 20000),
   updated_at timestamptz not null default now(),
-  primary key (cat_id, chapter_id, prompt_id)
+  primary key (cat_id, key)
 );
 
 create table public.book_photos (
   user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
   cat_id uuid not null references public.cats (id) on delete cascade,
-  chapter_id text not null,
-  storage_path text not null, -- Datei liegt in Supabase Storage
-  primary key (cat_id, chapter_id)
+  key text not null check (char_length(key) <= 80),
+  photo_path text not null,
+  primary key (cat_id, key)
 );
 
-alter table public.book_entries enable row level security;
-alter table public.book_photos enable row level security;
-create policy "own book entries" on public.book_entries
-  for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-create policy "own book photos" on public.book_photos
-  for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-
--- Pflege-Journal (Entwurf): Profil, Gewicht, Gesundheitseinträge, Medikamente je Katze.
+-- Pflege-Journal
 create table public.care_profiles (
   user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
   cat_id uuid primary key references public.cats (id) on delete cascade,
@@ -72,18 +68,10 @@ create table public.medications (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users (id) on delete cascade default auth.uid(),
   cat_id uuid not null references public.cats (id) on delete cascade,
-  name text not null, dose text not null default '', start date, "end" date, notes text not null default ''
+  name text not null check (char_length(name) <= 200), dose text not null default '', start date, "end" date, notes text not null default ''
 );
-alter table public.care_profiles enable row level security;
-alter table public.weights enable row level security;
-alter table public.health_records enable row level security;
-alter table public.medications enable row level security;
-create policy "own care profiles" on public.care_profiles for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-create policy "own weights" on public.weights for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-create policy "own health records" on public.health_records for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-create policy "own medications" on public.medications for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 
--- Später: Zuordnung gekaufter Produkte zu einem Konto (Befüllung erst, wenn die Kauf-Verknüpfung entschieden ist).
+-- Zuordnung gekaufter Produkte zu einem Konto (wird erst befüllt, wenn die Kauf-Verknüpfung entschieden ist).
 create table public.entitlements (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users (id) on delete cascade,
@@ -93,19 +81,53 @@ create table public.entitlements (
   unique (user_id, product_slug)
 );
 
+-- Row Level Security: jede Person sieht und ändert nur eigene Zeilen
 alter table public.cats enable row level security;
 alter table public.memories enable row level security;
+alter table public.book_answers enable row level security;
+alter table public.book_photos enable row level security;
+alter table public.care_profiles enable row level security;
+alter table public.weights enable row level security;
+alter table public.health_records enable row level security;
+alter table public.medications enable row level security;
 alter table public.entitlements enable row level security;
 
-create policy "own cats" on public.cats
-  for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-
-create policy "own memories" on public.memories
-  for all using (user_id = auth.uid()) with check (user_id = auth.uid());
-
+create policy "own cats" on public.cats for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own memories" on public.memories for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own book answers" on public.book_answers for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own book photos" on public.book_photos for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own care profiles" on public.care_profiles for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own weights" on public.weights for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own health records" on public.health_records for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+create policy "own medications" on public.medications for all to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
 -- Käufe dürfen Nutzerinnen nur lesen, nicht selbst eintragen.
-create policy "read own entitlements" on public.entitlements
-  for select using (user_id = auth.uid());
+create policy "read own entitlements" on public.entitlements for select to authenticated using (user_id = (select auth.uid()));
 
+-- Indizes für Fremdschlüssel und häufige Abfragen
 create index on public.cats (user_id);
-create index on public.memories (user_id, cat_id, date desc);
+create index on public.memories (user_id);
+create index on public.memories (cat_id, date desc);
+create index on public.book_answers (user_id);
+create index on public.book_photos (user_id);
+create index on public.care_profiles (user_id);
+create index on public.weights (user_id);
+create index on public.weights (cat_id, date);
+create index on public.health_records (user_id);
+create index on public.health_records (cat_id, date);
+create index on public.medications (user_id);
+create index on public.medications (cat_id);
+create index on public.entitlements (user_id);
+
+-- Privater Foto-Speicher: Dateien liegen unter <user_id>/..., nur die eigene Person darf lesen und schreiben.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('photos', 'photos', false, 3145728, array['image/jpeg', 'image/png', 'image/webp'])
+on conflict (id) do nothing;
+
+create policy "own photos read" on storage.objects for select to authenticated
+  using (bucket_id = 'photos' and (storage.foldername(name))[1] = (select auth.uid())::text);
+create policy "own photos write" on storage.objects for insert to authenticated
+  with check (bucket_id = 'photos' and (storage.foldername(name))[1] = (select auth.uid())::text);
+create policy "own photos update" on storage.objects for update to authenticated
+  using (bucket_id = 'photos' and (storage.foldername(name))[1] = (select auth.uid())::text);
+create policy "own photos delete" on storage.objects for delete to authenticated
+  using (bucket_id = 'photos' and (storage.foldername(name))[1] = (select auth.uid())::text);

@@ -44,8 +44,7 @@ Entscheidungen
 - [ ] Käufe verknüpfen: Gumroad, eigener Shop oder zunächst ohne Prüfung?
 
 Du (Konten, ca. 15 Minuten)
-- [ ] Kostenloses Supabase-Konto anlegen und ein Projekt erstellen (Region EU, z. B. Frankfurt)
-- [ ] `supabase/schema.sql` im SQL-Editor ausführen
+- [x] Supabase-Projekt „oh-paw-studio“ (Region Frankfurt) angelegt und `supabase/schema.sql` angewendet (9 Tabellen mit Row Level Security, privater Foto-Speicher „photos"; Sicherheitsprüfung ohne Befunde). Hinweis: Dafür wurde das Projekt „reels-library“ auf Wunsch pausiert (Gratistarif erlaubt 2 aktive Projekte).
 - [ ] Unter Authentication die E-Mail-Anmeldung (Magic Link) aktivieren und die Website-Adresse als Redirect eintragen
 - [ ] Die zwei öffentlichen Projektwerte (URL und anon key) in Netlify als Umgebungsvariablen eintragen
 
