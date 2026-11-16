@@ -12,7 +12,7 @@ import { productDetails } from "@/data/product-details";
 import { productPairs } from "@/data/product-pairs";
 import { productsFor } from "@/data/products";
 import { getPost, getPosts } from "@/lib/blog";
-import { alternates } from "@/lib/meta";
+import { alternates, ogImages } from "@/lib/meta";
 import { siteUrl } from "@/lib/site";
 import { getDictionary, hasLocale, locales } from "../../dictionaries";
 
@@ -28,8 +28,16 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug
   const own = `/blog/${slug}`;
   const other = post.pair ? `/blog/${post.pair}` : undefined;
   return {
-    title: post.title,
+    // Lange Titel ohne Zusatz „| Oh Paw Studio“, damit sie in Google nicht abgeschnitten werden
+    title: post.title.length + 16 > 65 ? { absolute: post.title } : post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      siteName: "Oh Paw Studio",
+      images: post.image ? [{ url: post.image }] : ogImages,
+    },
     alternates: other
       ? alternates(lang, lang === "de" ? { de: own, en: other } : { en: own, de: other })
       : { canonical: `/${lang}${own}` },
