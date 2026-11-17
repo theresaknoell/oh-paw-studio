@@ -3,7 +3,11 @@ import type { Locale } from "@/app/[lang]/dictionaries";
 export type PawApp = {
   demoBanner: string;
   nav: { app: string; dashboard: string; cats: string; memories: string; book: string; care: string; products: string; print: string; settings: string };
-  dashboard: { title: string; intro: string; cats: string; memories: string; start: string };
+  dashboard: {
+    title: string; intro: string; cats: string; memories: string; start: string;
+    firstTitle: string; firstText: string; firstCta: string; nextTitle: string;
+    shortcuts: { memories: string; book: string; care: string };
+  };
   cats: {
     title: string; empty: string; name: string; birthday: string; since: string;
     notes: string; add: string; remove: string; confirmRemove: string;
@@ -48,6 +52,11 @@ export const pawApp: Record<Locale, PawApp> = {
       title: "Dein Paw Space",
       intro: "Schön, dass du da bist. Hier sammelst du alles rund um deine Katzen.",
       cats: "Katzen", memories: "Erinnerungen", start: "Los geht's",
+      firstTitle: "Starte mit deiner ersten Katze",
+      firstText: "Lege ein Profil an, dann kannst du Erinnerungen, Gewicht und Tierarzttermine festhalten. Das dauert nur eine Minute.",
+      firstCta: "Katze anlegen",
+      nextTitle: "Wie geht's weiter?",
+      shortcuts: { memories: "Erinnerung festhalten", book: "Erinnerungsbuch füllen", care: "Pflege eintragen" },
     },
     cats: {
       title: "Meine Katzen", empty: "Noch keine Katze angelegt.", name: "Name",
@@ -119,6 +128,11 @@ export const pawApp: Record<Locale, PawApp> = {
       title: "Your Paw Space",
       intro: "Lovely to have you here. Collect everything about your cats in one place.",
       cats: "Cats", memories: "Memories", start: "Get started",
+      firstTitle: "Start with your first cat",
+      firstText: "Create a profile, then record memories, weight and vet visits. It only takes a minute.",
+      firstCta: "Add a cat",
+      nextTitle: "What's next?",
+      shortcuts: { memories: "Capture a memory", book: "Fill the memory book", care: "Add care entry" },
     },
     cats: {
       title: "My cats", empty: "No cat added yet.", name: "Name",

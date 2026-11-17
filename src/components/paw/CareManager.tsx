@@ -1,5 +1,6 @@
 "use client";
 
+import NeedCat from "./NeedCat";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePawStore, type CareProfile, type HealthKind } from "@/lib/paw-store";
@@ -42,7 +43,7 @@ export default function CareManager({ t, productHref }: { t: PawApp["care"]; pro
   const [h, setH] = useState<{ date: string; kind: HealthKind; text: string }>({ date: "", kind: "checkup", text: "" });
   const [m, setM] = useState({ name: "", dose: "", start: "", end: "", notes: "" });
   const cat = cats.find((c) => c.id === catSel) ?? cats[0];
-  if (!cat) return <p className="text-cocoa/75">{t.needCat}</p>;
+  if (!cat) return <NeedCat text={t.needCat} />;
 
   const profile = care.profiles[cat.id];
   const weights = care.weights.filter((x) => x.catId === cat.id).sort((a, b) => a.date.localeCompare(b.date));

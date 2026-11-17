@@ -13,6 +13,7 @@ export type NavLabels = {
   shop: string;
   bundles: string;
   inspiration: string;
+  pawSpace: string;
   about: string;
   allProducts: string;
   switchLanguage: string;
@@ -124,6 +125,14 @@ export default function NavMenu({
         <Link href={`${base}/bundles`} className={link(is(`${base}/bundles`))}>{nav.bundles}</Link>
         <Link href={`${base}/blog`} className={link(is(`${base}/blog`))}>{nav.inspiration}</Link>
         <Link href={`${base}/about`} className={link(is(`${base}/about`))}>{nav.about}</Link>
+        <Link
+          href={`${base}/my-paw-space`}
+          className={`rounded-full border-[1.5px] px-4 py-1.5 transition-colors hover:bg-olive-deep hover:text-ivory ${
+            is(`${base}/my-paw-space`) ? "border-olive-deep bg-olive-deep text-ivory" : "border-olive-deep text-olive-deep"
+          }`}
+        >
+          {nav.pawSpace}
+        </Link>
         <LanguageSwitch lang={lang} label={nav.switchLanguage} slugMap={slugMap} />
       </nav>
 
@@ -198,6 +207,7 @@ export default function NavMenu({
             <li className="border-b border-sand py-3"><Link href={`${base}/bundles`} className="block">{nav.bundles}</Link></li>
             <li className="border-b border-sand py-3"><Link href={`${base}/blog`} className="block">{nav.inspiration}</Link></li>
             <li className="border-b border-sand py-3"><Link href={`${base}/about`} className="block">{nav.about}</Link></li>
+            <li className="border-b border-sand py-3"><Link href={`${base}/my-paw-space`} className="block text-olive-deep">{nav.pawSpace}</Link></li>
           </ul>
         </div>
       )}

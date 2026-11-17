@@ -1,5 +1,6 @@
 "use client";
 
+import NeedCat from "./NeedCat";
 import { useState } from "react";
 import { celebrate } from "@/lib/celebrate";
 import { downscaleImage } from "@/lib/image";
@@ -18,7 +19,7 @@ export default function MemoriesManager({ t, savedFailed }: { t: PawApp["memorie
   const catId = form.catId || cats[0]?.id || "";
   const sorted = [...memories].sort((a, b) => b.date.localeCompare(a.date));
 
-  if (cats.length === 0) return <p className="text-cocoa/75">{t.needCat}</p>;
+  if (cats.length === 0) return <NeedCat text={t.needCat} />;
 
   const onPhoto = async (file: File | undefined) => {
     if (!file) return;

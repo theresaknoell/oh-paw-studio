@@ -1,5 +1,6 @@
 "use client";
 
+import NeedCat from "./NeedCat";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { answerKey, bookUnitsFor, parseRows, type Field, type Page, type Unit } from "@/data/paw-book";
@@ -146,7 +147,7 @@ export default function BookManager({
     }
   }, [book, bookPhotos, cat, unitIdx, bookUnits]);
 
-  if (!cat) return <p className="text-cocoa/75">{t.needCat}</p>;
+  if (!cat) return <NeedCat text={t.needCat} />;
   const unit: Unit = bookUnits[unitIdx];
   const started = (u: Unit) => unitFilled({ book, bookPhotos }, cat.id, u);
   const startedCount = bookUnits.filter(started).length;
