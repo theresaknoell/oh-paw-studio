@@ -16,6 +16,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # PageProps/LayoutProps erzeugt Next.js selbst; ohne diesen Schritt fehlen sie vor dem Build.
+      - run: npx next typegen
       - run: npx tsc --noEmit
       - run: npm run lint
       - run: npm run build
