@@ -19,15 +19,13 @@ export type NewsletterStrings = {
 
 type Status = "idle" | "sending" | "success" | "error";
 
-// Eigenes Formular, das beim Absenden an MailerLite sendet. Es lädt vorab keine Skripte von Dritten
-// (kein Google reCAPTCHA) und setzt keine Cookies.
+// Eigenes Formular, das über Netlify Forms gespeichert wird (statisches Gegenstück: public/__forms.html).
+// Es lädt keine Skripte von Dritten (kein Google reCAPTCHA) und setzt keine Cookies.
 export default function NewsletterSignup({
   lang,
-  action,
   t,
 }: {
   lang: "de" | "en";
-  action: string;
   t: NewsletterStrings;
 }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -71,11 +69,12 @@ export default function NewsletterSignup({
         }
         setStatus("sending");
         try {
-          await fetch(action, {
+          const res = await fetch("/__forms.html", {
             method: "POST",
-            mode: "no-cors",
-            body: new URLSearchParams({ "fields[email]": email, "ml-submit": "1", anticsrf: "true" }),
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ "form-name": "newsletter", email, language: lang, consent: "yes" }),
           });
+          if (!res.ok) throw new Error(String(res.status));
           setStatus("success");
         } catch {
           setError(t.errorNetwork);

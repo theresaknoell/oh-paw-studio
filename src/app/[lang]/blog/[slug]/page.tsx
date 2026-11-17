@@ -142,7 +142,7 @@ export default async function Post({ params }: PageProps<"/[lang]/blog/[slug]">)
           <h2 className="text-3xl">{dict.newsletter.title}</h2>
           <p className="mt-2 mb-5 text-cocoa/90">{dict.newsletter.text}</p>
           <div className="relative">
-            <NewsletterSignup lang={lang} action={newsletter.action} t={dict.newsletter} />
+            <NewsletterSignup lang={lang} t={dict.newsletter} />
           </div>
         </section>
       )}

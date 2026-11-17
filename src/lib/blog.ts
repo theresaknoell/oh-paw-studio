@@ -29,16 +29,18 @@ export function getPosts(lang: Locale): Post[] {
       const { data, content } = matter(
         fs.readFileSync(path.join(dir(lang), file), "utf8"),
       );
+      const topic = (topics as readonly string[]).includes(String(data.topic)) ? (String(data.topic) as Topic) : "start";
       return {
         slug: file.replace(/\.md$/, ""),
         title: String(data.title),
         // gray-matter liest Datumsangaben als Date-Objekt
         date: new Date(data.date).toISOString().slice(0, 10),
         excerpt: String(data.excerpt ?? ""),
-        topic: (topics as readonly string[]).includes(String(data.topic)) ? (String(data.topic) as Topic) : "start",
+        topic,
         readingMinutes: Math.max(1, Math.round(content.split(/\s+/).filter(Boolean).length / 200)),
         pair: data.pair ? String(data.pair) : null,
-        image: data.image ? String(data.image) : null,
+        // Ohne eigenes Bild im Beitragskopf (`image:`) zeigt der Beitrag die Themen-Illustration als Platzhalter.
+        image: data.image ? String(data.image) : `/images/blog/${topic}.jpg`,
         content,
       };
     })

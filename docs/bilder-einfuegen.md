@@ -1,6 +1,6 @@
 # Fotos einfügen (für den MacBook)
 
-Alle Fotos der Seite sind als Platzhalter vorbereitet. So ersetzt du sie:
+Alle Bilder der Seite sind aktuell Illustrations-Platzhalter in den Markenfarben (Ordner `public/images/`, erzeugt mit `scripts/make-placeholders.py`). Blogbeiträge ohne eigenes Bild zeigen automatisch die Illustration ihres Themas (`public/images/blog/<thema>.jpg`). So ersetzt du sie durch Fotos:
 
 1. **Datei ablegen:** in den Ordner `public/images/` legen, z. B. `public/images/hero.jpg` (JPG, PNG oder WebP, gern WebP).
 2. **Eintragen:** in `src/data/site-images.ts` den Pfad und den Alternativtext (Deutsch und Englisch) setzen, z. B.

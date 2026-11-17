@@ -18,9 +18,23 @@ This article does not replace veterinary advice. For anything unusual, your vet 
 - **Sleep and rest:** Has her rhythm changed?
 - **Mood:** Is she as approachable as before?
 
+## Why small things count
+
+With older cats, changes are easy to overlook because they happen slowly. You get used to the shorter play sessions and the new rhythm. Only in hindsight, on paper or in a photo, does it become visible what has shifted over weeks. This is not a diagnosis, but it is a good basis for a conversation with your vet.
+
 ## Regular rather than random
 
 A short note once a month is enough. That way you recognise changes over time that you might otherwise miss in daily life, and at the next appointment you can report specifically what you have observed.
+
+## A simple monthly note
+
+You do not need a detailed diary. Three questions are enough:
+
+1. What did I notice about my cat this month?
+2. What was different from the month before?
+3. What would I like to raise at the next appointment?
+
+A photo of her favourite spot or of her grooming can be a helpful reminder. Note the positives too: when did she last play, cuddle or sniff around with curiosity?
 
 ## Making everyday life more comfortable
 

@@ -78,7 +78,7 @@ export default async function PawSpace({
           <h2 className="text-3xl">{dict.newsletter.waitTitle}</h2>
           <p className="mt-2 mb-5 max-w-xl text-cocoa/90">{dict.newsletter.waitText}</p>
           <div className="relative max-w-xl">
-            <NewsletterSignup lang={lang} action={newsletter.pawSpaceAction || newsletter.action} t={dict.newsletter} />
+            <NewsletterSignup lang={lang} t={dict.newsletter} />
           </div>
         </section>
       )}

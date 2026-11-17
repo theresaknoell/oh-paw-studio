@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="utf-8" /><meta name="robots" content="noindex" /><title>Newsletter</title></head>
+  <body>
+    <!-- Statisches Formular, damit Netlify das Formular „newsletter“ beim Build erkennt. Das echte Formular sendet per fetch hierher. -->
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="website" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="language" />
+      <input type="text" name="consent" />
+      <input type="text" name="website" />
+    </form>
+  </body>
+</html>

@@ -32,6 +32,16 @@ Ein leeres Blatt kann einschüchtern. Mit ein paar guten Fragen fällt der Einst
 - Was hat dich an ihr überrascht?
 - Was möchtest du in zehn Jahren noch wissen?
 
+## Fragen für jede Lebensphase
+
+- **Mit einem Kitten:** Was war das erste Spielzeug, das es wirklich geliebt hat? Welche Dinge ließen es erschrecken, und welche sind inzwischen normal?
+- **Mit einer erwachsenen Katze:** Wie hat sich euer Alltag gemeinsam eingespielt? Welche Gewohnheit würdest du nie missen wollen?
+- **Mit einer Senior-Katze:** Welche Ruhe tut ihr jetzt gut? Welche Erinnerungen aus den gemeinsamen Jahren sind dir besonders wichtig?
+
+## Mit Fotos und Sinnen erinnern
+
+Ergänze deine Antworten mit einem Foto, einem Pfotenabdruck oder einer kleinen Notiz zum Geräusch ihres Schnurrens. Gerade die Kleinigkeiten, die im Alltag selbstverständlich wirken, sind später die schönsten Erinnerungen.
+
 ## Aufschreiben, sammeln, bewahren
 
 Lege dir einen festen Ort für deine Antworten an, zum Beispiel ein Notizbuch oder eine Datei, und ergänze sie, wenn dir etwas einfällt. Ein Erinnerungsbuch kann dafür eine schöne Struktur bieten, mit Platz für Fotos und Gedanken. Mehr dazu findest du in der [Welt Erinnerungen](/de/products?world=memories).

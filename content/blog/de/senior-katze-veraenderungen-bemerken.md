@@ -18,9 +18,23 @@ Dieser Beitrag ersetzt keine tierärztliche Beratung. Bei jeder Auffälligkeit i
 - **Schlaf und Ruhe:** Hat sich ihr Rhythmus verändert?
 - **Stimmung:** Ist sie zugänglich wie sonst?
 
+## Warum Kleinigkeiten zählen
+
+Bei Katzen im Alter lassen sich Veränderungen im Alltag leicht übersehen, weil sie langsam passieren. Man gewöhnt sich an die kürzeren Spielrunden und den neuen Rhythmus. Erst im Rückblick, auf Papier oder im Foto, wird sichtbar, was sich über Wochen verschoben hat. Das ist keine Diagnose, aber eine gute Gesprächsgrundlage für die Tierarztpraxis.
+
 ## Regelmäßig statt zufällig
 
 Eine kurze Notiz einmal im Monat genügt. So erkennst du Veränderungen über die Zeit, die dir im Alltag sonst nicht auffallen würden, und kannst beim nächsten Termin konkret berichten, was du beobachtet hast.
+
+## Eine einfache Monatsnotiz
+
+Du brauchst kein ausführliches Tagebuch. Drei Fragen genügen:
+
+1. Was ist mir diesen Monat an meiner Katze aufgefallen?
+2. Was war anders als im Monat davor?
+3. Was möchte ich beim nächsten Termin ansprechen?
+
+Ein Foto vom Lieblingsplatz oder von der Katze beim Putzen kann dazu eine hilfreiche Erinnerung sein. Notiere auch Positives: Wann hat sie zuletzt gespielt, gekuschelt oder neugierig geschnuppert?
 
 ## Den Alltag bequemer machen
 

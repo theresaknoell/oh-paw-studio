@@ -49,7 +49,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     <main className="flex flex-1 flex-col">
       {/* 1 Hero */}
       <section className={`${wrap} grid items-center gap-8 py-10 md:grid-cols-[1.1fr_1fr] md:gap-14 md:py-16`}>
-        <div className="order-2 md:order-1">
+        <div>
           <p className="rise text-[13px] font-medium uppercase tracking-[0.08em] text-cocoa/75">{h.label}</p>
           <h1 style={{ "--d": "80ms", hyphens: "manual" } as React.CSSProperties} className="rise mt-3 text-4xl leading-[1.05] md:text-6xl" >{h.intro}</h1>
           <p style={{ "--d": "180ms" } as React.CSSProperties} className="rise mt-5 font-serif text-2xl leading-8 text-olive-deep">{h.lead}</p>
@@ -58,8 +58,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <Link href={`${base}/about`} className={secondary}>{h.ctaStory}</Link>
           </div>
         </div>
-        <div style={{ "--d": "150ms" } as React.CSSProperties} className="rise order-1 md:order-2">
-          <PhotoSlot image={siteImages.hero} lang={lang} ratio="aspect-[4/5]" sizes="(min-width: 768px) 460px, 100vw" priority className="parallax mx-auto max-w-md" />
+        <div style={{ "--d": "150ms" } as React.CSSProperties} className="rise">
+          <PhotoSlot image={siteImages.hero} lang={lang} ratio="aspect-[4/3] md:aspect-[4/5]" sizes="(min-width: 768px) 460px, 100vw" priority className="parallax mx-auto max-w-md" />
         </div>
       </section>
 
@@ -186,7 +186,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <p className="mt-3 text-lg leading-7 text-cocoa/90">{dict.newsletter.text}</p>
             </Reveal>
             <Reveal className="relative" delay={120}>
-              <NewsletterSignup lang={lang} action={newsletter.action} t={dict.newsletter} />
+              <NewsletterSignup lang={lang} t={dict.newsletter} />
             </Reveal>
           </div>
         </section>

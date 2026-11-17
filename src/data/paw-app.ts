@@ -38,7 +38,7 @@ export type PawApp = {
   login: { title: string; intro: string; email: string; submit: string; note: string; demo: string; back: string };
   products: { title: string; intro: string; open: string };
   settings: {
-    title: string; intro: string; export: string; clear: string; confirmClear: string;
+    title: string; intro: string; export: string; clear: string; confirmClear: string; cancel: string;
     futureTitle: string; futureText: string;
     import: string; importOk: string; importError: string; storage: string; storageFull: string;
   };
@@ -117,6 +117,7 @@ export const pawApp: Record<Locale, PawApp> = {
       storage: "Belegter Speicher in diesem Browser", storageFull: "Der Speicher ist fast voll. Exportiere deine Daten und entferne Fotos.",
       export: "Meine Daten exportieren (JSON)", clear: "Alle Daten löschen",
       confirmClear: "Wirklich alle Daten in diesem Browser löschen?",
+      cancel: "Abbrechen",
       futureTitle: "Bald verfügbar",
       futureText: "Anmeldung per E-Mail-Link, Fotos, PDF-Export und digital ausfüllbare Vorlagen.",
     },
@@ -193,6 +194,7 @@ export const pawApp: Record<Locale, PawApp> = {
       storage: "Storage used in this browser", storageFull: "Storage is almost full. Export your data and remove photos.",
       export: "Export my data (JSON)", clear: "Delete all data",
       confirmClear: "Really delete all data in this browser?",
+      cancel: "Cancel",
       futureTitle: "Coming soon",
       futureText: "Sign-in via email link, photos, PDF export and templates you can fill in digitally.",
     },

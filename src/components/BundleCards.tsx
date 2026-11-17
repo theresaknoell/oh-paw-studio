@@ -7,6 +7,7 @@ type Strings = {
   instead: string;
   save: string;
   soon: string;
+  singles: string;
   buy: string;
 };
 
@@ -66,7 +67,15 @@ export default function BundleCards({
                   {t.buy}
                 </a>
               ) : (
-                <p className="mt-5 text-sm text-cocoa/85">{t.soon}</p>
+                <>
+                  <p className="mt-5 text-sm text-cocoa/85">{t.soon}</p>
+                  <Link
+                    href={`/${lang}/products`}
+                    className="mt-3 inline-block text-[15px] text-olive-deep underline underline-offset-4 hover:text-cocoa"
+                  >
+                    {t.singles} →
+                  </Link>
+                </>
               )}
             </div>
           </li>

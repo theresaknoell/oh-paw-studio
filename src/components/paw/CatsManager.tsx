@@ -14,6 +14,7 @@ export default function CatsManager({ t }: { t: PawApp["cats"] }) {
   const { cats, addCat, updateCat, removeCat, saveFailed } = usePawStore();
   const [form, setForm] = useState(empty);
   const [editing, setEditing] = useState<string | null>(null);
+  const [removing, setRemoving] = useState<string | null>(null);
 
   const onPhoto = async (file: File | undefined) => {
     if (!file) return;
@@ -89,10 +90,20 @@ export default function CatsManager({ t }: { t: PawApp["cats"] }) {
                   {[c.birthday && `${t.birthday}: ${c.birthday}`, c.since && `${t.since}: ${c.since}`].filter(Boolean).join(" · ")}
                 </p>
                 {c.notes && <p className="mt-2 text-cocoa/85">{c.notes}</p>}
-                <p className="mt-3 flex gap-4 text-sm">
-                  <button className="text-olive-deep underline underline-offset-4" onClick={() => startEdit(c.id)}>{t.edit}</button>
-                  <button className="text-olive-deep underline underline-offset-4" onClick={() => { if (confirm(t.confirmRemove)) removeCat(c.id); }}>{t.remove}</button>
-                </p>
+                {removing === c.id ? (
+                  <div role="alertdialog" aria-label={t.confirmRemove} className="mt-3 rounded-lg bg-sand/60 p-4">
+                    <p className="text-sm">{t.confirmRemove}</p>
+                    <p className="mt-3 flex flex-wrap gap-3">
+                      <button className="inline-flex min-h-11 items-center rounded-full bg-[#7a3f33] px-5 text-[15px] font-medium text-ivory transition-colors hover:bg-cocoa" onClick={() => { removeCat(c.id); setRemoving(null); }}>{t.remove}</button>
+                      <button className={ghost} onClick={() => setRemoving(null)}>{t.cancel}</button>
+                    </p>
+                  </div>
+                ) : (
+                  <p className="mt-3 flex gap-4 text-sm">
+                    <button className="text-olive-deep underline underline-offset-4" onClick={() => startEdit(c.id)}>{t.edit}</button>
+                    <button className="text-olive-deep underline underline-offset-4" onClick={() => setRemoving(c.id)}>{t.remove}</button>
+                  </p>
+                )}
               </div>
             </li>
           ))}

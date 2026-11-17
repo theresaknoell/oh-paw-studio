@@ -32,6 +32,16 @@ A blank page can feel intimidating. With a few good questions, getting started i
 - What surprised you about her?
 - What would you like to still know in ten years?
 
+## Questions for every stage of life
+
+- **With a kitten:** What was the first toy she truly loved? What used to scare her, and what has become normal?
+- **With an adult cat:** How did your daily life settle into a rhythm together? Which habit would you never want to miss?
+- **With a senior cat:** What kind of calm suits her now? Which memories from your years together matter most to you?
+
+## Remember with photos and senses
+
+Add to your answers with a photo, a paw print or a short note about the sound of her purr. It is often the small things that feel obvious in daily life that become the loveliest memories later.
+
 ## Write it down, collect it, keep it
 
 Create a regular place for your answers, such as a notebook or a file, and add to it whenever something comes to mind. A memory book can offer a lovely structure for this, with room for photos and thoughts. You'll find more in the [Memories world](/en/products?world=memories).
