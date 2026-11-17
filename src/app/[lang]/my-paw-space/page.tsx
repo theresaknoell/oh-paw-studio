@@ -7,6 +7,9 @@ import { newsletter } from "@/data/newsletter";
 import { pawSpace } from "@/data/paw-space";
 import { getDictionary, hasLocale } from "../dictionaries";
 
+// Reihenfolge wie die Karten in src/data/paw-space.ts
+const featurePaths = ["cats", "memories", "book", "care", "products"];
+
 export async function generateMetadata({ params }: PageProps<"/[lang]/my-paw-space">): Promise<Metadata> {
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
@@ -31,11 +34,31 @@ export default async function PawSpace({
         {page.lead}
       </p>
 
-      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {page.features.map((f) => (
-          <li key={f.title} className="rounded-lg border border-sand bg-sand/30 p-6">
-            <h2 className="text-2xl">{f.title}</h2>
-            <p className="mt-2 text-cocoa/80">{f.text}</p>
+      <div className="mt-8 flex flex-wrap items-center gap-4">
+        <Link
+          href={`/${lang}/my-paw-space/app`}
+          className="inline-flex min-h-12 items-center rounded-full bg-olive-deep px-7 text-[15px] font-medium text-ivory transition-colors hover:bg-cocoa"
+        >
+          {lang === "de" ? "Demo ausprobieren" : "Try the demo"}
+        </Link>
+        <p className="text-sm text-cocoa/75">
+          {lang === "de" ? "Kostenlos, ohne Konto. Deine Einträge bleiben in deinem Browser." : "Free, no account needed. Your entries stay in your browser."}
+        </p>
+      </div>
+
+      <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
+        {page.features.map((f, i) => (
+          <li key={f.title} className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}>
+            <Link
+              href={`/${lang}/my-paw-space/app/${featurePaths[i] ?? ""}`}
+              className="group block h-full rounded-lg border border-sand bg-sand/30 p-6 transition-colors hover:bg-sand/60"
+            >
+              <h2 className="text-2xl">{f.title}</h2>
+              <p className="mt-2 text-cocoa/80">{f.text}</p>
+              <span className="mt-4 inline-block text-sm text-olive-deep underline-offset-4 group-hover:underline">
+                {lang === "de" ? "Ausprobieren →" : "Try it →"}
+              </span>
+            </Link>
           </li>
         ))}
       </ul>
@@ -59,12 +82,7 @@ export default async function PawSpace({
           </div>
         </section>
       )}
-      <Link
-        href={`/${lang}/my-paw-space/app`}
-        className="mt-6 inline-block rounded-full bg-olive-deep px-6 py-3 text-sm text-ivory transition-colors hover:bg-cocoa"
-      >
-        {lang === "de" ? "Demo ausprobieren" : "Try the demo"}
-      </Link>
+
     </main>
   );
 }

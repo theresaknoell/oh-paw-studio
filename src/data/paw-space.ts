@@ -14,7 +14,7 @@ export const pawSpace: Record<Locale, PawSpacePage> = {
   de: {
     title: "My Paw Space",
     lead: "Dein persönlicher digitaler Ort für das Leben mit deiner Katze: Produkte, Erinnerungen und Alltag an einer Stelle.",
-    status: "In Planung",
+    status: "Demo",
     features: [
       {
         title: "Meine Katzen",
@@ -58,7 +58,7 @@ export const pawSpace: Record<Locale, PawSpacePage> = {
   en: {
     title: "My Paw Space",
     lead: "Your personal digital place for life with your cat: products, memories and everyday life in one spot.",
-    status: "In planning",
+    status: "Demo",
     features: [
       {
         title: "My cats",

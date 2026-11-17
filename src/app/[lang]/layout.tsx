@@ -105,6 +105,7 @@ export default async function RootLayout({
               links: [
                 { href: `/${lang}/blog`, label: dict.nav.inspiration },
                 { href: `/${lang}/about`, label: dict.nav.about },
+                { href: `/${lang}/my-paw-space`, label: dict.nav.pawSpace },
               ],
             },
             {
