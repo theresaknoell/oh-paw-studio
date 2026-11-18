@@ -21,4 +21,4 @@ weil Welt, Lebensphase, Sprachpaar und Empfehlungen (`src/data/product-pairs.ts`
 **Bekannte Textfehler aus Gumroad** (z. B. „Pflegeauf gaben") korrigiert er über die Liste `fixes` am Anfang der Datei
 `scripts/sync-gumroad.mjs`. Besser: den Fehler auch in Gumroad beheben.
 
-Bundles sind davon getrennt (`src/data/bundles.ts`): Preise und Links dort bitte selbst eintragen oder mir schicken.
+Bundles sind davon getrennt (`src/data/bundles.ts`). Der Abgleich meldet sie nicht als neu, sondern prüft nur, ob ihre Links im Shop existieren und ihre Produkte auf der Website stehen. Preise und Texte dort bitte selbst eintragen oder mir schicken.

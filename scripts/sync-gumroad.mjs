@@ -137,11 +137,20 @@ for (const slug of local) {
 
 // 4) Bericht
 const known = new Set(local);
-const added = [...listed.keys()].filter((s) => !known.has(s) && s !== "fall-diys");
+// Bundles stehen in src/data/bundles.ts (nicht in products.ts): deren Links und Produkte gesondert prüfen.
+const bundlesSrc = fs.readFileSync(path.join(root, "src/data/bundles.ts"), "utf8");
+const bundleSlugs = [...bundlesSrc.matchAll(/https:\/\/ohpawstudio\.gumroad\.com\/l\/([^"]+)"/g)].map((m) => m[1]);
+const bundleItems = [...bundlesSrc.matchAll(/(?:de|en): \[([^\]]*)\]/g)].flatMap((m) => [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]));
+const bundleProblems = [
+  ...bundleSlugs.filter((s) => !listed.has(s)).map((s) => `Bundle-Link nicht im Shop gefunden: ${s}`),
+  ...[...new Set(bundleItems)].filter((s) => !known.has(s)).map((s) => `Bundle-Produkt nicht auf der Website: ${s}`),
+];
+const added = [...listed.keys()].filter((s) => !known.has(s) && !bundleSlugs.includes(s) && s !== "fall-diys");
 const missing = local.filter((s) => !listed.has(s));
 console.log(`Shop: ${listed.size} Produkte, Website: ${local.length} Produkte.\n`);
 console.log(changes.length ? `Änderungen (${changes.length}):\n - ${changes.join("\n - ")}` : "Keine Änderungen: Website und Gumroad stimmen überein.");
 if (added.length) console.log(`\nNEU in Gumroad, noch nicht auf der Website (bitte mit Claude einbauen):\n - ${added.map((s) => `${s} (${listed.get(s).name})`).join("\n - ")}`);
+if (bundleProblems.length) console.log(`\nBundles (bitte prüfen):\n - ${bundleProblems.join("\n - ")}`);
 if (missing.length) console.log(`\nAuf der Website, aber nicht mehr in Gumroad (bitte prüfen):\n - ${missing.join("\n - ")}`);
 
 if (write && changes.length) {
