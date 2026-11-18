@@ -24,7 +24,7 @@ export const bundles: Bundle[] = [
       en: ["the-kitten-care-edition-en", "the-veterinary-records-pack-en", "first-year-with-you"],
     },
     priceEur: 29.9,
-    url: { de: null, en: null },
+    url: { de: "https://ohpawstudio.gumroad.com/l/kitten-jahr-bundle", en: "https://ohpawstudio.gumroad.com/l/kitten-year-bundle" },
   },
   {
     id: "home-play",
@@ -33,10 +33,10 @@ export const bundles: Bundle[] = [
     text: { de: "Ein Zuhause, in dem ihr euch beide wohlfühlt, plus Ideen für mehr Abwechslung.", en: "A home where you both feel at ease, plus ideas for more variety." },
     items: {
       de: ["the-cat-home-collection-de", "the-cat-enrichment-collection-de"],
-      en: ["the-cat-home-colletion-en", "the-cat-enrichment-collection-en"],
+      en: ["the-cat-home-collection-en", "the-cat-enrichment-collection-en"],
     },
     priceEur: 31.9,
-    url: { de: null, en: null },
+    url: { de: "https://ohpawstudio.gumroad.com/l/zuhause-und-spiel-bundle", en: "https://ohpawstudio.gumroad.com/l/home-and-play-bundle" },
   },
   {
     id: "senior-companion",
@@ -45,10 +45,10 @@ export const bundles: Bundle[] = [
     text: { de: "Beobachtungen festhalten, Tierarztbesuche vorbereiten und den Alltag ruhig begleiten.", en: "Note observations, prepare vet visits and support everyday life calmly." },
     items: {
       de: ["the-senior-cat-edition-de", "the-veterinary-records-pack-de", "the-cat-care-journal-de"],
-      en: ["the-senior-cat-care-edtion-en", "the-veterinary-records-pack-en", "the-cat-care-journal-en"],
+      en: ["the-senior-cat-care-edition-en", "the-veterinary-records-pack-en", "the-cat-care-journal-en"],
     },
     priceEur: 29.9,
-    url: { de: null, en: null },
+    url: { de: "https://ohpawstudio.gumroad.com/l/senior-begleitung-bundle", en: "https://ohpawstudio.gumroad.com/l/senior-companion-bundle" },
   },
   {
     id: "multi-cat-everyday",
@@ -60,7 +60,7 @@ export const bundles: Bundle[] = [
       en: ["the-multi-cat-household-pack-en", "the-cat-care-journal-en"],
     },
     priceEur: 21.9,
-    url: { de: null, en: null },
+    url: { de: "https://ohpawstudio.gumroad.com/l/mehrkatzen-alltag-bundle", en: "https://ohpawstudio.gumroad.com/l/multi-cat-everyday-bundle" },
   },
 ];
 

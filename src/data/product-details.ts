@@ -129,7 +129,7 @@ export const productDetails: Record<string, ProductDetail> = {
       "Ob Einzug, Umzug oder einfach der Wunsch nach mehr Ordnung: Diese Collection hilft dir, euer Zuhause bewusst zu gestalten."
     ]
   },
-  "the-cat-home-colletion-en": {
+  "the-cat-home-collection-en": {
     "tagline": "A home where you both feel at ease",
     "inside": [
       "The basics of a home that suits you both",
@@ -254,7 +254,7 @@ export const productDetails: Record<string, ProductDetail> = {
       "Perfect for first-time cat parents and for anyone who wants to give their new cat the best possible start."
     ]
   },
-  "the-senior-cat-care-edtion-en": {
+  "the-senior-cat-care-edition-en": {
     "tagline": "Gentle care for the later years",
     "inside": [
       "Monthly senior check with 15 observation points",
@@ -396,7 +396,7 @@ export const productDetails: Record<string, ProductDetail> = {
     ],
     "pages": 18
   },
-  "th-indoor-cat-activity-planner-de": {
+  "the-indoor-cat-activity-planner-de": {
     "tagline": "Mehr Abwechslung für Wohnungskatzen, gut geplant",
     "intro": [
       "Wohnungskatzen erleben ihre ganze Welt in deinem Zuhause. Damit sie dort genug zu entdecken, zu jagen und zu erkunden haben, braucht es keine großen Umbauten, sondern einen guten Plan.",
